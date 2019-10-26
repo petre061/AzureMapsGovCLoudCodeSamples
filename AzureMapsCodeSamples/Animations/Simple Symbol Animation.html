@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Symbol Animation - Azure Maps Web SDK Samples</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="This sample shows how to animate the position of a symbol on the map by updating the coordinates." />
+    <meta name="keywords" content="map, gis, API, SDK, animate, animation, symbols, pushpins, markers, pins" />
+    <meta name="author" content="Microsoft Azure Maps" />
+
+    <!-- Add references to the Azure Maps Map control JavaScript and CSS files. -->
+    <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css" type="text/css" />
+    <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.js"></script>
+
+    <script type='text/javascript'>
+        var map, datasource, pin, radius = 20;
+
+        function GetMap() {
+            //Point the Azure Maps domain to the US Azure Gov Cloud domain.
+			atlas.setDomain('atlas.azure.us');
+
+			//Initialize a map instance.
+            map = new atlas.Map('myMap', {
+                view: 'Auto',
+				
+				//Add your Azure Maps subscription key to the map SDK. Get an Azure Maps key at https://azure.com/maps
+                authOptions: {
+                    authType: 'subscriptionKey',
+                    subscriptionKey: '<Your Azure Maps Key>'
+                }
+            });
+
+            //Wait until the map resources are ready.
+            map.events.add('ready', function () {
+                //Create a data source and add it to the map.
+                datasource = new atlas.source.DataSource();
+                map.sources.add(datasource);
+
+                //Create a layer that defines how to render the shapes in the data source and add it to the map.
+                map.layers.add(new atlas.layer.SymbolLayer(datasource, null, {
+                    iconOptions: {
+                        //For smoother animation, ignore the placement of the icon. This skips the label collision calculations and allows the icon to overlap map labels. 
+                        ignorePlacement: true,
+
+                        //For smoother animation, allow symbol to overlap all other symbols on the map.
+                        allowOverlap: true  
+                    },
+                    textOptions: {
+                        //For smoother animation, ignore the placement of the text. This skips the label collision calculations and allows the text to overlap map labels.
+                        ignorePlacement: true,
+
+                        //For smoother animation, allow text to overlap all other symbols on the map.
+                        allowOverlap: true
+                    }
+                }));
+
+                //Create a pin and wrap with the shape class and add to data source.
+                pin = new atlas.Shape(new atlas.data.Point(positionOnCircle(0)));
+                datasource.add(pin);
+
+                //Start the animation.
+                animateMarker(0);
+            });
+        }
+
+        function positionOnCircle(angle) {
+            //Calculate the position on a circle for an angle of animation.
+            return [
+                Math.cos(angle) * radius,
+                Math.sin(angle) * radius
+            ];
+        }
+
+        function animateMarker(timestamp) {
+            //Update the position of the pin for the animation frame.
+            pin.setCoordinates(positionOnCircle(timestamp / 1000));
+
+            //Request the next frame of the animation.
+            requestAnimationFrame(animateMarker);
+        }
+    </script>
+</head>
+<body onload='GetMap()'>
+    <div id="myMap" style="position:relative;width:100%;min-width:290px;height:600px;"></div>
+
+    <fieldset style="width:calc(100% - 30px);min-width:290px;margin-top:10px;">
+        <legend>Simple Symbol Animation</legend>
+        This sample shows how to animate the position of a symbol on the map by updating the coordinates.
+    </fieldset>
+</body>
+</html>

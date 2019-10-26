@@ -1,64 +1,58 @@
 ---
-page_type: sample
+topic: sample
+description: A collection of over a hundred code samples for the Azure Maps Web SDK for use in the Azure Gov Cloud.
 languages:
-- csharp
+- javascript
 products:
-- dotnet
-description: "Add 150 character max description"
-urlFragment: "update-this-to-unique-url-stub"
+- azure
+- azure-maps
 ---
 
-# Official Microsoft Sample
+# Azure Maps Code Samples
 
-<!-- 
-Guidelines on README format: https://review.docs.microsoft.com/help/onboard/admin/samples/concepts/readme-template?branch=master
+A collection of over a hundred code samples for the [Azure Maps](https://azure.com/maps) Web SDK for use in the Azure Gov Cloud.
 
-Guidance on onboarding samples to docs.microsoft.com/samples: https://review.docs.microsoft.com/help/onboard/admin/samples/process/onboarding?branch=master
+[Try it now](https://azuremapscodesamples.azurewebsites.us/)
 
-Taxonomies for products and languages: https://review.docs.microsoft.com/new-hope/information-architecture/metadata/taxonomies?branch=master
--->
+[![screenshot](Images/screenshot.png)](https://azuremapscodesamples.azurewebsites.us/)
 
-Give a short description for your sample here. What does it do and why is it important?
+Code samples for the commercial version of Azure can be found [here](https://github.com/Azure-Samples/AzureMapsCodeSamples)
 
-## Contents
+## Related Projects
 
-Outline the file contents of the repository. It helps users navigate the codebase, build configuration and any related assets.
+* [Azure Maps & Azure Active Directory Samples](https://github.com/Azure-Samples/Azure-Maps-AzureAD-Samples)
+* [AirMap Azure Maps plugin](https://github.com/airmap/js-azure-maps-plugin)
+* [Azure Maps PowerApps PCF component](https://github.com/jenschristianschroder/pcfAzureMaps)
+* [Azure Maps PowerApps PCF Search component](https://github.com/mkcgphy/Azure-Maps-Get-Search-Address-TypeAhead)
+* [Real-time flight map with Azure functions, CosmosDB and SignalR](https://github.com/davetheunissen/Global-Azure-Bootcamp-2019-Workshop)
+* [Azure Maps Jupyter Notebook samples](https://github.com/Azure-Samples/Azure-Maps-Jupyter-Notebook)
+* [Azure Maps for Retail, Jupyter Notebooks](https://github.com/5h15h/Azure-Maps-Jupyter-Notebooks)
 
-| File/folder       | Description                                |
-|-------------------|--------------------------------------------|
-| `src`             | Sample source code.                        |
-| `.gitignore`      | Define what to ignore at commit time.      |
-| `CHANGELOG.md`    | List of changes to the sample.             |
-| `CONTRIBUTING.md` | Guidelines for contributing to the sample. |
-| `README.md`       | This README file.                          |
-| `LICENSE`         | The license for the sample.                |
+## Additional Resources
 
-## Prerequisites
-
-Outline the required components and tools that a user might need to have on their machine in order to run the sample. This can be anything from frameworks, SDKs, OS versions or IDE releases.
-
-## Setup
-
-Explain how to prepare the sample once the user clones or downloads the repository. The section should outline every step necessary to install dependencies and set up any settings (for example, API keys and output folders).
-
-## Runnning the sample
-
-Outline step-by-step instructions to execute the sample and see its output. Include steps for executing the sample from the IDE, starting specific services in the Azure portal or anything related to the overall launch of the code.
-
-## Key concepts
-
-Provide users with more context on the tools and services used in the sample. Explain some of the code that is being used and how services interact with each other.
+* [Azure Maps (main site)](https://azure.com/maps)
+* [Azure Maps Documentation](https://docs.microsoft.com/azure/azure-maps/index)
+* [Azure Maps Blog](https://azure.microsoft.com/blog/topics/azure-maps/)
+* [MSDN Forums](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelbs)
+* [StackOverflow [azure-maps]](https://stackoverflow.com/questions/tagged/azure-maps)
+* [Azure Maps feedback](https://feedback.azure.com/forums/909172-azure-maps)
 
 ## Contributing
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
+We welcome contributions. Feel free to submit code samples, file issues and pull requests on the repo and we'll address them as we can. 
+Learn more about how you can help on our [Contribution Rules & Guidelines](CONTRIBUTING.md). 
 
-When you submit a pull request, a CLA bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
+You can reach out to us anytime with questions and suggestions using our communities below:
+* [MSDN Forums](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelbs)
+* [StackOverflow [azure-maps]](https://stackoverflow.com/questions/tagged/azure-maps)
+* [Azure Maps feedback](https://feedback.azure.com/forums/909172-azure-maps)
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). 
+For more information, see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or 
 contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+
+## License
+
+MIT
+ 
+See [License](LICENSE.md) for full license text.

@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Create a Fullscreen Control - Azure Maps Web SDK Samples</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="This sample shows how to create a custom fullscreen control that can be added to the map. In this case a control for toggling the map between its specified size in the page and fullscreen mode." />
+    <meta name="keywords" content="maps, map, API, SDK, GIS, custom, control, custom control, fullscreen, full screen" />
+    <meta name="author" content="Microsoft Azure Maps" />
+
+    <!-- Add references to the Azure Maps Map control JavaScript and CSS files. -->
+    <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css" type="text/css" />
+    <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.js"></script>
+
+    <!-- Load in the JavaScript that has our custom control. -->
+    <script src="FullscreenControl.js"></script>
+
+    <script type='text/javascript'>
+        var map;
+
+        function GetMap() {
+            //Point the Azure Maps domain to the US Azure Gov Cloud domain.
+			atlas.setDomain('atlas.azure.us');
+
+			//Initialize a map instance.
+            map = new atlas.Map('myMap', {
+                view: 'Auto',
+				
+				//Add your Azure Maps subscription key to the map SDK. Get an Azure Maps key at https://azure.com/maps
+                authOptions: {
+                    authType: 'subscriptionKey',
+                    subscriptionKey: '<Your Azure Maps Key>'
+                }
+            });
+
+            //Wait until the map resources are ready.
+            map.events.add('ready', function () {               
+
+                //Optional. Add the map style control so we can see how the custom control reacts.
+                map.controls.add([
+                    new atlas.control.StyleControl(),
+
+                    //Add the custom control to the map.
+                    new FullscreenControl({
+                        style: 'auto'
+                    })
+                ], {
+                    position: 'top-right'
+                });
+            });
+        }
+    </script>
+</head>
+<body onload="GetMap()">
+    <div id="myMap" style="position:relative;width:100%;min-width:290px;height:600px;"></div>
+
+    <fieldset style="width:calc(100% - 30px);min-width:290px;margin-top:10px;">
+        <legend>Create a Fullscreen Control</legend>
+        This sample shows how to create a custom fullscreen control that can be added to the map. 
+        In this case a control for toggling the map between its specified size in the page and fullscreen mode. 
+        This control aligns its style with the built in controls in Azure Maps and also provides additional 
+        styling functionality to allow the controls color to be a CSS3 color or have it automatically switch between light and dark based on the map style. 
+        A framework for supporting translated text for aria-labels (accessibility) has also been added.
+    </fieldset>
+</body>
+</html>
