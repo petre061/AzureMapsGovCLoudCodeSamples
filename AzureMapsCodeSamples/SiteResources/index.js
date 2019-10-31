@@ -220,7 +220,7 @@ function openSample(sampleName) {
         changeUrl('sample', encodeURIComponent(sample.title));
 
         $('.modal-title').text(sample.title);
-        $('#modelSourceCode').attr('href', 'https://github.com/Azure-Samples/AzureMapsGovCloudCodeSamples/blob/master/AzureMapsGovCloudCodeSamples/' + sample.sourcePath);
+        $('#modelSourceCode').attr('href', 'https://github.com/Azure-Samples/AzureMapsGovCloudCodeSamples/blob/master/AzureMapsCodeSamples/' + sample.sourcePath);
         $('.modal-body').html('<iframe src="' + sample.path + '" frameborder="0" scrolling="0" width="99.6%" height="' + ($(window).height() - 190) + 'px" aria-label="Live code sample window" lang="en"></iframe>');
         $("#myModal").modal('show');
     }

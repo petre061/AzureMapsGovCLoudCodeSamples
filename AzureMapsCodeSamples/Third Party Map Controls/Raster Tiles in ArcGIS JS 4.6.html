@@ -43,7 +43,7 @@
                 //Create a tile layer that points to the Azure Maps tiles.
                 //https://docs.microsoft.com/rest/api/location-based-services/render/getmaptile
                 var tiledLayer = new WebTileLayer({
-                    urlTemplate: "https://atlas.microsoft.com/map/tile/png?api-version=1&layer=basic&style=main&tileSize=512&view=Auto&zoom={level}&x={col}&y={row}&subscription-key=" + subscriptionKey,
+                    urlTemplate: "https://atlas.azure.us/map/tile/png?api-version=1&layer=basic&style=main&tileSize=512&view=Auto&zoom={level}&x={col}&y={row}&subscription-key=" + subscriptionKey,
                     copyright: '© ' + new Date().getFullYear() + ' Microsoft, © ' + new Date().getFullYear() + ' TomTom',
                     tileInfo: {
                         spatialReference: {
