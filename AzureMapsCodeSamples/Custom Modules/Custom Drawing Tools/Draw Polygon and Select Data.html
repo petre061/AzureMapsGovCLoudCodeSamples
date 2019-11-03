@@ -51,9 +51,11 @@
                     if (polygonShape) {
                         var selectedPins = [];
 
+                        var poly = polygonShape.toJson();
+
                         //Search for all points that intersect the polygon.
                         for (var i = 0; i < pins.length; i++) {
-                            var intersection = turf.intersect(polygonShape.toJson(), pins[i]);
+                            var intersection = turf.intersect(poly, pins[i]);
 
                             if (intersection) {
                                 selectedPins.push(pins[i]);
