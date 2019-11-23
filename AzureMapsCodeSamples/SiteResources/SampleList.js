@@ -705,6 +705,66 @@ var sampleList = [
 	]
 },
 {
+	category:'Line Layer',
+	desc:'Learn how to visualize line and path data on the map using the line layer.',
+	samples: [
+		{
+			title:'Add Arrow along a Path',
+			desc:'This sample shows how to add arrow icons along a line on the map. ',
+			path:'Line%20Layer/Add%20Arrows%20along%20a%20Path.html',
+			sourcePath:'Line%20Layer/Add%20Arrows%20along%20a%20Path.html',
+			screenshot:'Add-Arrows-along-a-Path.png',
+			keywords:'map, gis, api, sdk, linestring, arrows, path, symbols, linelayer',
+			created:'11/22/2019'
+		},
+		{
+			title:'Add arrows to end of paths',
+			desc:'This sample shows how to add arrow icons along a line on the map. ',
+			path:'Line%20Layer/Add%20arrows%20to%20end%20of%20paths.html',
+			sourcePath:'Line%20Layer/Add%20arrows%20to%20end%20of%20paths.html',
+			screenshot:'Add-arrows-to-end-of-paths.png',
+			keywords:'map, gis, api, sdk, linestring, arrows, path, symbols, linelayer',
+			created:'11/22/2019'
+		},
+		{
+			title:'Data-driven stroke gradient',
+			desc:'This sample shows how to create a path between a set of data points can apply a stroke gradient based on properties in each data point.',
+			path:'Line%20Layer/Data-driven%20stroke%20gradient.html',
+			sourcePath:'Line%20Layer/Data-driven%20stroke%20gradient.html',
+			screenshot:'Data-driven-stroke-gradient.png',
+			keywords:'map, gis, api, sdk, line, linestring, polyline, layer, stroke gradient, gradient, linelayer, data-driven, data driven styling',
+			created:'11/22/2019'
+		},
+		{
+			title:'Line Layer Options',
+			desc:'This sample shows how the different options of the line layer affect rendering.',
+			path:'Line%20Layer/Line%20Layer%20Options.html',
+			sourcePath:'Line%20Layer/Line%20Layer%20Options.html',
+			screenshot:'Line-Layer-Options.png',
+			keywords:'map, gis, api, sdk, line, linestring, polyline, layer, linelayer',
+			created:'11/22/2019'
+		},
+		{
+			title:'Line layer with built-in icon template',
+			desc:'This sample shows how to use a built-in icon templates with a line layer.',
+			path:'Line%20Layer/Line%20layer%20with%20built-in%20icon%20template.html',
+			sourcePath:'Line%20Layer/Line%20layer%20with%20built-in%20icon%20template.html',
+			screenshot:'Line-layer-with-built-in-icon-template.png',
+			keywords:'map, gis, api, sdk, template, linestring, arrows, path, symbols, linelayer, image template',
+			created:'11/22/2019'
+		},
+		{
+			title:'Line with Stroke Gradient',
+			desc:'This sample shows how to apply a stroke gradient to a line on the map.',
+			path:'Line%20Layer/Line%20with%20Stroke%20Gradient.html',
+			sourcePath:'Line%20Layer/Line%20with%20Stroke%20Gradient.html',
+			screenshot:'Line-with-Stroke-Gradient.png',
+			keywords:'map, gis, api, sdk, line, linestring, polyline, layer, stroke gradient, gradient, linelayer',
+			created:'11/22/2019'
+		},
+	]
+},
+{
 	category:'Map',
 	desc:'These samples show how to use the many different features of the map.',
 	samples: [
@@ -855,41 +915,14 @@ var sampleList = [
 	]
 },
 {
-	category:'Polygon and Line Layers',
-	desc:'Learn how to overlay geospatially accurate circles, polygons, linestrings, and multi-geometries on the map using polygon and line layers.',
+	category:'Polygon and Polygon Extrusion Layers',
+	desc:'Learn how to overlay geospatially accurate circles, polygons, and multi-polygons on the map using the polygon and polygon extrusion layers.',
 	samples: [
-		{
-			title:'Add Arrow along a Path',
-			desc:'This sample shows how to add arrow icons along a line on the map. ',
-			path:'Polygon%20and%20Line%20Layers/Add%20Arrows%20along%20a%20Path.html',
-			sourcePath:'Polygon%20and%20Line%20Layers/Add%20Arrows%20along%20a%20Path.html',
-			screenshot:'Add-Arrows-along-a-Path.png',
-			keywords:'map, gis, api, sdk, linestring, arrows, path, symbols, linelayer',
-			created:'10/25/2019'
-		},
-		{
-			title:'Add arrows to end of paths',
-			desc:'This sample shows how to add arrow icons along a line on the map. ',
-			path:'Polygon%20and%20Line%20Layers/Add%20arrows%20to%20end%20of%20paths.html',
-			sourcePath:'Polygon%20and%20Line%20Layers/Add%20arrows%20to%20end%20of%20paths.html',
-			screenshot:'Add-arrows-to-end-of-paths.png',
-			keywords:'map, gis, api, sdk, linestring, arrows, path, symbols, linelayer',
-			created:'10/25/2019'
-		},
-		{
-			title:'Data-driven stroke gradient',
-			desc:'This sample shows how to create a path between a set of data points can apply a stroke gradient based on properties in each data point.',
-			path:'Polygon%20and%20Line%20Layers/Data-driven%20stroke%20gradient.html',
-			sourcePath:'Polygon%20and%20Line%20Layers/Data-driven%20stroke%20gradient.html',
-			screenshot:'Data-driven-stroke-gradient.png',
-			keywords:'map, gis, api, sdk, line, linestring, polyline, layer, stroke gradient, gradient, linelayer, data-driven, data driven styling',
-			created:'10/25/2019'
-		},
 		{
 			title:'Fill polygon with built-in icon template',
 			desc:'This sample shows how to use an image template as a fill pattern in a polygon layer.',
-			path:'Polygon%20and%20Line%20Layers/Fill%20polygon%20with%20built-in%20icon%20template.html',
-			sourcePath:'Polygon%20and%20Line%20Layers/Fill%20polygon%20with%20built-in%20icon%20template.html',
+			path:'Polygon%20and%20Polygon%20Extrusion%20Layers/Fill%20polygon%20with%20built-in%20icon%20template.html',
+			sourcePath:'Polygon%20and%20Polygon%20Extrusion%20Layers/Fill%20polygon%20with%20built-in%20icon%20template.html',
 			screenshot:'Fill-polygon-with-built-in-icon-template.png',
 			keywords:'map, gis, api, sdk, template, fill pattern, polygonlayer, image template',
 			created:'10/25/2019'
@@ -897,53 +930,35 @@ var sampleList = [
 		{
 			title:'Geospatially Accurate Circle',
 			desc:'This sample shows how to use the extended GeoJSON schema defined by Azure Maps to create a geospatially accurate circle on the map with a filled area and a styled outline.',
-			path:'Polygon%20and%20Line%20Layers/Geospatially%20Accurate%20Circle.html',
-			sourcePath:'Polygon%20and%20Line%20Layers/Geospatially%20Accurate%20Circle.html',
+			path:'Polygon%20and%20Polygon%20Extrusion%20Layers/Geospatially%20Accurate%20Circle.html',
+			sourcePath:'Polygon%20and%20Polygon%20Extrusion%20Layers/Geospatially%20Accurate%20Circle.html',
 			screenshot:'Geospatially-Accurate-Circle.png',
 			keywords:'map, gis, api, sdk, circles, geospatial, geospatial circles',
 			created:'10/25/2019'
 		},
 		{
-			title:'Line Layer Options',
-			desc:'This sample shows how the different options of the line layer affect rendering.',
-			path:'Polygon%20and%20Line%20Layers/Line%20Layer%20Options.html',
-			sourcePath:'Polygon%20and%20Line%20Layers/Line%20Layer%20Options.html',
-			screenshot:'Line-Layer-Options.png',
-			keywords:'map, gis, api, sdk, line, linestring, polyline, layer, linelayer',
-			created:'10/25/2019'
-		},
-		{
-			title:'Line layer with built-in icon template',
-			desc:'This sample shows how to use a built-in icon templates with a line layer.',
-			path:'Polygon%20and%20Line%20Layers/Line%20layer%20with%20built-in%20icon%20template.html',
-			sourcePath:'Polygon%20and%20Line%20Layers/Line%20layer%20with%20built-in%20icon%20template.html',
-			screenshot:'Line-layer-with-built-in-icon-template.png',
-			keywords:'map, gis, api, sdk, template, linestring, arrows, path, symbols, linelayer, image template',
-			created:'10/25/2019'
-		},
-		{
-			title:'Line with Stroke Gradient',
-			desc:'This sample shows how to apply a stroke gradient to a line on the map.',
-			path:'Polygon%20and%20Line%20Layers/Line%20with%20Stroke%20Gradient.html',
-			sourcePath:'Polygon%20and%20Line%20Layers/Line%20with%20Stroke%20Gradient.html',
-			screenshot:'Line-with-Stroke-Gradient.png',
-			keywords:'map, gis, api, sdk, line, linestring, polyline, layer, stroke gradient, gradient, linelayer',
-			created:'10/25/2019'
-		},
-		{
 			title:'Mercator Projection and Geospatial Circles',
 			desc:'This sample shows how the Mercator projection of the map affects the scale of geospatially accurate objects on the map.',
-			path:'Polygon%20and%20Line%20Layers/Mercator%20Projection%20and%20Geospatial%20Circles.html',
-			sourcePath:'Polygon%20and%20Line%20Layers/Mercator%20Projection%20and%20Geospatial%20Circles.html',
+			path:'Polygon%20and%20Polygon%20Extrusion%20Layers/Mercator%20Projection%20and%20Geospatial%20Circles.html',
+			sourcePath:'Polygon%20and%20Polygon%20Extrusion%20Layers/Mercator%20Projection%20and%20Geospatial%20Circles.html',
 			screenshot:'Mercator-Projection-and-Geospatial-Circles.png',
 			keywords:'map, gis, api, sdk, circle, geospatial, mercator, projection',
 			created:'10/25/2019'
 		},
 		{
+			title:'Polygon Extrusion Layer Options',
+			desc:'This sample shows how the different options of the polygon extrusion layer affect rendering.',
+			path:'Polygon%20and%20Polygon%20Extrusion%20Layers/Polygon%20Extrusion%20Layer%20Options.html',
+			sourcePath:'Polygon%20and%20Polygon%20Extrusion%20Layers/Polygon%20Extrusion%20Layer%20Options.html',
+			screenshot:'Polygon-Extrusion-Layer-Options.png',
+			keywords:'map, gis, api, sdk, polygon, layer',
+			created:'11/22/2019'
+		},
+		{
 			title:'Polygon Fill Pattern',
 			desc:'This sample shows how to fill a polygon area using a pattern image rather than a solid color.',
-			path:'Polygon%20and%20Line%20Layers/Polygon%20Fill%20Pattern.html',
-			sourcePath:'Polygon%20and%20Line%20Layers/Polygon%20Fill%20Pattern.html',
+			path:'Polygon%20and%20Polygon%20Extrusion%20Layers/Polygon%20Fill%20Pattern.html',
+			sourcePath:'Polygon%20and%20Polygon%20Extrusion%20Layers/Polygon%20Fill%20Pattern.html',
 			screenshot:'Polygon-Fill-Pattern.png',
 			keywords:'map, gis, api, sdk, polyon, fill pattern',
 			created:'10/25/2019'
@@ -951,8 +966,8 @@ var sampleList = [
 		{
 			title:'Polygon Hover Style',
 			desc:'This sample shows how to create a hover effect on a polygon layer.',
-			path:'Polygon%20and%20Line%20Layers/Polygon%20Hover%20Style.html',
-			sourcePath:'Polygon%20and%20Line%20Layers/Polygon%20Hover%20Style.html',
+			path:'Polygon%20and%20Polygon%20Extrusion%20Layers/Polygon%20Hover%20Style.html',
+			sourcePath:'Polygon%20and%20Polygon%20Extrusion%20Layers/Polygon%20Hover%20Style.html',
 			screenshot:'Polygon-Hover-Style.gif',
 			keywords:'map, gis, api, sdk, polygon, layer, hover, mouse',
 			created:'10/25/2019'
@@ -960,8 +975,8 @@ var sampleList = [
 		{
 			title:'Polygon labels - calculated',
 			desc:'This sample shows how to create labels for polygons by calculating a coordinates and creating a point feature for the label.',
-			path:'Polygon%20and%20Line%20Layers/Polygon%20labels%20-%20calculated.html',
-			sourcePath:'Polygon%20and%20Line%20Layers/Polygon%20labels%20-%20calculated.html',
+			path:'Polygon%20and%20Polygon%20Extrusion%20Layers/Polygon%20labels%20-%20calculated.html',
+			sourcePath:'Polygon%20and%20Polygon%20Extrusion%20Layers/Polygon%20labels%20-%20calculated.html',
 			screenshot:'Polygon-labels---calculated.png',
 			keywords:'map, gis, api, sdk, template, fill pattern, polygonlayer',
 			created:'10/25/2019'
@@ -969,8 +984,8 @@ var sampleList = [
 		{
 			title:'Polygon labels - symbol layer',
 			desc:'This sample shows how the symbol layer can be used to automatically render labels for polygons on the map. ',
-			path:'Polygon%20and%20Line%20Layers/Polygon%20labels%20-%20symbol%20layer.html',
-			sourcePath:'Polygon%20and%20Line%20Layers/Polygon%20labels%20-%20symbol%20layer.html',
+			path:'Polygon%20and%20Polygon%20Extrusion%20Layers/Polygon%20labels%20-%20symbol%20layer.html',
+			sourcePath:'Polygon%20and%20Polygon%20Extrusion%20Layers/Polygon%20labels%20-%20symbol%20layer.html',
 			screenshot:'Polygon-labels---symbol-layer.png',
 			keywords:'map, gis, api, sdk, template, fill pattern, polygonlayer',
 			created:'10/25/2019'
@@ -978,8 +993,8 @@ var sampleList = [
 		{
 			title:'Polygon Layer Options',
 			desc:'This sample shows how the different options of the polygon layer affect rendering.',
-			path:'Polygon%20and%20Line%20Layers/Polygon%20Layer%20Options.html',
-			sourcePath:'Polygon%20and%20Line%20Layers/Polygon%20Layer%20Options.html',
+			path:'Polygon%20and%20Polygon%20Extrusion%20Layers/Polygon%20Layer%20Options.html',
+			sourcePath:'Polygon%20and%20Polygon%20Extrusion%20Layers/Polygon%20Layer%20Options.html',
 			screenshot:'Polygon-Layer-Options.png',
 			keywords:'map, gis, api, sdk, polygon, layer',
 			created:'10/25/2019'
@@ -987,8 +1002,8 @@ var sampleList = [
 		{
 			title:'Polygon masks',
 			desc:'Polygon masks limit the viewable area of the map to a polygon area.',
-			path:'Polygon%20and%20Line%20Layers/Polygon%20masks.html',
-			sourcePath:'Polygon%20and%20Line%20Layers/Polygon%20masks.html',
+			path:'Polygon%20and%20Polygon%20Extrusion%20Layers/Polygon%20masks.html',
+			sourcePath:'Polygon%20and%20Polygon%20Extrusion%20Layers/Polygon%20masks.html',
 			screenshot:'Polygon-masks.png',
 			keywords:'map, gis, api, sdk, polygon mask, restrict map view',
 			created:'10/25/2019'
@@ -996,8 +1011,8 @@ var sampleList = [
 		{
 			title:'Simple MultiPolygon',
 			desc:'This sample shows how to render a MultiPolygon on the map.',
-			path:'Polygon%20and%20Line%20Layers/Simple%20MultiPolygon.html',
-			sourcePath:'Polygon%20and%20Line%20Layers/Simple%20MultiPolygon.html',
+			path:'Polygon%20and%20Polygon%20Extrusion%20Layers/Simple%20MultiPolygon.html',
+			sourcePath:'Polygon%20and%20Polygon%20Extrusion%20Layers/Simple%20MultiPolygon.html',
 			screenshot:'Simple-MultiPolygon.png',
 			keywords:'map, gis, api, sdk, polyon, multipolygon',
 			created:'10/25/2019'
@@ -1008,6 +1023,15 @@ var sampleList = [
 	category:'Popups',
 	desc:'See how to display information in a popup on the map.',
 	samples: [
+		{
+			title:'Accessible popups',
+			desc:'This sample shows how to use popups in a way that users can easily access them using keyboard shortcuts or on mouse click.',
+			path:'Popups/Accessible%20popups.html',
+			sourcePath:'Popups/Accessible%20popups.html',
+			screenshot:'Accessible-popups.png',
+			keywords:'map, gis, api, sdk, popups, infobox, infowindow, events, mouse, accessibility',
+			created:'11/20/2019'
+		},
 		{
 			title:'Customize a popup',
 			desc:'This sample shows how to customize the look of a popup.',
@@ -1112,6 +1136,15 @@ var sampleList = [
 			screenshot:'Search-Autosuggest-and-JQuery-UI.gif',
 			keywords:'map, gis, api, sdk, rest, search, geocoding, geocode, fuzzy, address, place, poi, points of interest, category, autosuggest, autocomplete, jquery',
 			created:'10/25/2019'
+		},
+		{
+			title:'Show weather overlays on a map',
+			desc:'This sample shows how to add weather radar and infrared overlays to the map as a tile layer.',
+			path:'REST%20Services/Show%20weather%20overlays%20on%20a%20map.html',
+			sourcePath:'REST%20Services/Show%20weather%20overlays%20on%20a%20map.html',
+			screenshot:'Show-weather-overlays-on-a-map.png',
+			keywords:'map, gis, api, sdk, tiles, layer, weather, accuweather',
+			created:'11/5/2019'
 		},
 		{
 			title:'Simple REST Directions (Route)',
@@ -1393,6 +1426,15 @@ var sampleList = [
 			created:'10/25/2019'
 		},
 		{
+			title:'Image sprite fallback expression',
+			desc:'This sample shows how to use an expression to check to see if an image is available in the maps image sprite, and if it isn\'t, use a fallback image instead.',
+			path:'Symbol%20Layer/Image%20sprite%20fallback%20expression.html',
+			sourcePath:'Symbol%20Layer/Image%20sprite%20fallback%20expression.html',
+			screenshot:'Image-sprite-fallback-expression.png',
+			keywords:'map, gis, api, sdk, markers, pins, pushpins, symbols, layer, icon, image',
+			created:'11/22/2019'
+		},
+		{
 			title:'Styled Symbol Layer',
 			desc:'This sample shows how to create a symbol layer and apply styles to it to customize how it renders each symbol.',
 			path:'Symbol%20Layer/Styled%20Symbol%20Layer.html',
@@ -1500,7 +1542,7 @@ var sampleList = [
 			path:'Tile%20Layers/Tile%20Layer%20using%20X,%20Y%20and%20Z.html',
 			sourcePath:'Tile%20Layers/Tile%20Layer%20using%20X,%20Y%20and%20Z.html',
 			screenshot:'Tile-Layer-using-X,-Y-and-Z.png',
-			keywords:'map, gis, api, sdk, tiles, layer, weather',
+			keywords:'map, gis, api, sdk, tiles, layer, nautical chart, openseamap',
 			created:'10/25/2019'
 		},
 		{
@@ -1509,7 +1551,7 @@ var sampleList = [
 			path:'Tile%20Layers/WMS%20Tile%20Layer.html',
 			sourcePath:'Tile%20Layers/WMS%20Tile%20Layer.html',
 			screenshot:'WMS-Tile-Layer.png',
-			keywords:'map, gis, api, sdk, tiles, layer, weather',
+			keywords:'map, gis, api, sdk, tiles, layer, wms, web mapping service',
 			created:'10/25/2019'
 		},
 		{
@@ -1518,7 +1560,7 @@ var sampleList = [
 			path:'Tile%20Layers/WMTS%20Tile%20Layer.html',
 			sourcePath:'Tile%20Layers/WMTS%20Tile%20Layer.html',
 			screenshot:'WMTS-Tile-Layer.png',
-			keywords:'map, gis, api, sdk, tiles, layer, weather',
+			keywords:'map, gis, api, sdk, tiles, layer, wmts, web mapping tile service',
 			created:'10/25/2019'
 		},
 		{
@@ -1527,7 +1569,7 @@ var sampleList = [
 			path:'Tile%20Layers/Animated%20Tile%20Layers/Animated%20Tile%20Layer.html',
 			sourcePath:'Tile%20Layers/Animated%20Tile%20Layers',
 			screenshot:'Animated-Tile-Layer.gif',
-			keywords:'map, gis, api, sdk, animate, animation, tiles, layer, weather',
+			keywords:'map, gis, api, sdk, animate, animation, tiles, layer',
 			created:'10/25/2019'
 		},
 	]
@@ -1606,4 +1648,4 @@ var sampleList = [
 			created:'10/25/2019'
 		},
 	]
-}];var numberOfSamples = 164;
+}];var numberOfSamples = 168;

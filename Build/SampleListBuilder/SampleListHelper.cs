@@ -31,7 +31,7 @@ namespace SampleListBuilder
 
         private static Dictionary<string, string> CategoryFolders = new Dictionary<string, string>()
         {
-            { "Animations", "Learn how to animate data on the map." },
+           { "Animations", "Learn how to animate data on the map." },
             { "Bubble Layer", "These samples demonstrate different ways to implement the bubble layer to render point based data." },
             { "Controls", "Add UI controls to the map to create an enhanced user experience." },
             { "Custom Modules", "Use custom modules to extend the functionality of the Azure Maps Web Control." },
@@ -43,8 +43,9 @@ namespace SampleListBuilder
             { "HTML Markers", "Use traditional HTML and CSS to represent point based data on the map as markers." },
             { "Image Layer", "See how to overlay images on the map as a layer." },
             { "Layers", "Learn how to visualize data using the different types of rendering layers." },
+            { "Line Layer", "Learn how to visualize line and path data on the map using the line layer." },
             { "Map", "These samples show how to use the many different features of the map." },
-            { "Polygon and Line Layers", "Learn how to overlay geospatially accurate circles, polygons, linestrings, and multi-geometries on the map using polygon and line layers." },
+            { "Polygon and Polygon Extrusion Layers", "Learn how to overlay geospatially accurate circles, polygons, and multi-polygons on the map using the polygon and polygon extrusion layers." },
             { "Popups", "See how to display information in a popup on the map." },
             { "REST Services", "Learn how to directly access the Azure Maps REST services from JavaScript." },
             { "Services Module", "Take advantage of the Services module to simplify integration of the REST services with the Azure Maps Web Control." },
@@ -89,6 +90,11 @@ namespace SampleListBuilder
                     {
                         Title = "Azure Maps + Time Series Insights + IoT Hub Hands On Lab",
                         Href = "https://github.com/rangv/MarchWorkshop/tree/master/AzureMaps"
+                    },
+                    new ExternalSample()
+                    {
+                        Title = "Azure IoT Real-time tracking workshop",
+                        Href = "https://github.com/kartben/azure-iot-realtime-asset-tracking-workshop"
                     },
                     new ExternalSample()
                     {
@@ -195,7 +201,11 @@ namespace SampleListBuilder
                         Title = "A-Maps - A QGIS plugin for the Azure Maps REST services.",
                         Href = "https://github.com/riccardoklinger/amaps"
                     },
-
+                    new ExternalSample()
+                    {
+                        Title = "Flutter_map - Use Azure Maps with the flutter UI toolkit.",
+                        Href = "https://github.com/johnpryan/flutter_map"
+                    },
                     new ExternalSample()
                     {
                         Title = "Azure Web Services - A collection of clients for Azure & Microsoft Web Services - Azure Cognitive Services, Azure Maps",

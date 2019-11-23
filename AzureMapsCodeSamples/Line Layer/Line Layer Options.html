@@ -18,18 +18,18 @@
 
     <script type='text/javascript'>
         var map, datasource, lineLayer, defaultOptions, removeDefaults;
-        
+
         function GetMap() {
             //Point the Azure Maps domain to the US Azure Gov Cloud domain.
-			atlas.setDomain('atlas.azure.us');
+            atlas.setDomain('atlas.azure.us');
 
-			//Initialize a map instance.
+            //Initialize a map instance.
             map = new atlas.Map('myMap', {
-                center: [-90, 40],
-                zoom: 2,
+                center: [-122.33, 47.6],
+                zoom: 13,
                 view: 'Auto',
-				
-				//Add your Azure Maps subscription key to the map SDK. Get an Azure Maps key at https://azure.com/maps
+
+                //Add your Azure Maps subscription key to the map SDK. Get an Azure Maps key at https://azure.com/maps
                 authOptions: {
                     authType: 'subscriptionKey',
                     subscriptionKey: '<Your Azure Maps Key>'
@@ -43,8 +43,8 @@
                 map.controls.add(new atlas.control.StyleControl({
                     style: 'dark'
                 }), {
-                    position: 'top-right'
-                });
+                        position: 'top-right'
+                    });
 
                 //Create a data source and add it to the map.
                 datasource = new atlas.source.DataSource();
@@ -89,7 +89,7 @@
                         dashArray.push(parseInt(sda[i]));
                     }
                 }
-            }   
+            }
 
             return {
                 strokeColor: getPropertyValue('color', document.getElementById('StrokeColor').value),
@@ -102,7 +102,12 @@
                 minZoom: getPropertyValue('minZoom', parseFloat(document.getElementById('MinZoom').value)),
                 maxZoom: getPropertyValue('maxZoom', parseFloat(document.getElementById('MaxZoom').value)),
                 visible: getPropertyValue('visible', document.getElementById('Visible').checked),
-                strokeDashArray: dashArray
+                strokeDashArray: dashArray,
+                translateAnchor: getPropertyValue('translateAnchor', document.getElementById('TranslateAnchor').value),
+                translate: getPropertyValue('translate', [
+                    parseFloat(document.getElementById('TranslateX').value),
+                    parseFloat(document.getElementById('TranslateY').value)
+                ])
             };
         }
 
@@ -137,7 +142,7 @@
         #myMap {
             position: relative;
             width: calc(100% - 375px);
-            min-width:290px;
+            min-width: 290px;
             height: 600px;
             float: left;
         }
@@ -314,7 +319,38 @@
                 <tr title="An integer value that specifies the width and height dimensions of the map tiles. For a seamless experience, the tile size must by a multiplier of 2. ">
                     <td>Stroke Dash Array</td>
                     <td>
-                        <input type="text" id="StrokeDashArray" onkeyup="updateLineLayer()"/>
+                        <input type="text" id="StrokeDashArray" onkeyup="updateLineLayer()" />
+                    </td>
+                </tr>
+                <tr title="Specifies the frame of reference for `translate`.">
+                    <td>Translate Anchor:</td>
+                    <td>
+                        <select id="TranslateAnchor" onchange="updateLineLayer()">
+                            <option value="map">map</option>
+                            <option value="viewport" selected="selected">viewport</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr title="The amount of offset in pixels to render the line relative to where it would render normally.">
+                    <td>Translate:</td>
+                    <td></td>
+                </tr>
+                <tr title="Specifies an offset distance of the line in pixels. Positive values indicate right and down, while negative values indicate left and up. Each component is multiplied by the value of size to obtain the final offset in pixels. When combined with rotation the offset will be as if the rotated direction was up.">
+                    <td align="right">x:</td>
+                    <td>
+                        <form oninput="x.value=TranslateX.value">
+                            <input type="range" id="TranslateX" value="0" min="-50" max="50" step="1" oninput="updateLineLayer()" onchange="updateSymbolLayer()" />
+                            <output name="x" for="TranslateX">0</output>
+                        </form>
+                    </td>
+                </tr>
+                <tr title="Specifies an offset distance of the line in pixels. Positive values indicate right and down, while negative values indicate left and up. Each component is multiplied by the value of size to obtain the final offset in pixels. When combined with rotation the offset will be as if the rotated direction was up.">
+                    <td align="right">y:</td>
+                    <td>
+                        <form oninput="y.value=TranslateY.value">
+                            <input type="range" id="TranslateY" value="0" min="-50" max="50" step="01" oninput="updateLineLayer()" onchange="updateSymbolLayer()" />
+                            <output name="y" for="TranslateY">0</output>
+                        </form>
                     </td>
                 </tr>
             </table>

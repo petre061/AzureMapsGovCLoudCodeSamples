@@ -49,10 +49,10 @@
             });
 
             //Create an instance of the SearchURL client.
-            searchURL = new atlas.service.SearchURL(pipeline);
+            searchURL = new atlas.service.SearchURL(pipeline, 'https://atlas.azure.us');
 
-            //Create an instance of the RouteURL client.
-            routeURL = new atlas.service.RouteURL(pipeline);
+            //Create an instance of the RouteURL client and point to the Gov Cloud endpoint.
+            routeURL = new atlas.service.RouteURL(pipeline, 'https://atlas.azure.us');
 
             //Wait until the map resources are ready.
             map.events.add('ready', function () {

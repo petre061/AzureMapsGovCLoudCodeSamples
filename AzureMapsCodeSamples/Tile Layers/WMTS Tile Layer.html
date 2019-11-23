@@ -7,7 +7,7 @@
     <meta http-equiv="x-ua-compatible" content="IE=Edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="This sample shows how to create a tile layer which points to a Web Mapping Tile Service (WMTS)." />
-    <meta name="keywords" content="map, gis, API, SDK, tiles, layer, weather" />
+    <meta name="keywords" content="map, gis, API, SDK, tiles, layer, WMTS, Web Mapping Tile Service" />
     <meta name="author" content="Microsoft Azure Maps" />
 
     <!-- Add references to the Azure Maps Map control JavaScript and CSS files. -->
@@ -24,9 +24,9 @@
 
         function GetMap() {
             //Point the Azure Maps domain to the US Azure Gov Cloud domain.
-			atlas.setDomain('atlas.azure.us');
+            atlas.setDomain('atlas.azure.us');
 
-			//Initialize a map instance.
+            //Initialize a map instance.
             map = new atlas.Map('myMap', {
                 center: [-99.47, 40.75],
                 zoom: 4,
