@@ -116,7 +116,7 @@
             var pipeline = atlas.service.MapsURL.newPipeline(subscriptionKeyCredential);
 
             //Construct the SearchURL object
-            var searchURL = new atlas.service.SearchURL(pipeline);
+            var searchURL = new atlas.service.SearchURL(pipeline, 'atlas.azure.us');
 
             var query = document.getElementById("search-input").value;
             searchURL.searchPOI(atlas.service.Aborter.timeout(10000), query, {

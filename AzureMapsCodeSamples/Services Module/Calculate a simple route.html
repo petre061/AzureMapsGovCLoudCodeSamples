@@ -44,7 +44,7 @@
             var pipeline = atlas.service.MapsURL.newPipeline(subscriptionKeyCredential);
 
             // Construct the RouteURL object
-            routeURL = new atlas.service.RouteURL(pipeline);
+            routeURL = new atlas.service.RouteURL(pipeline, 'atlas.azure.us');
 
             //Wait until the map resources are ready.
             map.events.add('ready', function () {

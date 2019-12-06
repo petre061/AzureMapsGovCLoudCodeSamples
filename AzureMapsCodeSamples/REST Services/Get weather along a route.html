@@ -1,39 +1,35 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Filter Data Along Route - Azure Maps Web SDK Samples</title>
+    <title>Get weather along a route - Azure Maps Web SDK Samples</title>
 
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="IE=Edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="This sample shows how to take a route line, calculate a buffer around it and then filter a set of points to find those that are within the buffer." />
-    <meta name="keywords" content="map, gis, API, SDK, Turf.js, geospatial, math, points, buffer, within, intersects, intersection" />
+    <meta name="description" content="This sample shows how to retrieve weather data for all the waypoints along a route." />
+    <meta name="keywords" content="map, gis, API, SDK, pins, symbols, pushpins, markers, infobox, infowindow, hover, popup templates" />
     <meta name="author" content="Microsoft Azure Maps" />
 
     <!-- Add references to the Azure Maps Map control JavaScript and CSS files. -->
     <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css" type="text/css" />
     <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.js"></script>
-
+    
     <!-- Add a reference to the Azure Maps Services Module JavaScript file. -->
     <script src="https://atlas.microsoft.com/sdk/javascript/service/2/atlas-service.min.js"></script>
-
-    <!-- Load turf.js a spatial math library. http://turfjs.org/ -->
-    <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
 
     <script type='text/javascript'>
         var map, searchURL, routeURL, points, datasource, routeLine;
 
-        function GetMap() {
-            //Point the Azure Maps domain to the US Azure Gov Cloud domain.
-			atlas.setDomain('atlas.azure.us');
+        var weatherAlongRouteUrl = 'https://atlas.azure.us/weather/route/json?api-version=1.0&subscription-key={subscription-key}&query={query}';
 
-			//Initialize a map instance.
+        function GetMap() {
+            //Initialize a map instance.
             map = new atlas.Map('myMap', {
                 center: [-122.25, 47.64],
                 zoom: 11,
                 view: 'Auto',
 
-				//Add your Azure Maps subscription key to the map SDK. Get an Azure Maps key at https://azure.com/maps
+                //Add your Azure Maps subscription key to the map SDK. Get an Azure Maps key at https://azure.com/maps
                 authOptions: {
                     authType: 'subscriptionKey',
                     subscriptionKey: '<Your Azure Maps Key>'
@@ -51,7 +47,7 @@
             //Create an instance of the SearchURL client.
             searchURL = new atlas.service.SearchURL(pipeline, 'atlas.azure.us');
 
-            //Create an instance of the RouteURL client and point to the Gov Cloud endpoint.
+            //Create an instance of the RouteURL client.
             routeURL = new atlas.service.RouteURL(pipeline, 'atlas.azure.us');
 
             //Wait until the map resources are ready.
@@ -61,25 +57,13 @@
                 datasource = new atlas.source.DataSource();
                 map.sources.add(datasource);
 
-                //Generate 1000 random points within the bounds of the map view using the Turf.js library
-                points = turf.randomPoint(1000, {
-                    bbox: map.getCamera().bounds
+                //Add a layer for rendering the weather data points.
+                var waypointLayer = new atlas.layer.BubbleLayer(datasource, null, {
+                    //color: ['get', 'color'],
+                    filter: ['any', ['==', ['geometry-type'], 'Point'], ['==', ['geometry-type'], 'MultiPoint']] //Only render Point or MultiPoints in this layer.
                 });
 
-                //Assign a color property to each point.
-                for (var i = 0; i < points.features.length; i++) {
-                    points.features[i].properties.color = '#3399ff';
-                }
-
-                datasource.add(points);
-
                 map.layers.add([
-                    //Add a layer for rendering line data.
-                    new atlas.layer.PolygonLayer(datasource, null, {
-                        fillColor: 'rgba(255, 0, 255, 0.4)',
-                        filter: ['any', ['==', ['geometry-type'], 'Polygon'], ['==', ['geometry-type'], 'MultiPolygon']]	//Only render Polygon or MultiPolygon in this layer.
-                    }),
-
                     //Add a layer for rendering line data.
                     new atlas.layer.LineLayer(datasource, null, {
                         strokeColor: 'rgb(0, 204, 153)',
@@ -87,16 +71,20 @@
                         filter: ['any', ['==', ['geometry-type'], 'LineString'], ['==', ['geometry-type'], 'MultiLineString']]	//Only render LineString or MultiLineString in this layer.
                     }),
 
-                    //Add a layer for rendering points as symbols.
-                    new atlas.layer.BubbleLayer(datasource, null, {
-                        color: ['get', 'color'],
-                        filter: ['any', ['==', ['geometry-type'], 'Point'], ['==', ['geometry-type'], 'MultiPoint']] //Only render Point or MultiPoints in this layer.
-                    })
+                    waypointLayer
                 ]);
+
+                //Add click events to the waypoint layer.
+                map.events.add('click', waypointLayer, featureClicked);
+
+                //Create a popup but leave it closed so we can update it and display it later.
+                popup = new atlas.Popup();
             });
         }
 
         function calculateRoute() {
+            datasource.clear();
+
             var start = document.getElementById('startTbx').value;
             var end = document.getElementById('endTbx').value;
 
@@ -120,7 +108,9 @@
                     }
 
                     routeURL.calculateRouteDirections(atlas.service.Aborter.timeout(3000), [startPoint, endPoint], {
-                        maxAlternatives: 0
+                        maxAlternatives: 0,
+                        instructionsType: 'text',
+                        traffic: true
                     }).then(r => {
                         if (r && r.routes && r.routes.length > 0) {
                             var route = r.routes[0];
@@ -140,37 +130,59 @@
                             //Create a line from the route path points and add it to the data source.
                             routeLine = new atlas.data.LineString(routeCoordinates);
 
-                            filterData();
+                            //Display the route line on the map.
+                            datasource.add(routeLine);
+
+                            var waypoints = [];
+                            var alongRouteWaypoints = [];
+
+                            var heading = 0;
+
+                            //Loop through the instructions and create waypoints.
+                            //Capture the waypoint information needed for the weather along route API which is "latitude,longitude,ETA (in minutes),heading".
+                            for (var i = 0; i < route.guidance.instructions.length; i++) {
+                                var ins = route.guidance.instructions[i];
+                                var pos = [ins.point.longitude, ins.point.latitude];
+
+                                waypoints.push(new atlas.data.Feature(new atlas.data.Point(pos), ins));
+
+                                //Calculate the heading.
+                                if (i < route.guidance.instructions.length - 1) {
+                                    var ins2 = route.guidance.instructions[i + 1];
+                                    heading = Math.round(atlas.math.getHeading(pos, [ins2.point.longitude, ins2.point.latitude]));
+                                }
+
+                                alongRouteWaypoints.push(`${ins.point.latitude},${ins.point.longitude},${Math.round(ins.travelTimeInSeconds / 60)},${heading}`);
+                            }
+
+                            //Get weather data.
+                            var requestUrl = weatherAlongRouteUrl.replace('{subscription-key}', atlas.getSubscriptionKey()).replace('{query}', alongRouteWaypoints.join(':'));
+
+                            getWeatherAlongRoute(requestUrl, waypoints);
                         }
                     });
                 });
             });
         }
 
-        function filterData() {
-            if (routeLine) {
-                var bufferDistance = parseFloat(document.getElementById('bufferDistance').value);
+        function getWeatherAlongRoute(requestUrl, waypoints) {
 
-                //Create a polygon search area by buffering the route line.
-                filterArea = turf.buffer(routeLine, bufferDistance, { units: 'miles' });
+            //Request the weather data and render it on the map.
+            fetch(requestUrl)
+                .then(function (response) {
+                    return response.json();
+                }).then(function (response) {
+                    if (response && response.waypoints && response.waypoints.length === waypoints.length) {
 
-                //Reset the color property of each point.
-                for (var i = 0; i < points.features.length; i++) {
-                    points.features[i].properties.color = '#3399ff';
-                }
+                        //Combine the weather data in with each waypoint.
+                        for (var i = 0; i < waypoints.length; i++) {
+                            Object.assign(waypoints[i].properties, response.waypoints[i]);
+                        }
 
-                //Calculate all points that are within the filter area.
-                var ptsWithin = turf.pointsWithinPolygon(points, filterArea);
-
-                //Change to color of all points that are in the filter area to red.
-                for (var i = 0; i < ptsWithin.features.length; i++) {
-                    ptsWithin.features[i].properties.color = 'red';
-                }
-
-                //Update the data on the map.
-                datasource.setShapes(points);
-                datasource.add([filterArea, routeLine]);
-            }
+                        //Render the waypoints on the map.
+                        datasource.add(waypoints);
+                    }
+                });
         }
 
         //Geocode the query and return the first coordinate.
@@ -189,6 +201,30 @@
                 });
             }
         }
+
+        function featureClicked(e) {
+            //Make sure the event occurred on a shape feature.
+            if (e.shapes && e.shapes.length > 0) {
+                //Get the properties of the feature.
+                var properties = e.shapes[0].getProperties();
+
+                //Set the content and position of the popup.
+                popup.setOptions({
+                    //Update the content of the popup.
+                    content: atlas.PopupTemplate.applyTemplate(properties, {
+                        //Since there is a lot of content, and we trust the content, don't sandbox it. Sandboxing limits the amount of data that can be rendered in the popup.
+                        sandboxContent: false
+                    }),
+
+                    //Update the position of the popup with the pins coordinate.
+                    position: e.shapes[0].getCoordinates()
+                });
+
+                //Open the popup.
+                popup.open(map);
+            }
+        }
+
     </script>
 </head>
 <body onload="GetMap()">
@@ -208,23 +244,15 @@
                 <td></td>
                 <td><input type="button" value="Calculate Route" onclick="calculateRoute()" /></td>
             </tr>
-            <tr>
-                <td>Buffer: </td>
-                <td>
-                    <form oninput="bd.value=bufferDistance.value">
-                        <input type="range" id="bufferDistance" value="1" min="0.1" max="5" step="0.1" onchange="filterData()" />
-                        <output name="bd" for="bufferDistance">1</output>
-                        <label> miles</label>
-                    </form>
-                </td>
-            </tr>
         </table>
     </div>
 
     <fieldset style="width:calc(100% - 30px);min-width:290px;margin-top:10px;">
-        <legend>Filter Data Along Route</legend>
-        This sample shows how to take a route line and calculate a buffer around it and then filter a set of point data to find those that are within the buffer. 
-        The buffer and within calculations are done using the open source <a href="http://turfjs.org/" target="_blank">Turf.js</a> library.
+        <legend>Get weather along a route</legend>
+        This sample shows how to retrieve weather data for all the waypoints along a route. 
+        All weather metadata is combined with the instruction details for each waypoint. 
+        Click on a waypoint to display a popup with all these details. 
+        Note that the weather along a route API only supports up to 60 waypoints and routes that complete within two hours of the current time.
     </fieldset>
 </body>
 </html>

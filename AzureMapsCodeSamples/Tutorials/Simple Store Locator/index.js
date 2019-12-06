@@ -43,7 +43,7 @@ function initialize() {
     });
 
     //Create an instance of the SearchURL client.
-    searchURL = new atlas.service.SearchURL(pipeline);
+    searchURL = new atlas.service.SearchURL(pipeline, 'atlas.azure.us');
 
     //If the user presses the search button, geocode the value they passed in.
     document.getElementById('searchBtn').onclick = performSearch;
