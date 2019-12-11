@@ -43,7 +43,9 @@
                 //Add a style control to the map.
                 map.controls.add(new atlas.control.StyleControl({
                     mapStyles: ['road', 'road_shaded_relief', 'grayscale_light', 'night', 'grayscale_dark', 'satellite', 'satellite_road_labels']
-                }));
+                }), {
+                    position: 'top-left'
+                });
 
                 //Create an instance of the drawing manager and display the drawing toolbar.
                 drawingManager = new atlas.drawing.DrawingManager(map, {
