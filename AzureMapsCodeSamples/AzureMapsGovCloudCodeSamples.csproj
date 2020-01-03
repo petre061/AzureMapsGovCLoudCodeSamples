@@ -196,6 +196,7 @@
     <Content Include="Drawing Tools Module\Change drawing rendering style.html" />
     <Content Include="Drawing Tools Module\Create a measuring tool.html" />
     <Content Include="Drawing Tools Module\Draw and search polygon area.html" />
+    <Content Include="Drawing Tools Module\Draw gridded polygon.html" />
     <Content Include="Drawing Tools Module\Drawing manager options.html" />
     <Content Include="Drawing Tools Module\Drawing toolbar options.html" />
     <Content Include="Drawing Tools Module\Drawing tools events.html" />
@@ -237,6 +238,7 @@
     <Content Include="SiteResources\screenshots\Customize-a-popup.png" />
     <Content Include="SiteResources\screenshots\Data-driven-stroke-gradient.png" />
     <Content Include="SiteResources\screenshots\Draw-and-search-polygon-area.png" />
+    <Content Include="SiteResources\screenshots\Draw-gridded-polygon.png" />
     <Content Include="SiteResources\screenshots\Drawing-toolbar-options.png" />
     <Content Include="SiteResources\screenshots\Drawing-tools-events.png" />
     <Content Include="SiteResources\screenshots\Drop-multiple-symbols-animation.gif" />
