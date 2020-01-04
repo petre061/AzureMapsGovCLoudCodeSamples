@@ -215,6 +215,7 @@
     <Content Include="Popups\Accessible popups.html" />
     <Content Include="Popups\Customize a popup.html" />
     <Content Include="Popups\Popup templates.html" />
+    <Content Include="Popups\Popup with DOM element content.html" />
     <Content Include="Popups\Reuse a popup template.html" />
     <Content Include="REST Services\Get weather along a route.html" />
     <Content Include="REST Services\Show weather overlays on a map.html" />
@@ -262,6 +263,7 @@
     <Content Include="SiteResources\screenshots\Polygon-labels---symbol-layer.png" />
     <Content Include="SiteResources\screenshots\Polygon-masks.png" />
     <Content Include="SiteResources\screenshots\Popup-templates.png" />
+    <Content Include="SiteResources\screenshots\Popup-with-DOM-element-content.png" />
     <Content Include="SiteResources\screenshots\Reuse-a-popup-template.png" />
     <Content Include="SiteResources\screenshots\Select-data-in-drawn-polygon-area.png" />
     <Content Include="SiteResources\screenshots\Show-weather-overlays-on-a-map.png" />
