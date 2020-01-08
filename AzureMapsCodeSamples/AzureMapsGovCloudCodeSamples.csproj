@@ -98,6 +98,8 @@
     <Content Include="Common\data\US_State_Literacy.tsv" />
     <Content Include="Common\images\icons\gas_station_pin.png" />
     <Content Include="Common\images\icons\grocery_cart_pin.png" />
+    <Content Include="Common\images\icons\purple_pin.png" />
+    <Content Include="Common\images\icons\purple_pin_small.png" />
     <Content Include="Common\images\icons\restaurant_pin.png" />
     <Content Include="Common\images\icons\school_pin.png" />
     <Content Include="Common\images\image-overlays\Chicago_1872_Map.png" />
@@ -267,6 +269,7 @@
     <Content Include="SiteResources\screenshots\Reuse-a-popup-template.png" />
     <Content Include="SiteResources\screenshots\Select-data-in-drawn-polygon-area.png" />
     <Content Include="SiteResources\screenshots\Show-weather-overlays-on-a-map.png" />
+    <Content Include="SiteResources\screenshots\Symbol-image-selection-state.gif" />
     <Content Include="SiteResources\screenshots\Symbol-layer-with-built-in-icon-template.png" />
     <Content Include="SiteResources\screenshots\Traffic-Control.png" />
     <Content Include="Spatial Math\Get closest HTML marker to position.html" />
@@ -309,6 +312,7 @@
     <Content Include="SiteResources\screenshots\Synchronize-map-views.png" />
     <Content Include="Symbol Layer\Data-driven symbol icons.html" />
     <Content Include="Symbol Layer\Image sprite fallback expression.html" />
+    <Content Include="Symbol Layer\Symbol image selection state.html" />
     <Content Include="Symbol Layer\Symbol layer with built-in icon template.html" />
     <Content Include="Tile Layers\Animated Tile Layers\Animated Tile Layer.html" />
     <Content Include="Tile Layers\Animated Tile Layers\AnimatedTileLayer.js" />

@@ -1543,6 +1543,15 @@ var sampleList = [
 			created:'10/25/2019'
 		},
 		{
+			title:'Symbol image selection state',
+			desc:'This sample shows how to change the image of a symbol based on its selection state. ',
+			path:'Symbol%20Layer/Symbol%20image%20selection%20state.html',
+			sourcePath:'Symbol%20Layer/Symbol%20image%20selection%20state.html',
+			screenshot:'Symbol-image-selection-state.gif',
+			keywords:'microsoft maps, map, gis, api, sdk, markers, pins, pushpins, symbols, layer, icon, image',
+			created:'1/8/2020'
+		},
+		{
 			title:'Layer events',
 			desc:'This sample highlights the name of the events that are firing as you interact with the Symbol Layer. The Symbol, Bubble, Line and Polygon layer all support the same set of events. The Tile Layer does not support any of these events.',
 			path:'Symbol%20Layer/Symbol%20layer%20events.html',
@@ -1747,4 +1756,4 @@ var sampleList = [
 			created:'10/25/2019'
 		},
 	]
-}];var numberOfSamples = 179;
+}];var numberOfSamples = 180;
