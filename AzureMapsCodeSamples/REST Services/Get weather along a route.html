@@ -23,6 +23,9 @@
         var weatherAlongRouteUrl = 'https://atlas.azure.us/weather/route/json?api-version=1.0&subscription-key={subscription-key}&query={query}';
 
         function GetMap() {
+            //Point the Azure Maps domain to the US Azure Gov Cloud domain.
+            atlas.setDomain('atlas.azure.us');
+
             //Initialize a map instance.
             map = new atlas.Map('myMap', {
                 center: [-122.25, 47.64],
