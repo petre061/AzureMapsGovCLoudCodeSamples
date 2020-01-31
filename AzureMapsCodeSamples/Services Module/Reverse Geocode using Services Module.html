@@ -45,7 +45,7 @@
                 retryOptions: { maxTries: 4 }, // Retry options
             });
 
-            //Create an instance of the SearchURL client.
+            //Create an instance of the SearchURL client and point to the US Azure Gov Cloud domain.
             searchURL = new atlas.service.SearchURL(pipeline, 'atlas.azure.us');
 
             //Wait until the map resources are ready.
