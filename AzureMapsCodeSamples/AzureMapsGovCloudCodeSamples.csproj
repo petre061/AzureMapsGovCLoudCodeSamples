@@ -213,6 +213,7 @@
     <Content Include="Drawing Tools Module\Drawing tools events.html" />
     <Content Include="Drawing Tools Module\Get drawn shapes from drawing manager.html" />
     <Content Include="Drawing Tools Module\Select data in drawn polygon area.html" />
+    <Content Include="Drawing Tools Module\Snap drawn line to roads.html" />
     <Content Include="Experimental\Dynamic Popup\Dynamicly posisitoned popups.html" />
     <Content Include="Map\Add custom icon template to atlas namespace.html" />
     <Content Include="HTML Markers\All built-in icon templates as HTML markers.html" />
@@ -283,6 +284,7 @@
     <Content Include="SiteResources\screenshots\Route-along-GeoJSON-network.png" />
     <Content Include="SiteResources\screenshots\Select-data-in-drawn-polygon-area.png" />
     <Content Include="SiteResources\screenshots\Show-weather-overlays-on-a-map.png" />
+    <Content Include="SiteResources\screenshots\Snap-drawn-line-to-roads.png" />
     <Content Include="SiteResources\screenshots\Snap-points-to-logical-route-path.png" />
     <Content Include="SiteResources\screenshots\Symbol-image-selection-state.gif" />
     <Content Include="SiteResources\screenshots\Symbol-layer-with-built-in-icon-template.png" />
