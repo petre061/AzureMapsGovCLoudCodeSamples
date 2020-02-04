@@ -991,6 +991,15 @@ var sampleList = [
 	desc:'Learn how to overlay geospatially accurate circles, polygons, and multi-polygons on the map using the polygon and polygon extrusion layers.',
 	samples: [
 		{
+			title:'Extruded choropleth map',
+			desc:'This sample shows how to create a choropleth map of extruded polygons using data driven styling.',
+			path:'Polygon%20and%20Polygon%20Extrusion%20Layers/Extruded%20choropleth%20map.html',
+			sourcePath:'Polygon%20and%20Polygon%20Extrusion%20Layers/Extruded%20choropleth%20map.html',
+			screenshot:'Extruded-choropleth-map.png',
+			keywords:'microsoft maps, map, gis, api, sdk, thematic, choropleth, heatmap, heat map, polygon extrusion, extruded polygons',
+			created:'2/3/2020'
+		},
+		{
 			title:'Fill polygon with built-in icon template',
 			desc:'This sample shows how to use an image template as a fill pattern in a polygon layer.',
 			path:'Polygon%20and%20Polygon%20Extrusion%20Layers/Fill%20polygon%20with%20built-in%20icon%20template.html',
@@ -1801,4 +1810,4 @@ var sampleList = [
 			created:'10/25/2019'
 		},
 	]
-}];var numberOfSamples = 185;
+}];var numberOfSamples = 186;

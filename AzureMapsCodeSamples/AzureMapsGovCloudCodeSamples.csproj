@@ -220,6 +220,7 @@
     <Content Include="Line Layer\Add arrows to end of paths.html" />
     <Content Include="Line Layer\Data-driven stroke gradient.html" />
     <Content Include="Map\Map style options.html" />
+    <Content Include="Polygon and Polygon Extrusion Layers\Extruded choropleth map.html" />
     <Content Include="Polygon and Polygon Extrusion Layers\Polygon Extrusion Layer Options.html" />
     <Content Include="Polygon and Polygon Extrusion Layers\Polygon labels - symbol layer.html" />
     <Content Include="Polygon and Polygon Extrusion Layers\Polygon labels - calculated.html" />
@@ -260,6 +261,7 @@
     <Content Include="SiteResources\screenshots\Drawing-tools-events.png" />
     <Content Include="SiteResources\screenshots\Drop-multiple-symbols-animation.gif" />
     <Content Include="SiteResources\screenshots\Drop-symbol-animation.gif" />
+    <Content Include="SiteResources\screenshots\Extruded-choropleth-map.png" />
     <Content Include="SiteResources\screenshots\Fill-polygon-with-built-in-icon-template.png" />
     <Content Include="SiteResources\screenshots\Geolocation-Control-Options.png" />
     <Content Include="SiteResources\screenshots\Geolocation-Control.png" />
