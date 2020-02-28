@@ -31,7 +31,7 @@ namespace SampleListBuilder
 
         private static Dictionary<string, string> CategoryFolders = new Dictionary<string, string>()
         {
-           { "Animations", "Learn how to animate data on the map." },
+            { "Animations", "Learn how to animate data on the map." },
             { "Bubble Layer", "These samples demonstrate different ways to implement the bubble layer to render point based data." },
             { "Controls", "Add UI controls to the map to create an enhanced user experience." },
             { "Custom Modules", "Use custom modules to extend the functionality of the Azure Maps Web Control." },
@@ -49,6 +49,7 @@ namespace SampleListBuilder
             { "Popups", "See how to display information in a popup on the map." },
             { "REST Services", "Learn how to directly access the Azure Maps REST services from JavaScript." },
             { "Services Module", "Take advantage of the Services module to simplify integration of the REST services with the Azure Maps Web Control." },
+            { "Spatial IO Module", "Learn how to use the Spatial IO module to easily read and write spatial data and connect to OGC services." },
             { "Spatial Math", "Learn how to use the spatial math library that is built into the Azure Maps Web Control." },
             { "Symbol Layer", "Render lots of styled points on the map in a Symbol layer with good performance. If working with smaller data sets use HTML based markers and take advantage of CSS for styling." },
             { "Third Party Map Controls", "As good as the Azure Maps Web Control is, there are many 3rd party map controls in which you can import Azure Maps data into which is a great option if you have an existing app built on one of these." },
@@ -126,7 +127,12 @@ namespace SampleListBuilder
                     new ExternalSample()
                     {
                         Title = "A PowerApps PCF control that displays a dataset as pins on Azure Map",
-                        Href = "https://github.com/Azure-Samples/azure-maps-dotnet-webgl-uwp-iot-remote-control"
+                        Href = "https://github.com/jenschristianschroder/pcfAzureMaps"
+                    },
+                    new ExternalSample()
+                    {
+                        Title = "PowerApps/Dynamics 365 PCF control for showing Latitude Longitude View data on an Azure Map Cluster Spider control",
+                        Href = "https://github.com/alano444/PCFAzureMapCluststerSpider"
                     }
                  }
             },
@@ -144,7 +150,7 @@ namespace SampleListBuilder
                     {
                         Title = "Azure Maps for Retail, Jupyter Notebooks",
                         Href = "https://github.com/5h15h/Azure-Maps-Jupyter-Notebooks",
-                    },                    
+                    },
                      new ExternalSample()
                     {
                         Title = "Azure Maps Python Sample",
