@@ -283,6 +283,7 @@
     <Content Include="Services Module\Calculate spaced positions along route.html" />
     <Content Include="Services Module\Methods for geocoding multiple addresses.html" />
     <Content Include="Services Module\Page through POI results.html" />
+    <Content Include="Services Module\Show traffic along route.html" />
     <Content Include="Services Module\Snap points to logical route path.html" />
     <Content Include="SiteResources\screenshots\Accessible-popups.png" />
     <Content Include="SiteResources\screenshots\Add-arrows-to-end-of-paths.png" />
@@ -341,6 +342,7 @@
     <Content Include="SiteResources\screenshots\Reuse-a-popup-template.png" />
     <Content Include="SiteResources\screenshots\Route-along-GeoJSON-network.png" />
     <Content Include="SiteResources\screenshots\Select-data-in-drawn-polygon-area.png" />
+    <Content Include="SiteResources\screenshots\Show-traffic-along-route.png" />
     <Content Include="SiteResources\screenshots\Show-weather-overlays-on-a-map.png" />
     <Content Include="SiteResources\screenshots\Simple-data-layer-options.png" />
     <Content Include="SiteResources\screenshots\Simple-WFS-example.png" />
