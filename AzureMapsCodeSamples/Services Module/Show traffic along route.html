@@ -73,7 +73,19 @@
                         ['get', 'magnitudeOfDelay'],
                         3, 'red',
                         2, 'orange',
-                        'GreenYellow'
+
+                        [
+                            'match',
+                            ['get', 'simpleCategory'],
+
+                            //If the category of the section is a Jam, make it orange.
+                            'JAM', 'orange',
+
+                            //If the category of the section is a road closure, make it black.
+                            'ROAD_CLOSURE', 'black',
+
+                            'GreenYellow'
+                        ]
                     ],
                     strokeWidth: 7,
                     lineJoin: 'round',
@@ -104,6 +116,9 @@
                     },
                     filter: ['any', ['==', ['geometry-type'], 'Point'], ['==', ['geometry-type'], 'MultiPoint']] //Only render Point or MultiPoints in this layer.
                 }));
+
+                //Calculate the initial route.
+                calculateRoute();
             });
         }
 
@@ -228,7 +243,7 @@
             </tr>
             <tr>
                 <td>End: </td>
-                <td><input type="text" id="endTbx" value="Redmond" /></td>
+                <td><input type="text" id="endTbx" value="San Diego" /></td>
             </tr>
             <tr>
                 <td></td>

@@ -30,13 +30,13 @@ interface PieChartMarkerOptions extends atlas.HtmlMarkerOptions {
     values: number[],
 
     /** The radius of a pie chart in pixels. Default: 40 */
-    radius?: number,  
+    radius?: number,
 
     /** The inner radius of the pie chart. This is a percent. Default: 0 */
     innerRadius: number;
 
     /** The colors of each category in the pie chart. Should have a length >= to largest values array in data set. Default: ['#3366CC', '#DC3912', '#FF9900', '#109618', '#990099'] */
-    colors?: string[], 
+    colors?: string[],
 
     /** A stroke thickness to add to the pie chart. Default: 0 */
     strokeThickness?: number,
@@ -58,8 +58,8 @@ class PieChartMarker extends atlas.HtmlMarker {
 
     private chartOptions = <PieChartMarkerOptions>{
         values: [],
-        radius: 40,  
-        colors: ['#3366CC', '#DC3912', '#FF9900', '#109618', '#990099'], 
+        radius: 40,
+        colors: ['#3366CC', '#DC3912', '#FF9900', '#109618', '#990099'],
         strokeThickness: 0,
         strokeColor: '#666666',
         innerRadius: 0,
@@ -69,6 +69,10 @@ class PieChartMarker extends atlas.HtmlMarker {
     private totalValue: number = 0;
     private tooltip: HTMLElement;
     private tooltipCallback: (marker: PieChartMarker, sliceIdx: number) => string;
+
+    private static _cssStylesLoaded = false;
+    private static _pieChartTooltipCss = '{background: white;color:black;border: 1px solid black;border-radius: 5px;padding: 5px;}';
+    private static _pieChartTextCss = '{ font-size:16px;font-family:arial;fill:#00000;font-weight:bold; }';
 
     /********************
     * Constructor
@@ -83,13 +87,12 @@ class PieChartMarker extends atlas.HtmlMarker {
         super(options);
         super.setOptions({
             htmlContent: document.createElement('div'),
-            pixelOffset: [0,0]
+            pixelOffset: [0, 0]
         });
 
         this.tooltipCallback = tooltipCallback;
-        
-        this.addCssClassIfDoesntExist('pieChartTooltip', '{background: white;border: 1px solid black;border-radius: 5px;padding: 5px;}');
-        this.addCssClassIfDoesntExist('pieChartText', '{font-size:16px;font-family:arial;fill:#00000;font-weight:bold;}');
+
+        this.loadCssStyles();
 
         this.tooltip = document.getElementById('pieChartTooltip');
 
@@ -127,7 +130,7 @@ class PieChartMarker extends atlas.HtmlMarker {
      * @returns The value of a slice of the pie based on it's index.
      */
     public getSliceValue(idx: number): number {
-        return (idx >= 0 && idx < this.chartOptions.values.length)? this.chartOptions.values[idx]: 0;
+        return (idx >= 0 && idx < this.chartOptions.values.length) ? this.chartOptions.values[idx] : 0;
     }
 
     /**
@@ -136,7 +139,7 @@ class PieChartMarker extends atlas.HtmlMarker {
      * @returns The percentage value of a slice of the pie based on it's index.
      */
     public getSlicePercentage(idx: number): number {
-        return (this.totalValue > 0) ? Math.round(this.getSliceValue(idx) / this.totalValue * 10000)/100: 0;
+        return (this.totalValue > 0) ? Math.round(this.getSliceValue(idx) / this.totalValue * 10000) / 100 : 0;
     }
 
     /**
@@ -236,7 +239,7 @@ class PieChartMarker extends atlas.HtmlMarker {
             var diameter = 2 * (radius + this.chartOptions.strokeThickness);
 
             var svg = ['<svg xmlns="http://www.w3.org/2000/svg" width="', diameter, 'px" height="', diameter, 'px" style="cursor:pointer">'];
-            
+
             var cx = radius + this.chartOptions.strokeThickness, cy = radius + this.chartOptions.strokeThickness;
             var tooltip = '';
 
@@ -259,7 +262,7 @@ class PieChartMarker extends atlas.HtmlMarker {
 
             var text = this.getOptions().text;
             if (text) {
-                svg.push('<text x="', cx, '" y="', (cy + 7),'" class="pieChartText" text-anchor="middle">', text,'</text>');
+                svg.push('<text x="', cx, '" y="', (cy + 7), '" class="pieChartText" text-anchor="middle">', text, '</text>');
             }
 
             svg.push('</svg>');
@@ -317,11 +320,20 @@ class PieChartMarker extends atlas.HtmlMarker {
         return obj3;
     }
 
-    private addCssClassIfDoesntExist(className: string, style: string) {
-        if (!document.getElementsByClassName(className).length) {
+    /**
+     * Add css classes for the pie chart tooltips if they aren't already added to the page.
+     */
+    private loadCssStyles() {
+        if (!PieChartMarker._cssStylesLoaded) {
             var cssClass = document.createElement('style');
-            cssClass.innerHTML = '.' + className + style;
+            cssClass.innerHTML = '.pieChartTooltip' + PieChartMarker._pieChartTooltipCss;
             document.body.appendChild(cssClass);
+
+            cssClass = document.createElement('style');
+            cssClass.innerHTML = '.pieChartText' + PieChartMarker._pieChartTextCss;
+            document.body.appendChild(cssClass);
+
+            PieChartMarker._cssStylesLoaded = true;
         }
     }
 

@@ -38,7 +38,7 @@ namespace SampleListBuilder
             { "Demos", "These samples demonstrate real-life scenarios or highlight key topics." },
             { "Device Sensors", "See how to access sensors from a devices browser and use them with Azure Maps." },
             { "Drawing Tools Module", "Add mouse and touch based drawing capabilities to the map." },
-            { "Geospatial Files", "Examples of how to import and export common geospatial file formats with Azure Maps." },
+            { "Geospatial Files", "Examples of how to import and export common geospatial file formats with Azure Maps. See also the <a href=\"#Spatial-IO-Module\">Spatial IO module samples</a>." },
             { "Heat Map Layer", "Heat maps are a type of data visualization used to represent the density of data using a range of colors. They're often used to show the data \"hot spots\" on a map and are a great way to render large point data sets." },
             { "HTML Markers", "Use traditional HTML and CSS to represent point based data on the map as markers." },
             { "Image Layer", "See how to overlay images on the map as a layer." },
@@ -95,7 +95,7 @@ namespace SampleListBuilder
                     new ExternalSample()
                     {
                         Title = "Azure IoT Real-time asset tracking workshop",
-                        Href = "http://aka.ms/iot-workshop/asset-tracking"
+                        Href = "https://aka.ms/iot-workshop/asset-tracking"
                     },
                     new ExternalSample()
                     {
@@ -156,6 +156,18 @@ namespace SampleListBuilder
                         Title = "Azure Maps Python Sample",
                         Href = "https://github.com/eavanvalkenburg/azuremaps-python-sample"
                     },
+                }
+            },
+            new ExternalSampleCategory()
+            {
+                Title = "React",
+                Samples = new List<ExternalSample>()
+                {
+                    new ExternalSample()
+                    {
+                        Title = "Azure Maps React Component - A react wrapper for the Azure Maps control.",
+                        Href = "https://github.com/WiredSolutions/react-azure-maps"
+                    }
                 }
             },
             new ExternalSampleCategory()

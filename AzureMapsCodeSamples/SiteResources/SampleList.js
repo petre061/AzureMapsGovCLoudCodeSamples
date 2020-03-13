@@ -502,7 +502,7 @@ var sampleList = [
 },
 {
 	category:'Geospatial Files',
-	desc:'Examples of how to import and export common geospatial file formats with Azure Maps.',
+	desc:'Examples of how to import and export common geospatial file formats with Azure Maps. See also the <a href="#Spatial-IO-Module">Spatial IO module samples</a>.',
 	samples: [
 		{
 			title:'Add TopoJSON data to the map',

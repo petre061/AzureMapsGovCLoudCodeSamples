@@ -98,7 +98,7 @@
     <None Include="Common\data\SpatialCSV\WAEcologicalSites.tab" />
     <Content Include="Common\data\geojson\USGS_M7EarthquakeContours.json" />
     <Content Include="Common\data\geojson\US_States_Population_Density.json" />
-    <Content Include="Common\data\geojson\route-networks\Ipswich Road Network.geojson" />
+    <None Include="Common\data\geojson\route-networks\Ipswich-Road-Network.json" />
     <Content Include="Common\data\geojson\route-networks\maritime-trade-routes.geojson" />
     <Content Include="Common\data\geojson\route-networks\montreal_roads.json" />
     <Content Include="Common\data\geojson\route-networks\niagra_roads.json" />
@@ -210,6 +210,7 @@
     <Content Include="Common\scripts\exif-js-min.js" />
     <Content Include="Common\scripts\FileSaver.js" />
     <Content Include="Common\scripts\geojson-path-finder.js" />
+    <Content Include="Common\scripts\lozad.min.js" />
     <Content Include="Common\scripts\shp.min.js" />
     <Content Include="Controls\Map Style Picker.html" />
     <Content Include="Custom Modules\Animation module\AnimationModule.js" />
@@ -260,7 +261,6 @@
     <Content Include="Drawing Tools Module\Get drawn shapes from drawing manager.html" />
     <Content Include="Drawing Tools Module\Select data in drawn polygon area.html" />
     <Content Include="Drawing Tools Module\Snap drawn line to roads.html" />
-    <Content Include="Experimental\Dynamic Popup\Dynamicly posisitoned popups.html" />
     <Content Include="Map\Add custom icon template to atlas namespace.html" />
     <Content Include="HTML Markers\All built-in icon templates as HTML markers.html" />
     <Content Include="Line Layer\Add arrows to end of paths.html" />
@@ -742,7 +742,6 @@
     <TypeScriptCompile Include="Custom Modules\Swipe map module\SwipeMapModule.ts" />
     <TypeScriptCompile Include="Custom Modules\Map Synchronizer Module\MapSynchronizerModule.ts" />
     <TypeScriptCompile Include="Custom Modules\Traffic Control\TrafficControl.ts" />
-    <TypeScriptCompile Include="Experimental\Dynamic Popup\DynamicPopup.ts" />
     <TypeScriptCompile Include="Tile Layers\Animated Tile Layers\AnimatedTileLayer.ts" />
     <TypeScriptCompile Include="Custom Modules\Fullscreen Control\FullScreenControl.ts" />
     <TypeScriptCompile Include="Map\Export Map as Image\MapImageExporter.ts" />

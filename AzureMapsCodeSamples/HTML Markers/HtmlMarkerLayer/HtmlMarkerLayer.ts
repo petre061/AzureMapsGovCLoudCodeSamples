@@ -103,19 +103,19 @@ class HtmlMarkerLayer extends atlas.layer.BubbleLayer {
     private _markerIds: string[] = [];
 
     private _markerCache: any = {};
-    
+
     /*********************
      * Constructor
      *********************/
 
-     /**
-     * Constructs a new HtmlMarkerLayer.
-     * @param source The id or instance of a data source which the layer will render.
-     * @param id The id of the layer. If not specified a random one will be generated.
-     * @param options The options of the Html marker layer.
-     */
+    /**
+    * Constructs a new HtmlMarkerLayer.
+    * @param source The id or instance of a data source which the layer will render.
+    * @param id The id of the layer. If not specified a random one will be generated.
+    * @param options The options of the Html marker layer.
+    */
     constructor(source?: string | atlas.source.Source, id?: string, options?: HtmlMarkerLayerOptions) {
-        super(source, id, <atlas.BubbleLayerOptions>{            
+        super(source, id, <atlas.BubbleLayerOptions>{
             color: 'transparent',
             radius: 1,
             strokeWidth: 0
@@ -199,6 +199,12 @@ class HtmlMarkerLayer extends atlas.layer.BubbleLayer {
         super.setOptions(newBaseOptions);
     }
 
+    /** Force the layer to refresh and update. */
+    public update(): void {
+        this.clearCache(true);
+        this.updateMarkers();
+    }
+
     /***************************
      * Public override methods
      ***************************/
@@ -210,7 +216,7 @@ class HtmlMarkerLayer extends atlas.layer.BubbleLayer {
             this._map.events.remove('move', () => { this.mapMoved(); });
             this._map.events.remove('sourcedata', () => { this.sourceUpdated(); });
         }
-   
+
         this._map = map;
 
         this._map.events.add('moveend', () => { this.updateMarkers(); });
@@ -277,7 +283,7 @@ class HtmlMarkerLayer extends atlas.layer.BubbleLayer {
 
         if (update) {
             this.updateMarkers();
-        }     
+        }
     }
 
     private updateMarkers() {
@@ -294,7 +300,7 @@ class HtmlMarkerLayer extends atlas.layer.BubbleLayer {
             var feature: atlas.data.Feature<atlas.data.Geometry, any>;
             var marker: HtmlMarker;
 
-            for (var i = 0, len = shapes.length; i < len; i++) {               
+            for (var i = 0, len = shapes.length; i < len; i++) {
                 marker = null;
 
                 if (shapes[i] instanceof atlas.Shape) {
@@ -387,4 +393,5 @@ class HtmlMarkerLayer extends atlas.layer.BubbleLayer {
  * //TODO: Future improvements
  *  - Add support for layer level events
  *  - Add support for points in shapes (i.e. polygons), similar to how symbol layer works.
+ *  - Investigate zoom level 0 issues.
  */
