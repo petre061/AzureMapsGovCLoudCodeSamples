@@ -104,7 +104,7 @@
     <Content Include="Common\data\geojson\route-networks\niagra_roads.json" />
     <Content Include="Common\data\geojson\route-networks\transit_routes_datasd.geojson" />
     <Content Include="Common\data\geojson\GpsTrace.json" />
-    <Content Include="Common\data\SpatialCSV\Chicago Narcotics.csv" />
+    <Content Include="Common\data\SpatialCSV\Chicago_Narcotics.csv" />
     <Content Include="Common\data\Gpx\kuhkopfsteig-fv.gpx" />
     <Content Include="Common\data\Kml\2007SanDiegoCountyFires.kml" />
     <Content Include="Common\data\Kml\AWOIS_Wrecks.kml" />
@@ -156,6 +156,7 @@
     <Content Include="Common\images\icons\restaurant_pin.png" />
     <Content Include="Common\images\icons\school_pin.png" />
     <Content Include="Common\images\icons\startPin.png" />
+    <Content Include="Common\images\icons\WiFiIcon.png" />
     <Content Include="Common\images\image-overlays\Chicago_1872_Map.png" />
     <Content Include="Common\images\fill-patterns\fill-checker-blue.png" />
     <Content Include="Common\images\fill-patterns\fill-checker-darkblue.png" />
@@ -266,6 +267,7 @@
     <Content Include="Line Layer\Add arrows to end of paths.html" />
     <Content Include="Line Layer\Data-driven stroke gradient.html" />
     <Content Include="Map\Map style options.html" />
+    <Content Include="Map\Map user interaction options.html" />
     <Content Include="Polygon and Polygon Extrusion Layers\Extruded choropleth map.html" />
     <Content Include="Polygon and Polygon Extrusion Layers\Polygon Extrusion Layer Options.html" />
     <Content Include="Polygon and Polygon Extrusion Layers\Polygon labels - symbol layer.html" />
@@ -283,6 +285,7 @@
     <Content Include="Services Module\Calculate spaced positions along route.html" />
     <Content Include="Services Module\Methods for geocoding multiple addresses.html" />
     <Content Include="Services Module\Page through POI results.html" />
+    <Content Include="Services Module\Search for boundaries.html" />
     <Content Include="Services Module\Show traffic along route.html" />
     <Content Include="Services Module\Snap points to logical route path.html" />
     <Content Include="SiteResources\screenshots\Accessible-popups.png" />
@@ -326,6 +329,7 @@
     <Content Include="SiteResources\screenshots\Load-KML-onto-map.png" />
     <Content Include="SiteResources\screenshots\Load-spatial-data-%28simple%29.png" />
     <Content Include="SiteResources\screenshots\Map-style-options.png" />
+    <Content Include="SiteResources\screenshots\Map-user-interaction-options.png" />
     <Content Include="SiteResources\screenshots\Methods-for-geocoding-multiple-addresses.png" />
     <Content Include="SiteResources\screenshots\OGC-map-layer-example.png" />
     <Content Include="SiteResources\screenshots\OGC-map-layer-options.png" />
@@ -341,6 +345,7 @@
     <Content Include="SiteResources\screenshots\Read-Well-Known-Text.png" />
     <Content Include="SiteResources\screenshots\Reuse-a-popup-template.png" />
     <Content Include="SiteResources\screenshots\Route-along-GeoJSON-network.png" />
+    <Content Include="SiteResources\screenshots\Search-for-boundaries.png" />
     <Content Include="SiteResources\screenshots\Select-data-in-drawn-polygon-area.png" />
     <Content Include="SiteResources\screenshots\Show-traffic-along-route.png" />
     <Content Include="SiteResources\screenshots\Show-weather-overlays-on-a-map.png" />
@@ -352,7 +357,9 @@
     <Content Include="SiteResources\screenshots\Spatial-data-write-options.png" />
     <Content Include="SiteResources\screenshots\Symbol-image-selection-state.gif" />
     <Content Include="SiteResources\screenshots\Symbol-layer-with-built-in-icon-template.png" />
+    <Content Include="SiteResources\screenshots\Text-format-with-inline-imge.png" />
     <Content Include="SiteResources\screenshots\Traffic-Control.png" />
+    <Content Include="SiteResources\screenshots\Voronoi-diagram-analysis.png" />
     <Content Include="SiteResources\screenshots\WFS-filter-example.png" />
     <Content Include="SiteResources\screenshots\WFS-service-explorer.png" />
     <Content Include="Spatial IO Module\Add a delimited file %28CSV%29 to the map.html" />
@@ -376,6 +383,7 @@
     <Content Include="Spatial Math\Get closest HTML marker to position.html" />
     <Content Include="Spatial Math\Get closest point to position.html" />
     <Content Include="Spatial Math\Get points in current map view.html" />
+    <Content Include="Spatial Math\Voronoi diagram analysis.html" />
     <Content Include="Symbol Layer\All built-in icon templates as symbols.html" />
     <Content Include="Spatial Math\Calculate a convex hull.html" />
     <Content Include="Spatial Math\Convex hull and HTML markers.html" />
@@ -415,6 +423,7 @@
     <Content Include="Symbol Layer\Image sprite fallback expression.html" />
     <Content Include="Symbol Layer\Symbol image selection state.html" />
     <Content Include="Symbol Layer\Symbol layer with built-in icon template.html" />
+    <Content Include="Symbol Layer\Text format with inline image.html" />
     <Content Include="Tile Layers\Animated Tile Layers\Animated Tile Layer.html" />
     <Content Include="Tile Layers\Animated Tile Layers\AnimatedTileLayer.js" />
     <Content Include="Custom Modules\Fullscreen Control\FullScreenControl.js" />
