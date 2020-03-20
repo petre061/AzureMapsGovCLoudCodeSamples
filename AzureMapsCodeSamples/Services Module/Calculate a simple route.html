@@ -37,11 +37,8 @@
                 }
             });
 
-            //Use SubscriptionKeyCredential with a subscription key
-            var subscriptionKeyCredential = new atlas.service.SubscriptionKeyCredential(atlas.getSubscriptionKey());
-
-            //Use subscriptionKeyCredential to create a pipeline
-            var pipeline = atlas.service.MapsURL.newPipeline(subscriptionKeyCredential);
+            //Create a pipeline using the Azure Maps subscription key.
+            var pipeline = atlas.service.MapsURL.newPipeline(new atlas.service.SubscriptionKeyCredential(atlas.getSubscriptionKey()));
 
             //Construct the RouteURL object and point to the US Azure Gov Cloud domain.
             routeURL = new atlas.service.RouteURL(pipeline, 'atlas.azure.us');
