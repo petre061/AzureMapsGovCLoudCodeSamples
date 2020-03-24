@@ -18,7 +18,7 @@
     <script src="https://atlas.microsoft.com/sdk/javascript/spatial/0/atlas-spatial.min.js"></script>
 
     <script type='text/javascript'>
-        var map, client, capabilities, layer, f;
+        var map, client, layer, f;
         
         function GetMap() {
             //Point the Azure Maps domain to the US Azure Gov Cloud domain.
@@ -39,12 +39,7 @@
             client = new atlas.io.ogc.WfsClient({
                 url: 'https://giswebservices.massgis.state.ma.us/geoserver/wfs?request=GetCapabilities&service=WFS'
             });
-
-            //Check the capabilities of the service.
-            client.getCapabilities().then(cap => {
-                capabilities = cap;
-            });
-
+            
             //Wait until the map resources are ready.
             map.events.add('ready', function () {
 
