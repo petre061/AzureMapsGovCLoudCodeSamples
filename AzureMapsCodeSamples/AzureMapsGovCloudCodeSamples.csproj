@@ -388,6 +388,7 @@
     <Content Include="SiteResources\screenshots\Census-block-group-analysis.png" />
     <Content Include="SiteResources\screenshots\Inspect-features-under-the-mouse.png" />
     <Content Include="SiteResources\screenshots\Pulse-animation-with-bubble-layer.gif" />
+    <Content Include="SiteResources\screenshots\Text-format-with-inline-image.png" />
     <Content Include="Spatial Analysis\Census block group analysis.html" />
     <Content Include="Spatial Analysis\Travel time analysis of multiple locations.html" />
     <Content Include="SiteResources\screenshots\Accessible-popups.png" />
