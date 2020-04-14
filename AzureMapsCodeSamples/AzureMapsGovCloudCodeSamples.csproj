@@ -89,6 +89,7 @@
     <Content Include="Animations\Animate a Line.html" />
     <Content Include="Animations\Animate a Symbol along a Path.html" />
     <Content Include="Animations\HTML Marker Pulse Animation.html" />
+    <Content Include="Animations\Pulse animation with bubble layer.html" />
     <Content Include="Animations\Simple HTML Marker Animation.html" />
     <Content Include="Animations\Simple Symbol Animation.html" />
     <Content Include="BingSiteAuth.xml" />
@@ -360,6 +361,7 @@
     <Content Include="HTML Markers\All built-in icon templates as HTML markers.html" />
     <Content Include="Line Layer\Add arrows to end of paths.html" />
     <Content Include="Line Layer\Data-driven stroke gradient.html" />
+    <Content Include="Map\Inspect features under the mouse.html" />
     <Content Include="Map\Map style options.html" />
     <Content Include="Map\Map user interaction options.html" />
     <Content Include="Polygon and Polygon Extrusion Layers\Extruded choropleth map.html" />
@@ -384,6 +386,8 @@
     <Content Include="Services Module\Show traffic along route.html" />
     <Content Include="Services Module\Snap points to logical route path.html" />
     <Content Include="SiteResources\screenshots\Census-block-group-analysis.png" />
+    <Content Include="SiteResources\screenshots\Inspect-features-under-the-mouse.png" />
+    <Content Include="SiteResources\screenshots\Pulse-animation-with-bubble-layer.gif" />
     <Content Include="Spatial Analysis\Census block group analysis.html" />
     <Content Include="Spatial Analysis\Travel time analysis of multiple locations.html" />
     <Content Include="SiteResources\screenshots\Accessible-popups.png" />
