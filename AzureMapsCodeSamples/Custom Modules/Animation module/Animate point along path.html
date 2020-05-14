@@ -71,7 +71,11 @@
 
                         //For smoother animation, allow symbol to overlap all other symbols on the map.
                         allowOverlap: true,
-                        rotation: ['get', '_heading']
+
+                        rotation: ['get', '_heading'],
+
+                        //Have the rotation align with the map.
+                        rotationAlignment: 'map'
                     },
 
                     //Only render Point or MultiPoints in this layer.    
@@ -84,7 +88,7 @@
                         animation.stop();
                     }
 
-                    animation = atlas.animations.moveAlongPath(point, path, { duration: 2000, type: 'snakeline', loop: true, captureMetadata: true, autoPlay: true });
+                    animation = atlas.animations.moveAlongPath(point, path, { map: map, duration: 2000, type: 'snakeline', loop: true, captureMetadata: true, autoPlay: true });
                 });
             });
         }

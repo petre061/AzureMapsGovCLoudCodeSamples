@@ -123,7 +123,6 @@
     <Content Include="Common\data\Kml\nhc_active.kml" />
     <Content Include="Common\data\Kml\Pentagon.kml" />
     <Content Include="Common\data\Kml\PhotoPins.kml" />
-    <Content Include="Common\data\Kml\SimpleNetworkLink.kml" />
     <Content Include="Common\data\Kml\WMSGroundOverlay.kml" />
     <Content Include="Common\data\Kmz\CivilWarSites.kmz" />
     <Content Include="Common\data\Kmz\Hurricane_Evacuation_Routes.kmz" />
