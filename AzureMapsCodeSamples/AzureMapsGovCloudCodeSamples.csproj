@@ -373,6 +373,7 @@
     <Content Include="Popups\Popup templates.html" />
     <Content Include="Popups\Popup with DOM element content.html" />
     <Content Include="Popups\Reuse a popup template.html" />
+    <Content Include="Popups\Show clustered points in popup.html" />
     <Content Include="REST Services\Get current weather at a location.html" />
     <Content Include="REST Services\Get weather along a route.html" />
     <Content Include="REST Services\Show weather overlays on a map.html" />
@@ -387,6 +388,7 @@
     <Content Include="SiteResources\screenshots\Census-block-group-analysis.png" />
     <Content Include="SiteResources\screenshots\Inspect-features-under-the-mouse.png" />
     <Content Include="SiteResources\screenshots\Pulse-animation-with-bubble-layer.gif" />
+    <Content Include="SiteResources\screenshots\Show-clustered-points-in-popup.png.png" />
     <Content Include="SiteResources\screenshots\Text-format-with-inline-image.png" />
     <Content Include="Spatial Analysis\Census block group analysis.html" />
     <Content Include="Spatial Analysis\Travel time analysis of multiple locations.html" />
