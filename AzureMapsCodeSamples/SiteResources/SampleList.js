@@ -1186,6 +1186,15 @@ var sampleList = [
 			created:'10/25/2019'
 		},
 		{
+			title:'Popups with leader lines',
+			desc:'This sample shows how to add events to Popups.',
+			path:'Popups/Popups%20with%20leader%20lines.html',
+			sourcePath:'Popups/Popups%20with%20leader%20lines.html',
+			screenshot:'Popups-with-leader-lines.png',
+			keywords:'microsoft maps, map, gis, api, sdk, popups, infobox, infowindow, events, mouse',
+			created:'6/1/2020'
+		},
+		{
 			title:'Reuse a popup template',
 			desc:'This sample shows how to use reuse a single popup template with multiple features that share a common set of property fields.',
 			path:'Popups/Reuse%20a%20popup%20template.html',
@@ -1878,6 +1887,15 @@ var sampleList = [
 			keywords:'microsoft maps, map, gis, api, sdk, markers, pins, pushpins, symbols, layer, icon, image',
 			created:'3/13/2020'
 		},
+		{
+			title:'Update layer based on map style',
+			desc:'This sample shows how to monitor the maps style and update the style of a layer accordingly.',
+			path:'Symbol%20Layer/Update%20layer%20based%20on%20map%20style.html',
+			sourcePath:'Symbol%20Layer/Update%20layer%20based%20on%20map%20style.html',
+			screenshot:'Update-layer-based-on-map-style.gif',
+			keywords:'microsoft maps, map, gis, api, sdk, markers, pins, pushpins, symbols, layer, icon, image, styledata',
+			created:'6/5/2020'
+		},
 	]
 },
 {
@@ -2056,4 +2074,4 @@ var sampleList = [
 			created:'10/25/2019'
 		},
 	]
-}];var numberOfSamples = 212;
+}];var numberOfSamples = 214;

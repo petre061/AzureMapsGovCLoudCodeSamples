@@ -27,11 +27,23 @@
                 zoom: 12,
                 view: 'Auto',
 
-                //Add your Azure Maps key to the map SDK. Get an Azure Maps key at https://azure.com/maps. NOTE: The primary key should be used as the key.
+                //Add your Azure Maps subscription client ID to the map SDK. Get an Azure Maps client ID at https://azure.com/maps
                 authOptions: {
-                    authType: 'subscriptionKey',
-                    subscriptionKey: '<Your Azure Maps Key>'
+                    authType: 'anonymous',
+                    clientId: 'c9f2f391-13f1-407b-a4a5-f0a241bacfbf',
+                    getToken: function (resolve, reject, map) {
+                        fetch('/Common/TokenService.ashx').then(function (response) {
+                            return response.text();
+                        }).then(function (token) {
+                            resolve(token);
+                        });
+                    }
                 }
+                //Add your Azure Maps key to the map SDK. Get an Azure Maps key at https://azure.com/maps. NOTE: The primary key should be used as the key.
+                //authOptions: {
+                //    authType: 'subscriptionKey',
+                //    subscriptionKey: '<Your Azure Maps Key>'
+                //}
             });
 
             //Wait until the map resources are ready.

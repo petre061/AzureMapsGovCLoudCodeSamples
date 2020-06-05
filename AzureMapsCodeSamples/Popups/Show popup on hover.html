@@ -69,17 +69,16 @@
                     pixelOffset: [0, -18]
                 });
 
+                //Close the popup when the mouse moves on the map.
+                map.events.add('mousemove', closePopup);
+
                 /**
-                 * Open the popup on mouse move or touchstart on the symbol layer.
-                 * Mouse move is used as mouseover only fires when the mouse initially goes over a symbol. 
-                 * If two symbols overlap, moving the mouse from one to the other won't trigger the event for the new shape as the mouse is still over the layer.
-                 */
+                * Open the popup on mouse move or touchstart on the symbol layer.
+                * Mouse move is used as mouseover only fires when the mouse initially goes over a symbol. 
+                * If two symbols overlap, moving the mouse from one to the other won't trigger the event for the new shape as the mouse is still over the layer.
+                */
                 map.events.add('mousemove', symbolLayer, symbolHovered);
                 map.events.add('touchstart', symbolLayer, symbolHovered);
-
-                //Close the popup on mouseout or touchend.
-                map.events.add('mouseout', symbolLayer, closePopup);
-                map.events.add('touchend', closePopup);
             });
         }
 

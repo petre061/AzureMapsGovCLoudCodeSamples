@@ -72,18 +72,44 @@
     <TypeScriptSourceRoot />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Azure.Services.AppAuthentication, Version=1.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.Services.AppAuthentication.1.5.0\lib\net461\Microsoft.Azure.Services.AppAuthentication.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.5.2.0\lib\net45\Microsoft.IdentityModel.Clients.ActiveDirectory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Entity" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Animations\Animate a Line.html" />
@@ -193,6 +219,8 @@
     <Content Include="Common\data\USCensus2010\BlockGroupPopulation\CenPop2010_Mean_BG54.txt" />
     <Content Include="Common\data\USCensus2010\BlockGroupPopulation\CenPop2010_Mean_BG55.txt" />
     <Content Include="Common\data\USCensus2010\BlockGroupPopulation\CenPop2010_Mean_BG56.txt" />
+    <Content Include="Common\images\fill-patterns\fill-forest-pattern.png" />
+    <Content Include="Common\images\fill-patterns\fill-grass-pattern.png" />
     <Content Include="Common\images\icons\campfire.png" />
     <Content Include="Common\images\icons\campground.png" />
     <Content Include="Common\images\icons\endPin.png" />
@@ -372,6 +400,7 @@
     <Content Include="Popups\Customize a popup.html" />
     <Content Include="Popups\Popup templates.html" />
     <Content Include="Popups\Popup with DOM element content.html" />
+    <Content Include="Popups\Popups with leader lines.html" />
     <Content Include="Popups\Reuse a popup template.html" />
     <Content Include="Popups\Show clustered points in popup.html" />
     <Content Include="REST Services\Get current weather at a location.html" />
@@ -387,9 +416,11 @@
     <Content Include="Services Module\Snap points to logical route path.html" />
     <Content Include="SiteResources\screenshots\Census-block-group-analysis.png" />
     <Content Include="SiteResources\screenshots\Inspect-features-under-the-mouse.png" />
+    <Content Include="SiteResources\screenshots\Popups-with-leader-lines.png" />
     <Content Include="SiteResources\screenshots\Pulse-animation-with-bubble-layer.gif" />
     <Content Include="SiteResources\screenshots\Show-clustered-points-in-popup.png.png" />
     <Content Include="SiteResources\screenshots\Text-format-with-inline-image.png" />
+    <Content Include="SiteResources\screenshots\Update-layer-based-on-map-style.gif" />
     <Content Include="Spatial Analysis\Census block group analysis.html" />
     <Content Include="Spatial Analysis\Travel time analysis of multiple locations.html" />
     <Content Include="SiteResources\screenshots\Accessible-popups.png" />
@@ -530,6 +561,7 @@
     <Content Include="Symbol Layer\Symbol image selection state.html" />
     <Content Include="Symbol Layer\Symbol layer with built-in icon template.html" />
     <Content Include="Symbol Layer\Text format with inline image.html" />
+    <Content Include="Symbol Layer\Update layer based on map style.html" />
     <Content Include="Tile Layers\Animated Tile Layers\Animated Tile Layer.html" />
     <Content Include="Tile Layers\Animated Tile Layers\AnimatedTileLayer.js" />
     <Content Include="Custom Modules\Fullscreen Control\FullScreenControl.js" />
@@ -778,6 +810,7 @@
     <Content Include="Common\data\USCensus2010\BlockGroups\cb_2013_54_bg_500k.kmz" />
     <Content Include="Common\data\USCensus2010\BlockGroups\cb_2013_55_bg_500k.kmz" />
     <Content Include="Common\data\USCensus2010\BlockGroups\cb_2013_56_bg_500k.kmz" />
+    <Content Include="Common\TokenService.ashx" />
     <None Include="packages.config" />
     <Content Include="Common\images\icons\showers.png" />
     <Content Include="Controls\Map Navigation Control Options.html" />
@@ -880,6 +913,9 @@
   <ItemGroup>
     <Compile Include="Common\CorsEnabledProxyService.ashx.cs">
       <DependentUpon>CorsEnabledProxyService.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\TokenService.ashx.cs">
+      <DependentUpon>TokenService.ashx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
