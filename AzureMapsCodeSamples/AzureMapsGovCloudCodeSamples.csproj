@@ -391,7 +391,7 @@
     <Content Include="Map\Inspect features under the mouse.html" />
     <Content Include="Map\Map style options.html" />
     <Content Include="Map\Map user interaction options.html" />
-    <Content Include="Map\Mouse events with key down.html" />
+    <Content Include="Map\Mouse events with keys pressed.html" />
     <Content Include="Polygon and Polygon Extrusion Layers\Extruded choropleth map.html" />
     <Content Include="Polygon and Polygon Extrusion Layers\Polygon Extrusion Layer Options.html" />
     <Content Include="Polygon and Polygon Extrusion Layers\Polygon labels - symbol layer.html" />
@@ -417,7 +417,7 @@
     <Content Include="Services Module\Snap points to logical route path.html" />
     <Content Include="SiteResources\screenshots\Census-block-group-analysis.png" />
     <Content Include="SiteResources\screenshots\Inspect-features-under-the-mouse.png" />
-    <Content Include="SiteResources\screenshots\Mouse events with key down.png" />
+    <Content Include="SiteResources\screenshots\Mouse-events-with-keys-pressed.png" />
     <Content Include="SiteResources\screenshots\Popups-with-leader-lines.png" />
     <Content Include="SiteResources\screenshots\Pulse-animation-with-bubble-layer.gif" />
     <Content Include="SiteResources\screenshots\Show-clustered-points-in-popup.png.png" />
