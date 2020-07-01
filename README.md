@@ -8,7 +8,7 @@ products:
 - azure-maps
 ---
 
-# Azure Maps Code Samples
+# Azure Maps Code Samples (Gov Cloud)
 
 A collection of over a hundred code samples for the [Azure Maps](https://azure.com/maps) Web SDK for use in the Azure Gov Cloud.
 
