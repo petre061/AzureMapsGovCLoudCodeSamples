@@ -30,20 +30,14 @@ namespace AzureMapsCodeSamples.Common
             //Only process URL's that are whitelisted.
             bool processUrl = IsUrlAllowed(url);
 
-#if DEBUG
-            //If code running in Debug mode, allow requests that originated from localhost.
-            if (!context.Request.UrlReferrer.AbsoluteUri.StartsWith("http://localhost:"))
-            {
-                processUrl = false;
-            }
-#else
-            //Only allow requests that originated on the code sample site.
-            if (!(context.Request.UrlReferrer.AbsoluteUri.StartsWith("https://azuremapscodesamples.azurewebsites.net/") ||
+            //Only allow requests that originated on local host or the code sample site.
+            if (!(context.Request.IsLocal ||
+                context.Request.UrlReferrer == null ||
+                context.Request.UrlReferrer.AbsoluteUri.StartsWith("https://azuremapscodesamples.azurewebsites.net/") ||
                 context.Request.UrlReferrer.AbsoluteUri.StartsWith("https://azuremapscodesamples.azurewebsites.us/")))
             {
                 processUrl = false;
             }
-#endif
 
             if (processUrl)
             {
@@ -144,6 +138,7 @@ namespace AzureMapsCodeSamples.Common
             //OGC services
             "https://basemap.nationalmap.gov/arcgis/rest/services/",
             "https://carto.nationalmap.gov/arcgis/services/",
+            "https://www.coast.noaa.gov/arcgis/rest/services/",
             "https://data.geus.dk/geusmap/ows/4258.jsp",
             "https://data.gns.cri.nz/webmaps/",
             "https://gis.dnr.alaska.gov/terrapixel/",
