@@ -380,10 +380,9 @@
     <Content Include="Demos\Data-Driven Styling.html" />
     <Content Include="Demos\Large GeoJSON Files.html" />
     <Content Include="Animations\Animate a choropleth map.html" />
-    <Content Include="Custom Modules\Map Synchronizer Module\MapSynchronizerModule.js" />
     <Content Include="Custom Modules\Swipe map module\Swipe between two maps.html" />
     <Content Include="Custom Modules\Swipe map module\Swipe map module options.html" />
-    <Content Include="Custom Modules\Map Synchronizer Module\Synchronize map views.html" />
+    <Content Include="Open Modules\Synchronize map views.html" />
     <Content Include="Custom Modules\Swipe map module\SwipeMapModule.js" />
     <Content Include="Custom Modules\Spyglass module\Spyglass map visualization.html" />
     <Content Include="Custom Modules\Spyglass module\Spyglass module options.html" />
@@ -448,6 +447,7 @@
     <Content Include="SiteResources\screenshots\Popups-with-leader-lines.png" />
     <Content Include="SiteResources\screenshots\Pulse-animation-with-bubble-layer.gif" />
     <Content Include="SiteResources\screenshots\Show-clustered-points-in-popup.png.png" />
+    <Content Include="SiteResources\screenshots\Synchronize-map-views.gif" />
     <Content Include="SiteResources\screenshots\Text-format-with-inline-image.png" />
     <Content Include="SiteResources\screenshots\Update-layer-based-on-map-style.gif" />
     <Content Include="SiteResources\screenshots\Vector-tile-bubble-layer.png" />
@@ -586,7 +586,6 @@
     <Content Include="SiteResources\screenshots\Spyglass-module-options.png" />
     <Content Include="SiteResources\screenshots\Swipe-between-two-maps.png" />
     <Content Include="SiteResources\screenshots\Swipe-map-module-options.png" />
-    <Content Include="SiteResources\screenshots\Synchronize-map-views.png" />
     <Content Include="Symbol Layer\Data-driven symbol icons.html" />
     <Content Include="Symbol Layer\Image sprite fallback expression.html" />
     <Content Include="Symbol Layer\Symbol image selection state.html" />
@@ -778,7 +777,6 @@
     <Content Include="Common\data\topojson\zip-code-level-2017-topojson.json" />
     <Content Include="Common\data\topojson\zips_us_topo.json" />
     <Content Include="Custom Modules\Swipe map module\SwipeMapModule.js.map" />
-    <Content Include="Custom Modules\Map Synchronizer Module\MapSynchronizerModule.js.map" />
     <Content Include="Common\data\geojson\US_County_Unemployment_2017.geojson" />
     <Content Include="Custom Modules\Spyglass module\SpyglassModule.js.map" />
     <Content Include="Common\data\topojson\cb_2018_us_zcta510_500k.json" />
@@ -968,7 +966,6 @@
     <TypeScriptCompile Include="Custom Modules\Spider Clusters\SpiderClusterManager.ts" />
     <TypeScriptCompile Include="Custom Modules\Spyglass module\SpyglassModule.ts" />
     <TypeScriptCompile Include="Custom Modules\Swipe map module\SwipeMapModule.ts" />
-    <TypeScriptCompile Include="Custom Modules\Map Synchronizer Module\MapSynchronizerModule.ts" />
     <TypeScriptCompile Include="Custom Modules\Traffic Control\TrafficControl.ts" />
     <TypeScriptCompile Include="Custom Modules\Fullscreen Control\FullScreenControl.ts" />
     <TypeScriptCompile Include="Map\Export Map as Image\MapImageExporter.ts" />
