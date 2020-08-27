@@ -4,6 +4,7 @@
     <title>Detect if browser is supported - Azure Maps Web SDK Samples</title>
 
     <meta charset="utf-8" />
+	<link rel="shortcut icon" href="/favicon.ico"/>
     <meta http-equiv="x-ua-compatible" content="IE=Edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="This sample shows how to detect if the browser is supported by the Azure Maps Web SDK. If it is, load the map, otherwise fallback gracefully." />
@@ -28,13 +29,13 @@
                 //Browser is supported, load the map.
 
                 //Point the Azure Maps domain to the US Azure Gov Cloud domain.
-			atlas.setDomain('atlas.azure.us');
+			    atlas.setDomain('atlas.azure.us');
 
-			//Initialize a map instance.
+			    //Initialize a map instance.
                 map = new atlas.Map('myMap', {
                     view: 'Auto',
 					
-					//Add your Azure Maps key to the map SDK. Get an Azure Maps key at https://azure.com/maps. NOTE: The primary key should be used as the key.
+			        //Add your Azure Maps key to the map SDK. Get an Azure Maps key at https://azure.com/maps. NOTE: The primary key should be used as the key.
                     authOptions: {
                         authType: 'subscriptionKey',
                         subscriptionKey: '<Your Azure Maps Key>'

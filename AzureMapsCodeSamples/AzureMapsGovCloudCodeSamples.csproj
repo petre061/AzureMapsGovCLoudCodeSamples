@@ -349,8 +349,10 @@
     <Content Include="Common\images\icons\ylw-pushpin.png" />
     <Content Include="Common\images\Pike_Market.jpg" />
     <Content Include="Common\images\pixel-art.jpg" />
-    <Content Include="Common\scripts\atlas-animations.min.js" />
+    <Content Include="Common\scripts\azure-maps-animations.min.js" />
+    <Content Include="Common\scripts\azure-maps-fullscreen-control.min.js" />
     <Content Include="Common\scripts\azure-maps-geolocation-control.min.js" />
+    <Content Include="Common\scripts\azure-maps-sync-maps.mins.js" />
     <Content Include="Common\scripts\catiline.min.js" />
     <Content Include="Common\scripts\clipboard.min.js" />
     <Content Include="Common\scripts\csv2geojson.js" />
@@ -382,6 +384,10 @@
     <Content Include="Animations\Animate a choropleth map.html" />
     <Content Include="Custom Modules\Swipe map module\Swipe between two maps.html" />
     <Content Include="Custom Modules\Swipe map module\Swipe map module options.html" />
+    <Content Include="favicon.ico" />
+    <Content Include="Map\Display 3D building footprints.html" />
+    <Content Include="Map\Fullscreen control options.html" />
+    <Content Include="Map\Fullscreen control.html" />
     <Content Include="Map\Synchronize map views.html" />
     <Content Include="Custom Modules\Swipe map module\SwipeMapModule.js" />
     <Content Include="Custom Modules\Spyglass module\Spyglass map visualization.html" />
@@ -436,9 +442,11 @@
     <Content Include="SiteResources\screenshots\Animation-easings.gif" />
     <Content Include="SiteResources\screenshots\Bouncing-marker-animation.gif" />
     <Content Include="SiteResources\screenshots\Census-block-group-analysis.png" />
+    <Content Include="SiteResources\screenshots\Display-3D-building-footprints.png" />
     <Content Include="SiteResources\screenshots\Drop-markers-on-interval.gif" />
     <Content Include="SiteResources\screenshots\Drop-multiple-markers-animation.gif" />
     <Content Include="SiteResources\screenshots\Drop-symbols-on-interval.gif" />
+    <Content Include="SiteResources\screenshots\Fullscreen-control-options.png" />
     <Content Include="SiteResources\screenshots\Inspect-features-under-the-mouse.png" />
     <Content Include="SiteResources\screenshots\Morph-shape-animation.gif" />
     <Content Include="SiteResources\screenshots\Mouse events with key down.png" />
@@ -592,7 +600,6 @@
     <Content Include="Symbol Layer\Symbol layer with built-in icon template.html" />
     <Content Include="Symbol Layer\Text format with inline image.html" />
     <Content Include="Symbol Layer\Update layer based on map style.html" />
-    <Content Include="Custom Modules\Fullscreen Control\FullScreenControl.js" />
     <Content Include="Experimental\Inspect features under the mouse.html" />
     <Content Include="Geospatial Files\Add TopoJSON data to the map.html" />
     <Content Include="Geospatial Files\Drag and Drop Shapefiles onto the Map.html" />
@@ -604,7 +611,6 @@
     <Content Include="Experimental\Add a delimited file %28CSV%29 to the map.html" />
     <Content Include="Geospatial Files\Extract and display photo location.html" />
     <Content Include="HTML Markers\HtmlMarkerLayer\HTML Marker Layer.html" />
-    <Content Include="Custom Modules\Fullscreen Control\Fullscreen Control.html" />
     <Content Include="Experimental\Solar Terminator Module\Solar Terminator Module.html" />
     <Content Include="Map\Export Map as Image\MapImageExporter.js" />
     <Content Include="Map\Limit Scroll Wheel Zoom.html" />
@@ -657,7 +663,7 @@
     <Content Include="REST Services\Calculate a Simple Isochrone.html" />
     <Content Include="SiteResources\screenshots\HTML-Marker-events.gif" />
     <Content Include="SiteResources\screenshots\Clustered-Pie-Chart-HTML-Markers.png" />
-    <Content Include="SiteResources\screenshots\Fullscreen-Control.png" />
+    <Content Include="SiteResources\screenshots\Fullscreen-control.png" />
     <Content Include="SiteResources\screenshots\Filter-Points-by-Property.png" />
     <Content Include="SiteResources\screenshots\Filter-Symbols-by-Property.png" />
     <Content Include="SiteResources\screenshots\Heat-Map-Layer-Options.png" />
@@ -752,7 +758,6 @@
     <Content Include="Common\data\geojson\SamplePoiDataSet.json" />
     <Content Include="HTML Markers\HtmlMarkerLayer\HtmlMarkerLayer.js.map" />
     <Content Include="HTML Markers\Pie Chart HTML Marker\PieChartMarker.js.map" />
-    <Content Include="Custom Modules\Fullscreen Control\FullScreenControl.js.map" />
     <Content Include="Experimental\Solar Terminator Module\SolarTerminatorModule.js.map" />
     <Content Include="Custom Modules\Simple Scale Bar Control\SimpleScaleBarControl.js.map" />
     <Content Include="Map\Export Map as Image\MapImageExporter.js.map" />
@@ -965,7 +970,6 @@
     <TypeScriptCompile Include="Custom Modules\Spyglass module\SpyglassModule.ts" />
     <TypeScriptCompile Include="Custom Modules\Swipe map module\SwipeMapModule.ts" />
     <TypeScriptCompile Include="Custom Modules\Traffic Control\TrafficControl.ts" />
-    <TypeScriptCompile Include="Custom Modules\Fullscreen Control\FullScreenControl.ts" />
     <TypeScriptCompile Include="Map\Export Map as Image\MapImageExporter.ts" />
     <TypeScriptCompile Include="HTML Markers\HtmlMarkerLayer\HtmlMarkerLayer.ts" />
     <TypeScriptCompile Include="Experimental\Solar Terminator Module\SolarTerminatorModule.ts" />
