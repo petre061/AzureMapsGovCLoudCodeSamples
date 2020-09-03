@@ -76,7 +76,7 @@ class SpiderClusterManager {
     private _hoverStateId: string = null;
     private _spiderDatasourceId: string;
     private _currentCluster: atlas.data.Feature<atlas.data.Point, any>;
-    
+
     private _options: ISpiderClusterOptions = {
         circleSpiralSwitchover: 6,
         minCircleLength: 30,
@@ -111,7 +111,7 @@ class SpiderClusterManager {
 
         this._map = map;
         this._clusterLayer = clusterLayer;
-        
+
         var s = clusterLayer.getSource();
         if (typeof s === 'string') {
             s = map.sources.getById(s);
@@ -133,9 +133,10 @@ class SpiderClusterManager {
 
         this._spiderLineLayer = new atlas.layer.LineLayer(this._spiderDataSource, null, this._options.stickLayerOptions);
         map.layers.add(this._spiderLineLayer);
-        
+
         //Make a copy of the cluster layer options.
-        var unclustedLayerOptions = this._deepCopy(unclustedLayer.getOptions(), ['source']);
+        var unclustedLayerOptions = Object.assign({}, unclustedLayer.getOptions());
+        unclustedLayerOptions.source = undefined;
         unclustedLayerOptions.filter = ['any', ['==', ['geometry-type'], 'Point'], ['==', ['geometry-type'], 'MultiPoint']] //Only render Point or MultiPoints in this layer.;        
 
         this._unclustedLayer = unclustedLayer;
@@ -156,7 +157,7 @@ class SpiderClusterManager {
         map.events.add('click', this.hideSpiderCluster);
         map.events.add('movestart', this.hideSpiderCluster);
         map.events.add('mouseleave', this._spiderFeatureLayer, this._unhighlightStick);
-        map.events.add('mousemove', this._spiderFeatureLayer, this._highlightStick);        
+        map.events.add('mousemove', this._spiderFeatureLayer, this._highlightStick);
         map.events.add('click', this._clusterLayer, this._layerClickEvent);
         map.events.add('click', this._spiderFeatureLayer, this._layerClickEvent);
         map.events.add('click', this._unclustedLayer, this._layerClickEvent);
@@ -185,7 +186,7 @@ class SpiderClusterManager {
 
         this._map.layers.remove(this._spiderLineLayer);
         this._spiderLineLayer = null;
-        
+
 
         //Clear and dispose of datasource.
         this._spiderDataSource.clear();
@@ -210,11 +211,11 @@ class SpiderClusterManager {
         if (options) {
             if (typeof options.circleSpiralSwitchover === 'number') {
                 this._options.circleSpiralSwitchover = options.circleSpiralSwitchover;
-            } 
+            }
 
             if (typeof options.maxFeaturesInWeb === 'number') {
                 this._options.maxFeaturesInWeb = options.maxFeaturesInWeb;
-            } 
+            }
 
             if (typeof options.minSpiralAngleSeperation === 'number') {
                 this._options.minSpiralAngleSeperation = options.minSpiralAngleSeperation;
@@ -298,7 +299,7 @@ class SpiderClusterManager {
                         centerPoint[1] + legPixelLength * Math.sin(angle)]])[0];
 
                     //Create stick to point feature.
-                    var stick = new atlas.data.Feature(new atlas.data.LineString([center, pos]), null, i+'');
+                    var stick = new atlas.data.Feature(new atlas.data.LineString([center, pos]), null, i + '');
                     shapes.push(stick);
 
                     //Create point feature in spiral that contains same metadata as parent point feature.
@@ -307,8 +308,8 @@ class SpiderClusterManager {
                     var id = (c instanceof atlas.Shape) ? c.getId() : c.id;
 
                     //Make a copy of the properties.
-                    p = this._deepCopy(p);
-                    p._stickId = i+'';
+                    p = Object.assign({}, p);
+                    p._stickId = i + '';
                     p._parentId = id;
 
                     shapes.push(new atlas.data.Feature(new atlas.data.Point(pos), p));
@@ -367,7 +368,7 @@ class SpiderClusterManager {
                 } else {
                     this._currentCluster = null;
                 }
-               
+
                 if (this._options.featureSelected && s) {
                     this._options.featureSelected(s, this._currentCluster);
                 }
@@ -406,21 +407,5 @@ class SpiderClusterManager {
             this._map.map.setFeatureState({ source: this._spiderDatasourceId, id: this._hoverStateId }, { hover: false });
             this._hoverStateId = null;
         }
-    }
-
-    private _deepCopy(obj: any, filter?: string[]): any {
-        var copy = obj,
-            k;
-
-        if (obj && typeof obj === 'object') {
-            copy = Object.prototype.toString.call(obj) === '[object Array]' ? [] : {};
-            for (k in obj) {
-                if (!Array.isArray(filter) || (Array.isArray(filter) && filter.indexOf(k) !== -1)) {
-                    copy[k] = this._deepCopy(obj[k], filter);
-                }
-            }
-        }
-
-        return copy;
     }
 }

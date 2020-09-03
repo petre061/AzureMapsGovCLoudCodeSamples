@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://azuremapscodesamples.azurewebsites.us</loc><changefreq>weekly</changefreq><priority>1.0</priority><lastmod>2020-08-27</lastmod></url>
+<url><loc>https://azuremapscodesamples.azurewebsites.us</loc><changefreq>weekly</changefreq><priority>1.0</priority><lastmod>2020-09-03</lastmod></url>
 <url><loc>https://azuremapscodesamples.azurewebsites.net/Animations/Animate%20a%20choropleth%20map.html</loc></url>
 <url><loc>https://azuremapscodesamples.azurewebsites.net/Animations/Animate%20a%20GPS%20trace.html</loc></url>
 <url><loc>https://azuremapscodesamples.azurewebsites.net/Animations/Animate%20a%20Line.html</loc></url>
@@ -42,7 +42,6 @@
 <url><loc>https://azuremapscodesamples.azurewebsites.net/Custom%20Modules/Spyglass%20module/Spyglass%20module%20options.html</loc></url>
 <url><loc>https://azuremapscodesamples.azurewebsites.net/Custom%20Modules/Swipe%20map%20module/Swipe%20between%20two%20maps.html</loc></url>
 <url><loc>https://azuremapscodesamples.azurewebsites.net/Custom%20Modules/Swipe%20map%20module/Swipe%20map%20module%20options.html</loc></url>
-<url><loc>https://azuremapscodesamples.azurewebsites.net/Custom%20Modules/Traffic%20Control/Traffic%20Control.html</loc></url>
 <url><loc>https://azuremapscodesamples.azurewebsites.net/Demos/Car%20vs%20Truck%20Route.html</loc></url>
 <url><loc>https://azuremapscodesamples.azurewebsites.net/Demos/Create%20a%20Choropleth%20Map.html</loc></url>
 <url><loc>https://azuremapscodesamples.azurewebsites.net/Demos/Data-Driven%20Styling.html</loc></url>
@@ -223,6 +222,8 @@
 <url><loc>https://azuremapscodesamples.azurewebsites.net/Tile%20Layers/Tile%20Layer%20using%20X,%20Y%20and%20Z.html</loc></url>
 <url><loc>https://azuremapscodesamples.azurewebsites.net/Tile%20Layers/WMS%20Tile%20Layer.html</loc></url>
 <url><loc>https://azuremapscodesamples.azurewebsites.net/Tile%20Layers/WMTS%20Tile%20Layer.html</loc></url>
+<url><loc>https://azuremapscodesamples.azurewebsites.net/Traffic/Traffic%20control%20options.html</loc></url>
+<url><loc>https://azuremapscodesamples.azurewebsites.net/Traffic/Traffic%20controls.html</loc></url>
 <url><loc>https://azuremapscodesamples.azurewebsites.net/Traffic/Traffic%20Overlay%20Options.html</loc></url>
 <url><loc>https://azuremapscodesamples.azurewebsites.net/Traffic/Traffic%20Overlay.html</loc></url>
 <url><loc>https://azuremapscodesamples.azurewebsites.net/Tutorials/interactiveSearch.html</loc></url>

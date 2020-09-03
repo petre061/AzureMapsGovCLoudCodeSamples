@@ -390,15 +390,6 @@ var sampleList = [
 			keywords:'microsoft maps, map, gis, api, sdk, synchronized maps, swipe map',
 			created:'10/25/2019'
 		},
-		{
-			title:'Create a Traffic Control',
-			desc:'This sample shows how to create a custom traffic control that can be added to the map.',
-			path:'Custom%20Modules/Traffic%20Control/Traffic%20Control.html',
-			sourcePath:'Custom%20Modules/Traffic%20Control',
-			screenshot:'Traffic-Control.jpg',
-			keywords:'microsoft maps, maps, map, api, sdk, gis, custom, control, custom control, traffic',
-			created:'10/25/2019'
-		},
 	]
 },
 {
@@ -484,7 +475,7 @@ var sampleList = [
 			created:'10/25/2019'
 		},
 		{
-			title:'User Location Accuracy Circle',
+			title:'User position accuracy circle',
 			desc:'This sample shows how to display the users position on the map with an accuracy circle.',
 			path:'Device%20Sensors/User%20position%20accuracy%20circle.html',
 			sourcePath:'Device%20Sensors/User%20position%20accuracy%20circle.html',
@@ -2140,6 +2131,24 @@ var sampleList = [
 	desc:'Overlay real-time traffic data on the map.',
 	samples: [
 		{
+			title:'Traffic control options',
+			desc:'This sample shows how to use options with the traffic control. Users can use the traffic control to toggle traffic on and off in the map.',
+			path:'Traffic/Traffic%20control%20options.html',
+			sourcePath:'Traffic/Traffic%20control%20options.html',
+			screenshot:'Traffic-control-options.png',
+			keywords:'microsoft maps, map, gis, api, sdk, traffic, layer, flow, incidents',
+			created:'9/3/2020'
+		},
+		{
+			title:'Traffic controls',
+			desc:'This sample shows how to add the traffic control that lets the user toggle the traffic on and off, as well as how to use the traffic legend control. ',
+			path:'Traffic/Traffic%20controls.html',
+			sourcePath:'Traffic/Traffic%20controls.html',
+			screenshot:'Traffic-controls.png',
+			keywords:'microsoft maps, map, gis, api, sdk, traffic, layer, flow, incidents',
+			created:'9/3/2020'
+		},
+		{
 			title:'Traffic Overlay Options',
 			desc:'This sample shows how the different Traffic Options change how the traffic overlay is rendered on the map.',
 			path:'Traffic/Traffic%20Overlay%20Options.html',
@@ -2242,4 +2251,4 @@ var sampleList = [
 			created:'7/2/2020'
 		},
 	]
-}];var numberOfSamples = 232;
+}];var numberOfSamples = 233;
