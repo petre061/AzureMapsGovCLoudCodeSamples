@@ -361,6 +361,7 @@
     <Content Include="Common\scripts\exif-js-min.js" />
     <Content Include="Common\scripts\FileSaver.js" />
     <Content Include="Common\scripts\geojson-path-finder.js" />
+    <Content Include="Common\scripts\GeoJS\geo.min.js" />
     <Content Include="Common\scripts\lozad.min.js" />
     <Content Include="Common\scripts\shp.min.js" />
     <Content Include="Controls\Map Style Picker.html" />
@@ -389,6 +390,7 @@
     <Content Include="Custom Modules\Swipe map module\Swipe between two maps.html" />
     <Content Include="Custom Modules\Swipe map module\Swipe map module options.html" />
     <Content Include="favicon.ico" />
+    <Content Include="Line Layer\Display isoline data.html" />
     <Content Include="Map\Display 3D building footprints.html" />
     <Content Include="Controls\Fullscreen control options.html" />
     <Content Include="Controls\Fullscreen control.html" />
@@ -483,13 +485,16 @@
     <Content Include="SiteResources\screenshots\Clustered-Pie-Chart-HTML-Markers.jpg" />
     <Content Include="SiteResources\screenshots\Consistent-zoomable-Heat-Map.gif" />
     <Content Include="SiteResources\screenshots\Convex-hull-and-HTML-markers.gif" />
+    <Content Include="SiteResources\screenshots\Create-3D-isobands-from-isolines.jpg" />
     <Content Include="SiteResources\screenshots\Create-a-Choropleth-Map.jpg" />
     <Content Include="SiteResources\screenshots\Create-a-measuring-tool.jpg" />
+    <Content Include="SiteResources\screenshots\Create-isobands-from-isolines.jpg" />
     <Content Include="SiteResources\screenshots\Create-Symbols-from-Custom-JSON.jpg" />
     <Content Include="SiteResources\screenshots\Cross-reference-pixels-in-image-layer.jpg" />
     <Content Include="SiteResources\screenshots\CSS-Styled-HTML-Marker.gif" />
     <Content Include="SiteResources\screenshots\Custom-Symbol-Image-Icon.jpg" />
     <Content Include="SiteResources\screenshots\Customize-a-popup.jpg" />
+    <Content Include="SiteResources\screenshots\Data-binning-points-with-Turfjs.jpg" />
     <Content Include="SiteResources\screenshots\Data-Driven-Bubble-Layer-Styling.jpg" />
     <Content Include="SiteResources\screenshots\Data-driven-stroke-gradient.jpg" />
     <Content Include="SiteResources\screenshots\Data-Driven-Styling.jpg" />
@@ -499,6 +504,7 @@
     <Content Include="SiteResources\screenshots\Display-3D-building-footprints.jpg" />
     <Content Include="SiteResources\screenshots\Display-cluster-area-with-Convex-Hull.jpg" />
     <Content Include="SiteResources\screenshots\Display-clusters-with-a-Symbol-Layer.jpg" />
+    <Content Include="SiteResources\screenshots\Display-isoline-data.jpg" />
     <Content Include="SiteResources\screenshots\Drag-and-Drop-GeoJSON-File-onto-Map.gif" />
     <Content Include="SiteResources\screenshots\Drag-and-Drop-Shapefiles-onto-the-Map.gif" />
     <Content Include="SiteResources\screenshots\Drag-and-drop-spatial-files-onto-map.jpg" />
@@ -577,7 +583,7 @@
     <Content Include="SiteResources\screenshots\Map-user-interaction-options.jpg" />
     <Content Include="SiteResources\screenshots\MapsSampleIcon.jpg" />
     <Content Include="SiteResources\screenshots\Mercator-Projection-and-Geospatial-Circles.jpg" />
-    <Content Include="SiteResources\screenshots\Merge-Two-Polygons-Together-%28Turf.js%29.jpg" />
+    <Content Include="SiteResources\screenshots\Merge two polygons together.jpg" />
     <Content Include="SiteResources\screenshots\Methods-for-geocoding-multiple-addresses.jpg" />
     <Content Include="SiteResources\screenshots\Mini-Overview-Map.jpg" />
     <Content Include="SiteResources\screenshots\Morph-shape-animation.gif" />
@@ -608,6 +614,7 @@
     <Content Include="SiteResources\screenshots\Pulse-animation-with-bubble-layer.gif" />
     <Content Include="SiteResources\screenshots\Raster-Tiles-in-ArcGIS-JS-4.6.jpg" />
     <Content Include="SiteResources\screenshots\Raster-Tiles-in-Cesium-JS.jpg" />
+    <Content Include="SiteResources\screenshots\Raster-tiles-in-GeoJS.jpg" />
     <Content Include="SiteResources\screenshots\Raster-Tiles-in-Leaflet-JS.jpg" />
     <Content Include="SiteResources\screenshots\Raster-Tiles-in-OpenLayers.jpg" />
     <Content Include="SiteResources\screenshots\Read-and-write-Well-Known-Text.jpg" />
@@ -697,6 +704,9 @@
     <Content Include="Spatial Math\Basic snap to road logic.html" />
     <Content Include="Spatial Analysis\GeoJSONRouting\index.js" />
     <Content Include="Spatial Analysis\GeoJSONRouting\Route along GeoJSON network.html" />
+    <Content Include="Spatial Math\Create 3D isobands from isolines.html" />
+    <Content Include="Spatial Math\Create isobands from isolines.html" />
+    <Content Include="Spatial Math\Data binning points with Turfjs.html" />
     <Content Include="Spatial Math\Get closest HTML marker to position.html" />
     <Content Include="Spatial Math\Get closest point to position.html" />
     <Content Include="Spatial Math\Get points in current map view.html" />
@@ -766,6 +776,7 @@
     <Content Include="HTML Markers\Simple HTML Marker.html" />
     <Content Include="HTML Markers\HTML Marker with Custom SVG Template.html" />
     <Content Include="Symbol Layer\Formatted text field.html" />
+    <Content Include="Third Party Map Controls\Raster tiles in GeoJS.html" />
     <Content Include="Third Party Map Controls\Satellite Imagery in OpenLayers.html" />
     <Content Include="Tile Layers\WMS Tile Layer.html" />
     <Content Include="Tile Layers\WMTS Tile Layer.html" />
@@ -927,7 +938,7 @@
     <Content Include="SiteResources\index.css" />
     <Content Include="SiteResources\index.js" />
     <Content Include="SiteResources\SampleList.js" />
-    <Content Include="Spatial Math\Merge Two Polygons Together %28Turf.js%29.html" />
+    <Content Include="Spatial Math\Merge two polygons together.html" />
     <Content Include="Spatial Math\Introduction to spatial math.html" />
     <Content Include="Symbol Layer\Create Symbols from Custom JSON.html" />
     <Content Include="HTML Markers\CSS Styled HTML Marker.html" />
