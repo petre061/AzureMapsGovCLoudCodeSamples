@@ -1261,13 +1261,22 @@ var sampleList = [
 			created:'10/25/2019'
 		},
 		{
+			title:'Polygon mask with dynamic styling',
+			desc:'This sample shows how to dynamically style a polygon mask to align with the current style of the map.',
+			path:'Polygon%20and%20Polygon%20Extrusion%20Layers/Polygon%20mask%20with%20dynamic%20styling.html',
+			sourcePath:'Polygon%20and%20Polygon%20Extrusion%20Layers/Polygon%20mask%20with%20dynamic%20styling.html',
+			screenshot:'Polygon-mask-with-dynamic-styling.jpg',
+			keywords:'microsoft maps, map, gis, api, sdk, polygon mask, restrict map view',
+			created:'10/25/2019'
+		},
+		{
 			title:'Polygon masks',
-			desc:'Polygon masks limit the viewable area of the map to a polygon area.',
+			desc:'This sample shows how to create polygon masks for both regular Polygon and MultiPolygon geometries.',
 			path:'Polygon%20and%20Polygon%20Extrusion%20Layers/Polygon%20masks.html',
 			sourcePath:'Polygon%20and%20Polygon%20Extrusion%20Layers/Polygon%20masks.html',
 			screenshot:'Polygon-masks.jpg',
-			keywords:'microsoft maps, map, gis, api, sdk, polygon mask, restrict map view',
-			created:'10/25/2019'
+			keywords:'microsoft maps, map, gis, api, sdk, multipolygon, polygon mask, restrict map view',
+			created:'9/17/2020'
 		},
 		{
 			title:'Simple MultiPolygon',
@@ -2314,4 +2323,4 @@ var sampleList = [
 			created:'7/2/2020'
 		},
 	]
-}];var numberOfSamples = 240;
+}];var numberOfSamples = 241;
