@@ -276,7 +276,7 @@ var sampleList = [
 			path:'Bubble%20Layer/Point%20Clusters%20in%20Bubble%20Layer.html',
 			sourcePath:'Bubble%20Layer/Point%20Clusters%20in%20Bubble%20Layer.html',
 			screenshot:'Point-Clusters-in-Bubble-Layer.jpg',
-			keywords:'microsoft maps, map, gis, api, sdk, markers, pins, pushpins, symbols, layer, bubbles, clustering, superclusterer',
+			keywords:'microsoft maps, map, gis, api, sdk, markers, pins, pushpins, symbols, layer, bubbles, clustering, superclusterer, earthquakes, usgs',
 			created:'10/25/2019'
 		},
 	]
@@ -692,11 +692,11 @@ var sampleList = [
 	samples: [
 		{
 			title:'Cluster weighted Heat Map',
-			desc:'This sample shows how to create a heat map that uses clustering on the data source to improve performance for large data sets. ',
+			desc:'This sample shows how to create a heat map that uses clustering on the data source to improve performance for large data sets.',
 			path:'Heat%20Map%20Layer/Cluster%20weighted%20Heat%20Map.html',
 			sourcePath:'Heat%20Map%20Layer/Cluster%20weighted%20Heat%20Map.html',
 			screenshot:'Cluster-weighted-Heat-Map.jpg',
-			keywords:'microsoft maps, map, gis, api, sdk, heatmap, heat map, heatmaps, heat maps, density, layer, thermatic, clustering, superclusterer',
+			keywords:'microsoft maps, map, gis, api, sdk, heatmap, heat map, heatmaps, heat maps, density, layer, thermatic, clustering, superclusterer, earthquakes, usgs',
 			created:'10/25/2019'
 		},
 		{
@@ -714,7 +714,7 @@ var sampleList = [
 			path:'Heat%20Map%20Layer/Heat%20Map%20Layer%20Options.html',
 			sourcePath:'Heat%20Map%20Layer/Heat%20Map%20Layer%20Options.html',
 			screenshot:'Heat-Map-Layer-Options.jpg',
-			keywords:'microsoft maps, map, gis, api, sdk, heatmap, heat map, heatmaps, heat maps, density, thermatic, layer',
+			keywords:'microsoft maps, map, gis, api, sdk, heatmap, heat map, heatmaps, heat maps, density, thermatic, layer, earthquakes, usgs',
 			created:'10/25/2019'
 		},
 		{
@@ -723,7 +723,7 @@ var sampleList = [
 			path:'Heat%20Map%20Layer/Simple%20Heat%20Map%20Layer.html',
 			sourcePath:'Heat%20Map%20Layer/Simple%20Heat%20Map%20Layer.html',
 			screenshot:'Simple-Heat-Map-Layer.jpg',
-			keywords:'microsoft maps, map, gis, api, sdk, heatmap, heat map, heatmaps, heat maps, density, layer, thermatic',
+			keywords:'microsoft maps, map, gis, api, sdk, heatmap, heat map, heatmaps, heat maps, density, layer, thermatic, earthquakes, usgs',
 			created:'10/25/2019'
 		},
 		{
@@ -732,7 +732,7 @@ var sampleList = [
 			path:'Heat%20Map%20Layer/Weighted%20Heat%20Map%20Layer.html',
 			sourcePath:'Heat%20Map%20Layer/Weighted%20Heat%20Map%20Layer.html',
 			screenshot:'Weighted-Heat-Map-Layer.jpg',
-			keywords:'microsoft maps, map, gis, api, sdk, heatmap, heat map, heatmaps, heat maps, density, layer, thermatic',
+			keywords:'microsoft maps, map, gis, api, sdk, heatmap, heat map, heatmaps, heat maps, density, layer, thermatic, earthquakes, usgs',
 			created:'10/25/2019'
 		},
 	]
@@ -912,7 +912,7 @@ var sampleList = [
 			path:'Line%20Layer/Display%20isoline%20data.html',
 			sourcePath:'Line%20Layer/Display%20isoline%20data.html',
 			screenshot:'Display-isoline-data.jpg',
-			keywords:'microsoft maps, map, gis, api, sdk, line, linestring, polyline, layer, isobands, isoband, isolines, isoline, contour, linelayer, data-driven, data driven styling',
+			keywords:'microsoft maps, map, gis, api, sdk, line, linestring, polyline, layer, isobands, isoband, isolines, isoline, contour, linelayer, data-driven, data driven styling, earthquakes, usgs',
 			created:'9/10/2020'
 		},
 		{
@@ -1157,11 +1157,11 @@ var sampleList = [
 		},
 		{
 			title:'Export Map as Image',
-			desc:'This sample shows how to export the map canvas as an image which can be used in reports or emails. ',
+			desc:'This sample shows how to export the map canvas as an image which can be used in reports or emails.',
 			path:'Map/Export%20Map%20as%20Image/Export%20Map%20as%20Image.html',
 			sourcePath:'Map/Export%20Map%20as%20Image',
 			screenshot:'Export-Map-as-Image.jpg',
-			keywords:'microsoft maps, map, gis, api, sdk, map image, export image, screenshots, reports, export map',
+			keywords:'microsoft maps, map, gis, api, sdk, map image, export image, screenshots, reports, export map, earthquakes, usgs',
 			created:'10/25/2019'
 		},
 	]
@@ -1180,6 +1180,15 @@ var sampleList = [
 			created:'2/3/2020'
 		},
 		{
+			title:'Extruded gridded data source',
+			desc:'This sample shows how to create a 3D polygon extrusions from a gridded data source.',
+			path:'Polygon%20and%20Polygon%20Extrusion%20Layers/Extruded%20gridded%20data%20source.html',
+			sourcePath:'Polygon%20and%20Polygon%20Extrusion%20Layers/Extruded%20gridded%20data%20source.html',
+			screenshot:'Extruded-gridded-data-source.jpg',
+			keywords:'microsoft maps, maps, map, api, sdk, gis, bivariate, data binning, data bin, gridding, hexgrid, hexbins, hexagon bins, tessellations, thematic, choropleth, heatmap, heat map, polygon extrusion, extruded polygons',
+			created:'10/1/2020'
+		},
+		{
 			title:'Fill polygon with built-in icon template',
 			desc:'This sample shows how to use an image template as a fill pattern in a polygon layer.',
 			path:'Polygon%20and%20Polygon%20Extrusion%20Layers/Fill%20polygon%20with%20built-in%20icon%20template.html',
@@ -1196,6 +1205,15 @@ var sampleList = [
 			screenshot:'Geospatially-Accurate-Circle.jpg',
 			keywords:'microsoft maps, map, gis, api, sdk, circles, geospatial, geospatial circles',
 			created:'10/25/2019'
+		},
+		{
+			title:'Gridded data source options',
+			desc:'This sample shows all the different options available for the gridded data source module.',
+			path:'Polygon%20and%20Polygon%20Extrusion%20Layers/Gridded%20data%20source%20options.html',
+			sourcePath:'Polygon%20and%20Polygon%20Extrusion%20Layers/Gridded%20data%20source%20options.html',
+			screenshot:'Gridded-data-source-options.jpg',
+			keywords:'microsoft maps, maps, map, api, sdk, gis, bivariate, data binning, data bin, gridding, hexgrid, hexbins, hexagon bins, tessellations',
+			created:'10/1/2020'
 		},
 		{
 			title:'Mercator Projection and Geospatial Circles',
@@ -1277,6 +1295,15 @@ var sampleList = [
 			screenshot:'Polygon-masks.jpg',
 			keywords:'microsoft maps, map, gis, api, sdk, multipolygon, polygon mask, restrict map view',
 			created:'9/17/2020'
+		},
+		{
+			title:'Show points of gridded data source',
+			desc:'This sample shows how to overlay a gridded data source on the map and the data points that are aggregated inside.',
+			path:'Polygon%20and%20Polygon%20Extrusion%20Layers/Show%20points%20of%20gridded%20data%20source.html',
+			sourcePath:'Polygon%20and%20Polygon%20Extrusion%20Layers/Show%20points%20of%20gridded%20data%20source.html',
+			screenshot:'Show-points-of-gridded-data-source.jpg',
+			keywords:'microsoft maps, maps, map, api, sdk, gis, earthquakes, usgs, bivariate, data binning, data bin, gridding, hexgrid, hexbins, hexagon bins, tessellations, thematic, choropleth, heatmap, heat map, polygon extrusion, extruded polygons',
+			created:'10/1/2020'
 		},
 		{
 			title:'Simple MultiPolygon',
@@ -1389,7 +1416,7 @@ var sampleList = [
 			path:'Popups/Show%20clustered%20points%20in%20popup.html',
 			sourcePath:'Popups/Show%20clustered%20points%20in%20popup.html',
 			screenshot:'Show-clustered-points-in-popup.jpg',
-			keywords:'microsoft maps, map, gis, api, sdk, markers, pins, pushpins, symbols, layer, bubbles, clustering, superclusterer',
+			keywords:'microsoft maps, map, gis, api, sdk, markers, pins, pushpins, symbols, layer, bubbles, clustering, superclusterer, earthquakes, usgs',
 			created:'5/18/2020'
 		},
 		{
@@ -1755,7 +1782,7 @@ var sampleList = [
 			path:'Spatial%20IO%20Module/Spatial%20data%20gallery.html',
 			sourcePath:'Spatial%20IO%20Module/Spatial%20data%20gallery.html',
 			screenshot:'Spatial-data-gallery.jpg',
-			keywords:'microsoft maps, map, gis, api, sdk, kml, kmz, georss, gpx, gml, geojson, csv, ogc, spatial data, spatial io module, geoxml',
+			keywords:'microsoft maps, map, gis, api, sdk, kml, kmz, georss, gpx, gml, geojson, csv, ogc, spatial data, spatial io module, geoxml, earthquakes, usgs',
 			created:'2/28/2020'
 		},
 		{
@@ -1842,7 +1869,7 @@ var sampleList = [
 			path:'Spatial%20Math/Create%20isobands%20from%20isolines.html',
 			sourcePath:'Spatial%20Math/Create%20isobands%20from%20isolines.html',
 			screenshot:'Create-isobands-from-isolines.jpg',
-			keywords:'microsoft maps, map, gis, api, sdk, line, linestring, polyline, layer, isobands, isoband, isolines, isoline, contour, linelayer, data-driven, data driven styling',
+			keywords:'microsoft maps, map, gis, api, sdk, line, linestring, polyline, layer, isobands, isoband, isolines, isoline, contour, linelayer, data-driven, data driven styling, earthquakes, usgs',
 			created:'9/10/2020'
 		},
 		{
@@ -1851,7 +1878,7 @@ var sampleList = [
 			path:'Spatial%20Math/Data%20binning%20points%20with%20Turfjs.html',
 			sourcePath:'Spatial%20Math/Data%20binning%20points%20with%20Turfjs.html',
 			screenshot:'Data-binning-points-with-Turfjs.jpg',
-			keywords:'microsoft maps, map, gis, api, sdk, line, linestring, polyline, layer, hexbin, hex bin, hex grid, hexgrid',
+			keywords:'microsoft maps, maps, map, api, sdk, gis, bivariate, data binning, data bin, gridding, hexbins, hexgrid, hexagon bins, tessellations',
 			created:'9/10/2020'
 		},
 		{
@@ -1860,7 +1887,7 @@ var sampleList = [
 			path:'Spatial%20Math/Display%20cluster%20area%20with%20Convex%20Hull.html',
 			sourcePath:'Spatial%20Math/Display%20cluster%20area%20with%20Convex%20Hull.html',
 			screenshot:'Display-cluster-area-with-Convex-Hull.jpg',
-			keywords:'microsoft maps, map, gis, api, sdk, markers, pins, pushpins, symbols, layer, clustering, superclusterer, convex hull, spatial math',
+			keywords:'microsoft maps, map, gis, api, sdk, markers, pins, pushpins, symbols, layer, clustering, superclusterer, convex hull, spatial math, earthquakes, usgs',
 			created:'10/25/2019'
 		},
 		{
@@ -1992,7 +2019,7 @@ var sampleList = [
 			path:'Symbol%20Layer/Display%20clusters%20with%20a%20Symbol%20layer.html',
 			sourcePath:'Symbol%20Layer/Display%20clusters%20with%20a%20Symbol%20layer.html',
 			screenshot:'Display-clusters-with-a-Symbol-Layer.jpg',
-			keywords:'microsoft maps, map, gis, api, sdk, markers, pins, pushpins, symbols, layer, clustering, superclusterer',
+			keywords:'microsoft maps, map, gis, api, sdk, markers, pins, pushpins, symbols, layer, clustering, superclusterer, earthquakes, usgs',
 			created:'10/25/2019'
 		},
 		{
@@ -2323,4 +2350,4 @@ var sampleList = [
 			created:'7/2/2020'
 		},
 	]
-}];var numberOfSamples = 241;
+}];var numberOfSamples = 244;
