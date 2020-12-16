@@ -28,7 +28,7 @@ namespace SampleListBuilder
             
             foreach (var s in Samples)
             {
-                sb.AppendFormat("<url><loc>https://azuremapscodesamples.azurewebsites.net/{0}</loc></url>\n", s.Path);
+                sb.AppendFormat("<url><loc>https://azuremapscodesamples.azurewebsites.us/{0}</loc></url>\n", s.Path);
             }
 
             return sb.ToString();

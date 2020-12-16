@@ -64,7 +64,7 @@
                 primaryDataSource = new atlas.source.DataSource();
                 primaryMap.sources.add(primaryDataSource);
 
-                primaryDataSource.importDataFromUrl('https://azuremapscodesamples.azurewebsites.net/Common/data/geojson/US_County_Unemployment_2017.geojson');
+                primaryDataSource.importDataFromUrl('../Common/data/geojson/US_County_Unemployment_2017.geojson');
 
                 //Choropleth based on unemployment rates in the US counties.
                 primaryMap.layers.add(new atlas.layer.PolygonLayer(primaryDataSource, null, {
@@ -86,7 +86,7 @@
                 secondaryDataSource = new atlas.source.DataSource();
                 secondaryMap.sources.add(secondaryDataSource);
 
-                secondaryDataSource.importDataFromUrl('https://azuremapscodesamples.azurewebsites.net/Common/data/geojson/US_County_Unemployment_2017.geojson');
+                secondaryDataSource.importDataFromUrl('../Common/data/geojson/US_County_Unemployment_2017.geojson');
 
                 //Choropleth based on suze of labor force in the US counties.
                 secondaryMap.layers.add(new atlas.layer.PolygonLayer(secondaryDataSource, null, {

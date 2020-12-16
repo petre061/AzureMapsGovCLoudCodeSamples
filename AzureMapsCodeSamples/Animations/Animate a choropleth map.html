@@ -19,7 +19,7 @@
     <script src="https://atlas.microsoft.com/sdk/javascript/spatial/0/atlas-spatial.min.js"></script>
 
     <!-- Add reference to the animation module. -->
-    <script src="../Common/scripts/atlas-animations.min.js"></script>
+    <script src="../Common/scripts/azure-maps-animations.min.js"></script>
 
     <script type='text/javascript'>
         var map, datasource, popup, maxScale = 30, colorExpressions = [], timer;
@@ -107,8 +107,8 @@
 
                 //Download population estimates for US counties and county boundary GeoJSON data.
                 Promise.all([
-                    fetch('https://azuremapscodesamples.azurewebsites.net/Common/data/US_County_2010_Population.csv').then(response => response.text()),
-                    fetch('https://azuremapscodesamples.azurewebsites.net/Common/data/geojson/US_County_Boundaries.json').then(response => response.json())
+                    fetch('../Common/data/US_County_2010_Population.csv').then(response => response.text()),
+                    fetch('../Common/data/geojson/US_County_Boundaries.json').then(response => response.json())
                 ]).then(results => {
                     var csv = results[0];
 
