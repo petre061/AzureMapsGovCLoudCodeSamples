@@ -447,6 +447,7 @@
     <Content Include="Popups\Popups with leader lines.html" />
     <Content Include="Popups\Reuse a popup template.html" />
     <Content Include="Popups\Show clustered points in popup.html" />
+    <Content Include="REST Services\3D Elevation profiles.html" />
     <Content Include="REST Services\Elevation path gradient.html" />
     <Content Include="REST Services\Elevations by bounding box.html" />
     <Content Include="REST Services\Get current weather at a location.html" />
@@ -461,6 +462,7 @@
     <Content Include="Services Module\Search for boundaries.html" />
     <Content Include="Services Module\Show traffic along route.html" />
     <Content Include="Services Module\Snap points to logical route path.html" />
+    <Content Include="SiteResources\screenshots\3D-Elevation-profiles.jpg" />
     <Content Include="SiteResources\screenshots\Accessible-popups.jpg" />
     <Content Include="SiteResources\screenshots\Add-a-Context-Menu-to-the-Map.jpg" />
     <Content Include="SiteResources\screenshots\Add-a-delimited-file-%28CSV%29-to-the-map.jpg" />
@@ -544,6 +546,8 @@
     <Content Include="SiteResources\screenshots\Drop-multiple-symbols-animation.gif" />
     <Content Include="SiteResources\screenshots\Drop-symbol-animation.gif" />
     <Content Include="SiteResources\screenshots\Drop-symbols-on-interval.gif" />
+    <Content Include="SiteResources\screenshots\Elevation-by-bounding-box.jpg" />
+    <Content Include="SiteResources\screenshots\Elevation-path-gradient.jpg" />
     <Content Include="SiteResources\screenshots\Expanding-Spider-Clusters.gif" />
     <Content Include="SiteResources\screenshots\Export-Map-as-Image.jpg" />
     <Content Include="SiteResources\screenshots\Extract-and-display-photo-location.jpg" />
@@ -569,6 +573,7 @@
     <Content Include="SiteResources\screenshots\Get-closest-point-to-position.jpg" />
     <Content Include="SiteResources\screenshots\Get-current-weather-at-a-location.jpg" />
     <Content Include="SiteResources\screenshots\Get-drawn-shapes-from-drawing-manager.jpg" />
+    <Content Include="SiteResources\screenshots\Get-elevation-at-position.jpg" />
     <Content Include="SiteResources\screenshots\Get-points-in-current-map-view.jpg" />
     <Content Include="SiteResources\screenshots\Get-weather-along-a-route.jpg" />
     <Content Include="SiteResources\screenshots\Gridded-data-source-options.jpg" />
@@ -611,6 +616,7 @@
     <Content Include="SiteResources\screenshots\Mercator-Projection-and-Geospatial-Circles.jpg" />
     <Content Include="SiteResources\screenshots\Merge-two-polygons-together.jpg" />
     <Content Include="SiteResources\screenshots\Methods-for-geocoding-multiple-addresses.jpg" />
+    <Content Include="SiteResources\screenshots\Mini-overview-map-options.jpg" />
     <Content Include="SiteResources\screenshots\Mini-overview-map.jpg" />
     <Content Include="SiteResources\screenshots\Morph-shape-animation.gif" />
     <Content Include="SiteResources\screenshots\Mouse events with key down.jpg" />
