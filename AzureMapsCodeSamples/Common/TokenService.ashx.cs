@@ -2,14 +2,10 @@
 using System.Threading.Tasks;
 using System.Web;
 
-namespace AzureMapsGovCloudCodeSamples.Common
+namespace AzureMapsCodeSamples.Common
 {
-    /// <summary>
-    /// Summary description for TokenService
-    /// </summary>
     public class TokenService : HttpTaskAsyncHandler
     {
-
         /// <summary>
         /// This token provider simplifies access tokens for Azure Resources. It uses the Managed Identity of the deployed resource.
         /// For instance if this application was deployed to Azure App Service or Azure Virtual Machine, you can assign an Azure AD
@@ -17,17 +13,33 @@ namespace AzureMapsGovCloudCodeSamples.Common
         /// </summary>
         /// <remarks>
         /// For the Web SDK to authorize correctly, you still must assign Azure role based access control for the managed identity
-        /// as explained here https://github.com/Azure-Samples/Azure-Maps-AzureAD-Samples/tree/master/src/ClientGrant/AzureMapsWebApiToken. 
+        /// as explained in the readme.md. There is significant benefit which is outlined in the the readme.
         /// </remarks>
         private static readonly AzureServiceTokenProvider tokenProvider = new AzureServiceTokenProvider();
 
         public override async Task ProcessRequestAsync(HttpContext context)
         {
-            string accessToken = await tokenProvider.GetAccessTokenAsync("https://atlas.microsoft.com/");
-
-            context.Response.StatusCode = 200;
-            context.Response.ContentType = "text/plain";
-            context.Response.Write(accessToken);
+            //Ensure the request for a token is coming from 
+            if (context.Request.UrlReferrer != null &&
+                context.Request.UrlReferrer.AbsoluteUri.StartsWith("https://azuremapscodesamples.azurewebsites.us/"))
+            {
+                context.Response.ContentType = "text/plain";
+                try
+                {
+                    // tokenProvider will cache the token in memory, if you would like to reduce the dependency on Azure AD we recommend
+                    // implementing a distributed cache combined with using the other methods available on tokenProvider.
+                    string accessToken = await tokenProvider.GetAccessTokenAsync("https://atlas.microsoft.com/");
+                    context.Response.Write(accessToken);
+                }
+                catch
+                {
+                    context.Response.StatusCode = 401;
+                }
+            }
+            else
+            {
+                context.Response.StatusCode = 401;
+            }
         }
     }
 }

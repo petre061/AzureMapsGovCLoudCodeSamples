@@ -3,23 +3,23 @@
 <head>
 	<title>Elevation by bounding box - Azure Maps Web SDK Samples</title>
 
-    <meta charset="utf-8" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <meta http-equiv="x-ua-compatible" content="IE=Edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content=" This sample shows how to snap a line drawn using the drawing tools to the road network. " />
-    <meta name="keywords" content="Microsoft maps, map, gis, API, SDK, services, module, route, directions, snap to roads, snapping, gps traces, gps trace, snap to road" />
-    <meta name="author" content="Microsoft Azure Maps" />
+	<meta charset="utf-8" />
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<meta http-equiv="x-ua-compatible" content="IE=Edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta name="description" content="This sample shows how to get elevations in a grid pattern with a bounding box." />
+	<meta name="keywords" content="Microsoft maps, map, gis, API, SDK, services, elevations, elevation, DEM" />
+	<meta name="author" content="Microsoft Azure Maps" />
 
-    <!-- Add references to the Azure Maps Map control JavaScript and CSS files. -->
-    <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css" type="text/css" />
-    <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.js"></script>
+	<!-- Add references to the Azure Maps Map control JavaScript and CSS files. -->
+	<link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css" type="text/css" />
+	<script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.js"></script>
 
-    <!-- Add references to the Azure Maps Map Drawing Tools JavaScript and CSS files. -->
-    <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/drawing/0/atlas-drawing.min.css" type="text/css" />
-    <script src="https://atlas.microsoft.com/sdk/javascript/drawing/0/atlas-drawing.min.js"></script>
+	<!-- Add references to the Azure Maps Map Drawing Tools JavaScript and CSS files. -->
+	<link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/drawing/0/atlas-drawing.min.css" type="text/css" />
+	<script src="https://atlas.microsoft.com/sdk/javascript/drawing/0/atlas-drawing.min.js"></script>
 
-    <script type='text/javascript'>
+	<script type='text/javascript'>
 		var map, datasource, layer, drawingManager;
 
 		var elevationBoundsUrl = 'https://{azMapsDomain}/elevation/lattice/json?api-version=1.0&bounds={bounds}&rows={rows}&columns={columns}';
@@ -27,70 +27,85 @@
 		var maxSamples = 2000;
 		var colors = ['#006837', '#1a9850', '#66bd63', '#a6d96a', '#d9ef8b', '#ffffbf', '#fee08b', '#fdae61', '#f46d43', '#d73027', '#a50026'];
 
-        function GetMap() {
-            //Point the Azure Maps domain to the US Azure Gov Cloud domain.
-            atlas.setDomain('atlas.azure.us');
+		function GetMap() {
+			//Point the Azure Maps domain to the US Azure Gov Cloud domain.
+			atlas.setDomain('atlas.azure.us');
 
-            //Initialize a map instance.
-            map = new atlas.Map('myMap', {
+			//Initialize a map instance.
+			map = new atlas.Map('myMap', {
 				center: [-119.949, 46.53],
 				zoom: 12,
 				style: 'satellite',
-                view: 'Auto',
+				view: 'Auto',
 
-                //Add your Azure Maps key to the map SDK. Get an Azure Maps key at https://azure.com/maps. NOTE: The primary key should be used as the key.
+                //Add authentication details for connecting to Azure Maps.
                 authOptions: {
-                    authType: 'subscriptionKey',
-                    subscriptionKey: '<Your Azure Maps Key>'
+                    //Use Azure Active Directory authentication.
+                    authType: 'anonymous',
+                    clientId: 'c9f2f391-13f1-407b-a4a5-f0a241bacfbf', //Your Azure Maps Azure Active Directory account client id.
+                    getToken: function (resolve, reject, map) {
+                        //URL to your authentication service that retrieves an Azure Active Directory Token.
+                        var tokenServiceUrl = 'https://azuremapscodesamples.azurewebsites.us/Common/TokenService.ashx';
+
+                        fetch(tokenServiceUrl).then(function (response) {
+                            return response.text();
+                        }).then(function (token) {
+                            resolve(token);
+                        });
+                    }
+
+                    //Alternatively, use an Azure Maps key. Get an Azure Maps key at https://azure.com/maps. NOTE: The primary key should be used as the key.
+                    //authType: 'subscriptionKey',
+                    //subscriptionKey: '<Your Azure Maps Key>'
                 }
-            });
+			});
 
-            //Wait until the map resources are ready.
-            map.events.add('ready', function () {
-                //Create a data source for the route line.
-                datasource = new atlas.source.DataSource();
-                map.sources.add(datasource);
+			//Wait until the map resources are ready.
+			map.events.add('ready', function () {
+				//Create a data source for the route line.
+				datasource = new atlas.source.DataSource();
+				map.sources.add(datasource);
 
-                //Create a layer for rendering the elevation points.
-                layer = new atlas.layer.BubbleLayer(datasource, null, {
-                    color: [
-                        'interpolate',
-                        ['linear'],
-                        ['get', 'elevation'],
-                        400, '#006837',
-                        450, '#1a9850',
-                        500, '#66bd63',
-                        550, '#a6d96a',
-                        600, '#d9ef8b',
-                        650, '#ffffbf',
-                        700, '#fee08b',
-                        750, '#fdae61',
-                        800, '#f46d43',
-                        850, '#d73027',
-                        900, '#a50026'
-                    ],
+				//Create a layer for rendering the elevation points.
+				layer = new atlas.layer.BubbleLayer(datasource, null, {
+					color: [
+						'interpolate',
+						['linear'],
+						['get', 'elevation'],
+						400, '#006837',
+						450, '#1a9850',
+						500, '#66bd63',
+						550, '#a6d96a',
+						600, '#d9ef8b',
+						650, '#ffffbf',
+						700, '#fee08b',
+						750, '#fdae61',
+						800, '#f46d43',
+						850, '#d73027',
+						900, '#a50026'
+					],
 
-                    //Don't outline the bubbles. This will make them blend together to create a heat map like visual.
-                    strokeWidth: 0
-                });
-                map.layers.add(layer);
+					//Don't outline the bubbles. This will make them blend together to create a heat map like visual.
+					strokeWidth: 0
+				});
+				map.layers.add(layer);
 
-                //Create an instance of the drawing manager and display the line drawing option of the drawing toolbar.
-                drawingManager = new atlas.drawing.DrawingManager(map, {
-                    toolbar: new atlas.control.DrawingToolbar({
-                        buttons: ['draw-rectangle'],
-                        position: 'top-left',
-                        style: 'light'
-                    })
-                });
+				//Create an instance of the drawing manager and display the line drawing option of the drawing toolbar.
+				drawingManager = new atlas.drawing.DrawingManager(map, {
+					toolbar: new atlas.control.DrawingToolbar({
+						buttons: ['draw-rectangle'],
+						position: 'top-left',
+						style: 'light'
+					})
+				});
 
-                ///Clear the map and drawing canvas when the user enters into a drawing mode.
-                map.events.add('drawingmodechanged', drawingManager, drawingModeChanged);
+				///Clear the map and drawing canvas when the user enters into a drawing mode.
+				map.events.add('drawingmodechanged', drawingManager, drawingModeChanged);
 
-                //Monitor for when a rectangle drawing has been completed.
-                map.events.add('drawingcomplete', drawingManager, getElevations);
-            });
-        }
+				//Monitor for when a rectangle drawing has been completed.
+				map.events.add('drawingcomplete', drawingManager, getElevations);
+			});
+		}
 
 		function drawingModeChanged(mode) {
 			//Clear the drawing canvas and data source.
@@ -111,10 +126,10 @@
 			//Get the width and height of the bounding box in meters.
 			var nw = atlas.data.BoundingBox.getNorthWest(bbox);
 			var width = atlas.math.getDistanceTo(nw, atlas.data.BoundingBox.getNorthEast(bbox));
-			var height = atlas.math.getDistanceTo(nw,  atlas.data.BoundingBox.getSouthWest(bbox));
+			var height = atlas.math.getDistanceTo(nw, atlas.data.BoundingBox.getSouthWest(bbox));
 
 			//In this sample we want to create an evenly distributed grid, so aspect ratio will be used to determine the number of requires rows/columns.
-			var aspectRatio = width / height;   
+			var aspectRatio = width / height;
 
 			//The square root of the max number of samples, gives use the number of row/columns for a perfect square. Apply the square root of the aspect ratio to this to handle rectangles.
 			var numRows = Math.floor(Math.sqrt(maxSamples / aspectRatio));
@@ -153,12 +168,12 @@
 					}
 				});
 
-				//Calculate a new style expression based on the 
+				//Calculate a new style expression based on the
 				updateStyle(minElv, maxElv);
 
 				//Overwrite the points to the data source.
 				datasource.setShapes(points);
-						
+
 				//Hide loading icon.
 				document.getElementById('loadingIcon').style.display = 'none';
 			});
@@ -210,36 +225,36 @@
 			];
 
 			document.getElementById('legend').innerHTML = legend.join('');
-        }
+		}
 
-        function processRequest(url) {
-            //This is a reusable function that sets the Azure Maps platform domain, sings the request, and makes use of any transformRequest set on the map.
-            return new Promise((resolve, reject) => {
-                //Replace the domain placeholder to ensure the same Azure Maps cloud is used throughout the app.
-                url = url.replace('{azMapsDomain}', atlas.getDomain());
+		function processRequest(url) {
+			//This is a reusable function that sets the Azure Maps platform domain, sings the request, and makes use of any transformRequest set on the map.
+			return new Promise((resolve, reject) => {
+				//Replace the domain placeholder to ensure the same Azure Maps cloud is used throughout the app.
+				url = url.replace('{azMapsDomain}', atlas.getDomain());
 
-                //Get the authentication details from the map for use in the request.
-                var requestParams = map.authentication.signRequest({ url: url });
+				//Get the authentication details from the map for use in the request.
+				var requestParams = map.authentication.signRequest({ url: url });
 
-                //Transform the request.
-                var transform = map.getServiceOptions().tranformRequest;
-                if (transform) {
-                    requestParams = transform(request);
-                }
+				//Transform the request.
+				var transform = map.getServiceOptions().tranformRequest;
+				if (transform) {
+					requestParams = transform(request);
+				}
 
-                fetch(requestParams.url, {
-                    method: 'GET',
-                    mode: 'cors',
-                    headers: new Headers(requestParams.headers)
-                })
-                    .then(r => r.json(), e => reject(e))
-                    .then(r => {
-                        resolve(r);
-                    }, e => reject(e));
-            });
-        }
-    </script>
-    <style>
+				fetch(requestParams.url, {
+					method: 'GET',
+					mode: 'cors',
+					headers: new Headers(requestParams.headers)
+				})
+					.then(r => r.json(), e => reject(e))
+					.then(r => {
+						resolve(r);
+					}, e => reject(e));
+			});
+		}
+	</script>
+	<style>
 		#legend {
 			position: absolute;
 			top: 10px;
@@ -255,7 +270,7 @@
 			height: 16px;
 			text-align: center;
 		}
-    </style>
+	</style>
 </head>
 <body onload="GetMap()">
 	<div id="myMap" style="position:relative;width:100%;min-width:290px;height:600px;"></div>
@@ -286,7 +301,8 @@
 		The color of each data point is set using a data-driven style based on the elevation value.
 		The style is dynamically scaled based on the
 		<br /><br />
-		<b>Modules used:</b> Drawing, Services
+		<b>Modules used:</b> Drawing, Services<br /><br />
+		Elevation data from the <a href="https://docs.microsoft.com/azure/azure-maps/how-to-request-elevation-data" target="_blank">Azure Maps Elevation services</a> © DLR 2011-2014 / © Airbus 2021.
 	</fieldset>
 </body>
 </html>

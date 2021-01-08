@@ -1,1 +1,1 @@
-﻿<%@ WebHandler Language="C#" CodeBehind="TokenService.ashx.cs" Class="AzureMapsGovCloudCodeSamples.Common.TokenService" %>
+﻿<%@ WebHandler Language="C#" CodeBehind="TokenService.ashx.cs" Class="AzureMapsCodeSamples.Common.TokenService" %>

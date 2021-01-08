@@ -20,17 +20,33 @@
 
         function GetMap() {
             //Point the Azure Maps domain to the US Azure Gov Cloud domain.
-			atlas.setDomain('atlas.azure.us');
+            atlas.setDomain('atlas.azure.us');
+
+            //Add authentication details for connecting to Azure Maps.
+            var authOptions = {
+                //Use Azure Active Directory authentication.
+                authType: "anonymous",
+                clientId: 'c9f2f391-13f1-407b-a4a5-f0a241bacfbf', //Your Azure Maps Azure Active Directory account client id.
+                getToken: function (resolve, reject, map) {
+                    //URL to your authentication service that retrieves an Azure Active Directory Token.
+                    var tokenServiceUrl = 'https://azuremapscodesamples.azurewebsites.us/Common/TokenService.ashx';
+
+                    fetch(tokenServiceUrl).then(function (response) {
+                        return response.text();
+                    }).then(function (token) {
+                        resolve(token);
+                    });
+                }
+
+                //Alternatively, use an Azure Maps key. Get an Azure Maps key at https://azure.com/maps. NOTE: The primary key should be used as the key.
+                //authType: 'subscriptionKey',
+                //subscriptionKey: '<Your Azure Maps Key>'
+            };
 
 			//Initialize a map instance.
             map = new atlas.Map('myMap', {
                 view: 'Auto',
-				
-		        //Add your Azure Maps key to the map SDK. Get an Azure Maps key at https://azure.com/maps. NOTE: The primary key should be used as the key.
-                authOptions: {
-                    authType: 'subscriptionKey',
-                    subscriptionKey: '<Your Azure Maps Key>'
-                }
+                authOptions: authOptions
             });
 
             //Initialize asecond map instance.
@@ -39,10 +55,7 @@
                 zoom: 12,
                 style: 'satellite_road_labels',
                 view: 'Auto',
-                authOptions: {
-                    authType: 'subscriptionKey',
-                    subscriptionKey: '<Your Azure Maps Key>'
-                }
+                authOptions: authOptions
             });
         }
     </script>
