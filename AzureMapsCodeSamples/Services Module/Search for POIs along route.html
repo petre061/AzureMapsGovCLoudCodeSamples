@@ -23,6 +23,9 @@
         var aborter = atlas.service.Aborter.timeout(3000);
 
         function GetMap() {
+            //Point the Azure Maps domain to the US Azure Gov Cloud domain.
+            atlas.setDomain('atlas.azure.us');
+
             //Initialize a map instance.
             map = new atlas.Map('myMap', {
                 center: [-122.25, 47.64],
@@ -36,7 +39,7 @@
                     clientId: 'c9f2f391-13f1-407b-a4a5-f0a241bacfbf', //Your Azure Active Directory client id for accessing your Azure Maps account.
                     getToken: function (resolve, reject, map) {
                         //URL to your authentication service that retrieves an Azure Active Directory Token.
-                        var tokenServiceUrl = "https://azuremapscodesamples.azurewebsites.us/Common/TokenService.ashx";
+                        var tokenServiceUrl = 'https://azuremapscodesamples.azurewebsites.us/Common/TokenService.ashx';
 
                         fetch(tokenServiceUrl).then(r => r.text()).then(token => resolve(token));
                     }
@@ -48,13 +51,13 @@
             });
 
             //Use MapControlCredential to share authentication between a map control and the service module.
-            var pipeline = atlas.service.MapsURL.newPipeline(new atlas.service.MapControlCredential(map), 'atlas.azure.us');
+            var pipeline = atlas.service.MapsURL.newPipeline(new atlas.service.MapControlCredential(map));
 
             //Create an instance of the SearchURL client.
-            searchURL = new atlas.service.SearchURL(pipeline, atlas.getDomain());
+            searchURL = new atlas.service.SearchURL(pipeline, 'atlas.azure.us');
 
             //Create an instance of the RouteURL client.
-            routeURL = new atlas.service.RouteURL(pipeline, atlas.getDomain());
+            routeURL = new atlas.service.RouteURL(pipeline, 'atlas.azure.us');
 
             //Wait until the map resources are ready.
             map.events.add('ready', function () {
