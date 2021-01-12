@@ -27,7 +27,7 @@ function initialize() {
                 //Add authentication details for connecting to Azure Maps.
                 authOptions: {
                     //Use Azure Active Directory authentication.
-                    authType: "anonymous",
+                    authType: 'anonymous',
                     clientId: 'c9f2f391-13f1-407b-a4a5-f0a241bacfbf', //Your Azure Maps Azure Active Directory account client id.
                     getToken: function (resolve, reject, map) {
                         //URL to your authentication service that retrieves an Azure Active Directory Token.
