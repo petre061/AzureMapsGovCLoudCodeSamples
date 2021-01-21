@@ -164,17 +164,21 @@
 
         <br /><br />
         Ideas to take things further;
-        <ul>
-            <li>
-                Sort the polygons based on their most north western coordinate.
-                This will make it so the tab order, when the map isn't rotated is left to right, top to bottom.'
-            </li>
-            <li>
-                Set a limit to the number of popup's that are created. After a couple hundred popups the page will slow down.
-                Additionally, users likely won't want to have to tab through hundreds of shapes.
-                Consider creating/removing popups after the map has been moved and only creating those that are closest to the center of the map.
-            </li>
-        </ul>
+              <ul>
+                  <li>
+                      Sort the polygons based on their most north western coordinate.
+                      This will make it so the tab order, when the map isn't rotated is left to right, top to bottom.'
+                  </li>
+                  <li>
+                      Set a limit to the number of popup's that are created. After a couple hundred popups the page will slow down.
+                      Additionally, users likely won't want to have to tab through hundreds of shapes.
+                      Consider creating/removing popups after the map has been moved and only creating those that are closest to the center of the map.
+                  </li>
+                  <li>
+                      Instead of highlighting the polygons by changing the color of the outline, create a highlight polygon from the bounding box of
+                      the shape to align with how accessibility tools typically highlight elements on a page.
+                  </li>
+              </ul>
     </fieldset>
 </body>
 </html>
