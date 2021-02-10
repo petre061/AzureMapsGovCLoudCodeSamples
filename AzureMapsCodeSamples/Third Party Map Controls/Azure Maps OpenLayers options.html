@@ -1,98 +1,81 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Azure Maps Cesium options - Azure Maps Web SDK Samples</title>
+    <title>Azure Maps OpenLayers options - Azure Maps Web SDK Samples</title>
 
     <meta charset="utf-8" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <meta http-equiv="x-ua-compatible" content="IE=Edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="This sample shows how the different options of the Azure Maps imagery provider class can be used in the Cesium JS map control." />
-    <meta name="keywords" content="Microsoft maps, map, gis, API, SDK, tiles, raster, cesium, cesium.js" />
+    <meta name="description" content="This sample shows how the different options of Azure Maps tile layer can be used in the OpenLayers map control." />
+    <meta name="keywords" content="Microsoft maps, map, gis, API, SDK, raster, imagery, satellite, aerial, tiles, Open Layers, OpenLayers" />
     <meta name="author" content="Microsoft Azure Maps" />
+    
+    <!-- Add references to the OpenLayers JavaScript and CSS files. -->
+    <link rel="stylesheet" href="https://openlayers.org/en/v4.6.5/css/ol.css" type="text/css" />
 
-    <!-- Add references to the CesiumJS Map control JavaScript and CSS files. -->
-    <link rel="stylesheet" href="https://cesiumjs.org/releases/1.77/Build/Cesium/Widgets/widgets.css" type="text/css" />
-    <script src="https://cesiumjs.org/releases/1.77/Build/Cesium/Cesium.js"></script>
+    <!-- The line below is only needed for old environments like Internet Explorer and Android 4.x -->
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
+    <script src="https://openlayers.org/en/v4.6.5/build/ol.js"></script>
 
-    <!-- Add reference to the Azure Maps Cesium plugin. -->
-    <script src="../Common/scripts/azure-maps-cesium.min.js"></script>
+    <!-- Add reference to the Azure Maps OpenLayers plugin. -->
+    <script src="../Common/scripts/azure-maps-openlayers.min.js"></script>  
 
     <script type='text/javascript'>
-        var viewer;
-
-        var tilesetId = 'microsoft.base.road';
-        var language = 'en-US';
-        var trafficFlowThickness = 5;
-
-        //Authentication options for connecting to Azure Maps.
-        var authOptions = {
-            //Point the Azure Maps domain to the US Azure Gov Cloud domain.
-            azMapsDomain: 'atlas.azure.us',
-
-            //Use Azure Active Directory authentication.
-            authType: 'anonymous',
-            clientId: 'c9f2f391-13f1-407b-a4a5-f0a241bacfbf', //Your Azure Active Directory client id for accessing your Azure Maps account.
-            getToken: function (resolve, reject, map) {
-                //URL to your authentication service that retrieves an Azure Active Directory Token.
-                var tokenServiceUrl = "https://azuremapscodesamples.azurewebsites.us/Common/TokenService.ashx";
-
-                fetch(tokenServiceUrl).then(r => r.text()).then(token => resolve(token));
-            }
-
-            //Alternatively, use an Azure Maps key. Get an Azure Maps key at https://azure.com/maps. NOTE: The primary key should be used as the key.
-            //authType: 'subscriptionKey',
-            //subscriptionKey: '<Your Azure Maps Key>'
-        };
+        var map, azMapsSource;
 
         function GetMap() {
-            //Create a map instance.
-            viewer = new Cesium.Viewer('myMap', {
-                //Disable the base layer picker and geocoder by default.
-                baseLayerPicker: false,
-                geocoder: false
+            //Create an Azure Maps tile source.
+            azMapsSource = new ol.source.AzureMaps({ 
+                //Add authentication details for connecting to Azure Maps.
+                authOptions: {
+                    //Point the Azure Maps domain to the US Azure Gov Cloud domain.
+                    azMapsDomain: 'atlas.azure.us',
+
+                    //Use Azure Active Directory authentication.
+                    authType: 'anonymous',
+                    clientId: 'c9f2f391-13f1-407b-a4a5-f0a241bacfbf', //Your Azure Active Directory client id for accessing your Azure Maps account.
+                    getToken: function (resolve, reject, map) {
+                        //URL to your authentication service that retrieves an Azure Active Directory Token.
+                        var tokenServiceUrl = "https://azuremapscodesamples.azurewebsites.us/Common/TokenService.ashx";
+
+                        fetch(tokenServiceUrl).then(r => r.text()).then(token => resolve(token));
+                    }
+
+                    //Alternatively, use an Azure Maps key. Get an Azure Maps key at https://azure.com/maps. NOTE: The primary key should be used as the key.
+                    //authType: 'subscriptionKey',
+                    //subscriptionKey: '<Your Azure Maps Key>'
+                }
             });
 
-            updateProvider();
+            //Create a map instance.
+            map = new ol.Map({
+                target: 'myMap',
+                layers: [
+                    new ol.layer.Tile({
+                        source: azMapsSource
+                    })
+                ],
+                view: new ol.View({
+                    center: [0, 0],
+                    zoom: 2
+                })
+            });
         }
 
-        function tilesetIdUpdated(elm) {
-            tilesetId = elm.selectedOptions[0].text;
-            updateProvider();
+        function tilesetIdUpdated(elm){
+            azMapsSource.setTilesetId(elm.selectedOptions[0].text);
         }
 
-        function languageUpdated(elm) {
-            language = elm.options[elm.selectedIndex].value;
-            updateProvider();
+        function languageUpdated(elm){
+            var lang = elm.options[elm.selectedIndex].value
+            azMapsSource.setLanguage(lang);
+        }    
+
+        function trafficFlowThicknessUpdated(elm){
+            azMapsSource.setTrafficFlowThickness(elm.value);
         }
-
-        function updateFlowThickness(elm) {
-            trafficFlowThickness = elm.value;
-            updateProvider();
-        }
-
-        function updateProvider() {
-            //Remove any imagery layer that may already be on the map.
-            if (viewer.imageryLayers.length > 0) {
-                viewer.imageryLayers.remove(viewer.imageryLayers.get(0));
-            }
-
-            //Add a new imagery provider with the new options.
-            viewer.imageryLayers.addImageryProvider(new Cesium.AzureMapsImageryProvider({
-                //Add authentication details for connecting to Azure Maps.
-                authOptions: authOptions,
-
-                //Set the tilesetId to display as the imagery provider.
-                tilesetId: tilesetId,
-
-                //Optional: set the language of the map labels.
-                language: language,
-
-                //Optional: set traffic flow line thickness.
-                trafficFlowThickness: trafficFlowThickness
-            }));
-        }
-    </script>
+    </script> 
 </head>
 <body onload="GetMap()">
     <div id="myMap" style="position:relative;width:100%;min-width:290px;height:600px;"></div>
@@ -188,13 +171,13 @@
                 <td>Traffic flow thickness:</td>
                 <td>
                     <form oninput="ft.value=flowThickness.value">
-                        <input type="range" id="flowThickness" value="5" min="1" max="20" step="1" onchange="updateFlowThickness(this)" />
+                        <input type="range" id="flowThickness" value="5" min="1" max="20" step="1" onchange="trafficFlowThicknessUpdated(this)" />
                         <output name="ft" for="flowThickness">5</output>
                     </form>
                 </td>
-            </tr>
+            </tr>  
         </table>
-        <br /><br />
+        <br/><br/>
         Options not demonstrated:
 
         <ul>
@@ -206,10 +189,10 @@
 
     <fieldset style="width:calc(100% - 30px);min-width:290px;margin-top:10px;">
         <legend>
-            <h1 style="font-size:16px">Azure Maps Cesium options</h1>
+            <h1 style="font-size:16px">Azure Maps OpenLayers options</h1>
         </legend>
-        This sample shows how the different options of the Azure Maps imagery provider class can be used in the Cesium JS map control.
-        This samples uses the open source <a href="https://github.com/Azure-Samples/azure-maps-cesium" target="_blank">Azure Maps Cesium JS plugin</a>.
+        This sample shows how the different options of Azure Maps tile layer can be used in the OpenLayers map control.
+        This samples uses the open source <a href="https://github.com/Azure-Samples/azure-maps-openlayers" target="_blank">Azure Maps OpenLayers plugin</a>.
     </fieldset>
 </body>
 </html>
