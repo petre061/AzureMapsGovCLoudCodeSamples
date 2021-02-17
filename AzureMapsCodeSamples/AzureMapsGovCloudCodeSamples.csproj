@@ -379,7 +379,9 @@
     <Content Include="Common\scripts\GeoJS\geo.min.js" />
     <Content Include="Common\scripts\lozad.min.js" />
     <Content Include="Common\scripts\shp.min.js" />
+    <Content Include="Common\scripts\turf.min.js" />
     <Content Include="Controls\Bring Data Into View Control.html" />
+    <Content Include="Controls\Custom navigation controls.html" />
     <Content Include="Controls\Map Style Picker.html" />
     <Content Include="Controls\Route range control.html" />
     <Content Include="Controls\Select shapes with selection control.html" />
@@ -527,8 +529,10 @@
     <Content Include="SiteResources\screenshots\Create-a-measuring-tool.jpg" />
     <Content Include="SiteResources\screenshots\Create-isobands-from-isolines.jpg" />
     <Content Include="SiteResources\screenshots\Create-Symbols-from-Custom-JSON.jpg" />
+    <Content Include="SiteResources\screenshots\Creator-indoor-maps.jpg" />
     <Content Include="SiteResources\screenshots\Cross-reference-pixels-in-image-layer.jpg" />
     <Content Include="SiteResources\screenshots\CSS-Styled-HTML-Marker.gif" />
+    <Content Include="SiteResources\screenshots\Custom-navigation-controls.jpg" />
     <Content Include="SiteResources\screenshots\Custom-Symbol-Image-Icon.jpg" />
     <Content Include="SiteResources\screenshots\Customize-a-popup.jpg" />
     <Content Include="SiteResources\screenshots\Data-binning-points-with-Turfjs.jpg" />
@@ -835,6 +839,7 @@
     <Content Include="Tile Layers\WMTS Tile Layer.html" />
     <Content Include="Traffic\Traffic control options.html" />
     <Content Include="Traffic\Traffic controls.html" />
+    <Content Include="Experimental\Creator indoor maps.html" />
     <Content Include="Tutorials\interactiveSearch.html" />
     <Content Include="Tutorials\route.html" />
     <Content Include="Tutorials\search.html" />
