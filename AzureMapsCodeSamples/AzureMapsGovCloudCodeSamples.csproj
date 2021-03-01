@@ -789,6 +789,7 @@
     <Content Include="Symbol Layer\Data-driven symbol icons.html" />
     <Content Include="Symbol Layer\Expanding Spider Clusters.html" />
     <Content Include="Symbol Layer\Image sprite fallback expression.html" />
+    <Content Include="Symbol Layer\Load missing image into sprite.html" />
     <Content Include="Symbol Layer\Symbol image selection state.html" />
     <Content Include="Symbol Layer\Symbol layer with built-in icon template.html" />
     <Content Include="Symbol Layer\Text format with inline image.html" />
