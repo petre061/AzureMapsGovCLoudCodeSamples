@@ -408,6 +408,7 @@
     <Content Include="HTML Markers\Pie chart HTML marker options.html" />
     <Content Include="HTML Markers\Pie Chart HTML Markers.html" />
     <Content Include="Map\Export Map as Image.html" />
+    <Content Include="Map\Fill viewport with single world.html" />
     <Content Include="Map\Mini overview map options.html" />
     <Content Include="Map\Mini overview map.html" />
     <Content Include="Map\Swipe between two maps.html" />
