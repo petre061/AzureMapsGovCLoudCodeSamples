@@ -458,6 +458,7 @@
     <Content Include="Popups\Reuse a popup template.html" />
     <Content Include="Popups\Show clustered points in popup.html" />
     <Content Include="REST Services\3D Elevation profiles.html" />
+    <Content Include="REST Services\Calculate slope direction.html" />
     <Content Include="REST Services\Elevation along a route.html" />
     <Content Include="REST Services\Elevation path gradient.html" />
     <Content Include="REST Services\Elevations by bounding box.html" />
@@ -514,6 +515,7 @@
     <Content Include="SiteResources\screenshots\Calculate-a-Simple-Isochrone.jpg" />
     <Content Include="SiteResources\screenshots\Calculate-a-simple-route.jpg" />
     <Content Include="SiteResources\screenshots\Calculate-concentric-isochrones.jpg" />
+    <Content Include="SiteResources\screenshots\Calculate-slope-direction.jpg" />
     <Content Include="SiteResources\screenshots\Calculate-spaced-positions-along-route.jpg" />
     <Content Include="SiteResources\screenshots\Car-vs-Truck-Route.jpg" />
     <Content Include="SiteResources\screenshots\Cardinal-Spline-Options.jpg" />

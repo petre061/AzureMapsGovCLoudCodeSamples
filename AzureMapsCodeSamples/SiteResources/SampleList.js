@@ -1510,6 +1510,15 @@ var sampleList = [
 			created:'10/25/2019'
 		},
 		{
+			title:'Calculate slope direction',
+			desc:'This sample shows how to get elevations in a grid pattern with a bounding box and then calculate the slope direction and it\'s magnitude for each point relative to its neighboring points.',
+			path:'REST%20Services/Calculate%20slope%20direction.html',
+			sourcePath:'REST%20Services/Calculate%20slope%20direction.html',
+			screenshot:'Calculate-slope-direction.jpg',
+			keywords:'microsoft maps, map, gis, api, sdk, slope, services, elevations, elevation, dem, hydrology, terrain',
+			created:'3/16/2021'
+		},
+		{
 			title:'Elevation along a route',
 			desc:'This sample shows how to retrieve elevation data along a route path, and then render each data point as a colored bubble based on its elevation.',
 			path:'REST%20Services/Elevation%20along%20a%20route.html',
@@ -2533,4 +2542,4 @@ var sampleList = [
 			created:'7/2/2020'
 		},
 	]
-}];var numberOfSamples = 265;
+}];var numberOfSamples = 266;
