@@ -381,9 +381,11 @@
     <Content Include="Common\scripts\FileSaver.js" />
     <Content Include="Common\scripts\geojson-path-finder.js" />
     <Content Include="Common\scripts\GeoJS\geo.min.js" />
+    <Content Include="Common\scripts\jszip.min.js" />
     <Content Include="Common\scripts\lozad.min.js" />
     <Content Include="Common\scripts\shp.min.js" />
     <Content Include="Common\scripts\turf.min.js" />
+    <Content Include="Common\scripts\xlsx.full.min.js" />
     <Content Include="Controls\Bring Data Into View Control.html" />
     <Content Include="Controls\Custom navigation controls.html" />
     <Content Include="Controls\Map Style Picker.html" />
@@ -396,7 +398,9 @@
     <Content Include="Device Sensors\Geolocation control options.html" />
     <Content Include="Device Sensors\Geolocation control.html" />
     <Content Include="Drawing Tools Module\Allow map panning with drawing tools.html" />
+    <Content Include="Geospatial Files\Visualize Excel data.html" />
     <Content Include="SiteResources\screenshots\Calculate-nearest-locations.jpg" />
+    <Content Include="SiteResources\screenshots\Visualize-Excel-data.jpg" />
     <Content Include="Spatial Analysis\Calculate nearest locations.html" />
     <Content Include="Experimental\Custom Drawing Tools\Draw Line.html" />
     <Content Include="Experimental\Custom Drawing Tools\Draw Polygon.html" />
