@@ -600,6 +600,24 @@ var sampleList = [
 			keywords:'microsoft maps, map, gis, api, sdk, services, module, route, directions, snap to roads, snapping, gps traces, gps trace, snap to road',
 			created:'1/31/2020'
 		},
+		{
+			title:'Snap grid options',
+			desc:'This sample shows how the different options of the snap grid manager modify how the snapping experience works.',
+			path:'Drawing%20Tools%20Module/Snap%20grid%20options.html',
+			sourcePath:'Drawing%20Tools%20Module/Snap%20grid%20options.html',
+			screenshot:'Snap-grid-options.jpg',
+			keywords:'microsoft maps, map, gis, api, sdk, drawing tools, paint, events',
+			created:'7/20/2021'
+		},
+		{
+			title:'Use a snapping grid',
+			desc:'This sample shows how to use the snap grid manager when dragging HTML markers and/or while drawing shapes.',
+			path:'Drawing%20Tools%20Module/Use%20a%20snapping%20grid.html',
+			sourcePath:'Drawing%20Tools%20Module/Use%20a%20snapping%20grid.html',
+			screenshot:'Use-a-snapping-grid.jpg',
+			keywords:'microsoft maps, map, gis, api, sdk, drawing tools, paint, events',
+			created:'7/20/2021'
+		},
 	]
 },
 {
@@ -2569,4 +2587,4 @@ var sampleList = [
 			created:'7/2/2020'
 		},
 	]
-}];var numberOfSamples = 269;
+}];var numberOfSamples = 271;
