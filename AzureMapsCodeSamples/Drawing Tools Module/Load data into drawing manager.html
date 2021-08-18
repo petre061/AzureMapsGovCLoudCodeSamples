@@ -1,14 +1,14 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Drawing tools events - Azure Maps Web SDK Samples</title>
+    <title>Load data into drawing manager - Azure Maps Web SDK Samples</title>
 
     <meta charset="utf-8" />
-	<link rel="shortcut icon" href="/favicon.ico"/>
+    <link rel="shortcut icon" href="/favicon.ico" />
     <meta http-equiv="x-ua-compatible" content="IE=Edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="This sample shows how the events in the Drawing Tools module work." />
-    <meta name="keywords" content="Microsoft maps, map, gis, API, SDK, drawing tools, paint, events" />
+    <meta name="description" content="This sample shows how to programmatically add shapes to the drawing manager and put them into edit mode. " />
+    <meta name="keywords" content="Microsoft maps, map, gis, API, SDK, drawing tools, circle, rectangle, polygon, linestring, point, marker, paint" />
     <meta name="author" content="Microsoft Azure Maps" />
 
     <!-- Add references to the Azure Maps Map control JavaScript and CSS files. -->
@@ -20,7 +20,7 @@
     <script src="https://atlas.microsoft.com/sdk/javascript/drawing/1/atlas-drawing.min.js"></script>
 
     <script type='text/javascript'>
-        var map, drawingManager, drawingEvents = ['drawingchanged', 'drawingchanging', 'drawingcomplete', 'drawingmodechanged', 'drawingstarted', 'drawingerased'];
+        var map, drawingManager;
 
         function GetMap() {
             //Point the Azure Maps domain to the US Azure Gov Cloud domain.
@@ -29,7 +29,7 @@
             //Initialize a map instance.
             map = new atlas.Map('myMap', {
                 center: [-122.33, 47.6],
-                zoom: 12,
+                zoom: 10,
                 view: 'Auto',
 
                 //Add authentication details for connecting to Azure Maps.
@@ -58,38 +58,45 @@
                     toolbar: new atlas.control.DrawingToolbar({ position: 'top-right', style: 'light' })
                 });
 
-                //Add events to the drawing manager.
-                for (var i = 0; i < drawingEvents.length; i++) {
-                    map.events.add(drawingEvents[i], drawingManager, createHighlightEvent(drawingEvents[i]));
+                //Get the source from the drawing manager.
+                var source = drawingManager.getSource();
 
-                    //Add a div to highlight the event.
-                    document.getElementById('eventPanel').innerHTML += '<div id="' + drawingEvents[i] + '">' + drawingEvents[i] + '</div>'
-                }
+                //Method 1: Create a shape fature and add it to the map.
+                source.add({
+                    "type": "Feature",
+                    "properties": {},
+                    "geometry": {
+                        "type": "LineString",
+                        "coordinates": [[-122.27577,47.55938],[-122.29705,47.60662],[-122.22358,47.6367]]
+                    }
+                });
+
+                //Method 2: Import GeoJSON data from a file.
+                source.importDataFromUrl('../Common/data/geojson/randomFeatures.json');
             });
         }
 
-        function createHighlightEvent(eventType) {
+        function editFirstShape() {
+            //This shows how to programmatically put a shape into edit mode.
 
-            return function (e) {
-                //Highlight the div to indicate that the event has fired.
-                document.getElementById(eventType).style.background = 'LightGreen';
+            //Get a shape. Can either be a new shape or one that's in the data source of the drawing manager.
+            var shape = drawingManager.getSource().getShapes()[0];
 
-                //Remove the highlighting after a second.
-                setTimeout(function () { document.getElementById(eventType).style.background = 'white'; }, 1000);
-            }
+            //Pass the shape into the drawing managers edit function.
+            drawingManager.edit(shape);
+
+            //To programmatically take a shape out of edit mode, set the drawing managers mode to 'idle'.
         }
     </script>
 </head>
 <body onload="GetMap()">
     <div id="myMap" style="position:relative;width:100%;min-width:290px;height:600px;"></div>
 
-    <div id="eventPanel" style="position:absolute;top:0;left:0;background-color:white;padding:10px;"></div>
-
-    <div style="clear:both;"></div>
-
     <fieldset style="width:calc(100% - 30px);min-width:290px;margin-top:10px;">
-        <legend><h1 style="font-size:16px">Drawing tools events</h1></legend>
-        This sample shows how the events in the Drawing Tools module work.
+        <legend><h1 style="font-size:16px">Load data into drawing manager</h1></legend>
+        This sample shows how to programmatically add shapes to the drawing manager and put them into edit mode.
+
+        <input type="button" onclick="editFirstShape()" value="Edit first shape" />
     </fieldset>
 </body>
 </html>

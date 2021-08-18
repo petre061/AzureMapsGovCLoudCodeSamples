@@ -16,8 +16,8 @@
     <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.js"></script>
 
     <!-- Add references to the Azure Maps Map Drawing Tools JavaScript and CSS files. -->
-    <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/drawing/0/atlas-drawing.min.css" type="text/css" />
-    <script src="https://atlas.microsoft.com/sdk/javascript/drawing/0/atlas-drawing.min.js"></script>
+    <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/drawing/1/atlas-drawing.min.css" type="text/css" />
+    <script src="https://atlas.microsoft.com/sdk/javascript/drawing/1/atlas-drawing.min.js"></script>
 
     <script type='text/javascript'>
         var map, datasource, drawingManager;
@@ -56,7 +56,7 @@
                 //Create an instance of the drawing manager and display the drawing toolbar.
                 drawingManager = new atlas.drawing.DrawingManager(map, {
                     toolbar: new atlas.control.DrawingToolbar({
-                        buttons: ['draw-line', 'draw-polygon', 'draw-rectangle', 'draw-circle'],
+                        buttons: ['draw-line', 'draw-polygon', 'draw-rectangle', 'draw-circle', 'edit-geometry'],
                         position: 'top-right',
                         style: 'light'
                     })
@@ -66,8 +66,9 @@
                 map.events.add('drawingmodechanged', drawingManager, drawingModeChanged);
 
                 //Monitor for when a polygon drawing has been completed.
-                map.events.add('drawingchanging', drawingManager, measureShape);
-                map.events.add('drawingcomplete', drawingManager, drawingComplete);
+                map.events.add('drawingchanging', drawingManager, measureShape);    //Fires when in shape preview is shown.
+                map.events.add('drawingchanged', drawingManager, measureShape);     //Fires when the shape has changed.
+                map.events.add('drawingcomplete', drawingManager, drawingComplete); //Fires when drawing is completed.
             });
         }
 

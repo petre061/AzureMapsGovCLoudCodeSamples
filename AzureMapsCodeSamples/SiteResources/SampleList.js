@@ -583,6 +583,15 @@ var sampleList = [
 			created:'7/18/2021'
 		},
 		{
+			title:'Load data into drawing manager',
+			desc:'This sample shows how to programmatically add shapes to the drawing manager and put them into edit mode. ',
+			path:'Drawing%20Tools%20Module/Load%20data%20into%20drawing%20manager.html',
+			sourcePath:'Drawing%20Tools%20Module/Load%20data%20into%20drawing%20manager.html',
+			screenshot:'Load-data-into-drawing-manager.jpg',
+			keywords:'microsoft maps, map, gis, api, sdk, drawing tools, circle, rectangle, polygon, linestring, point, marker, paint',
+			created:'7/26/2021'
+		},
+		{
 			title:'Select data in drawn polygon area',
 			desc:'This sample shows how to use the drawing tools to draw polygon areas on the map and select points that are within them. ',
 			path:'Drawing%20Tools%20Module/Select%20data%20in%20drawn%20polygon%20area.html',
@@ -599,6 +608,24 @@ var sampleList = [
 			screenshot:'Snap-drawn-line-to-roads.jpg',
 			keywords:'microsoft maps, map, gis, api, sdk, services, module, route, directions, snap to roads, snapping, gps traces, gps trace, snap to road',
 			created:'7/18/2021'
+		},
+		{
+			title:'Snap grid options',
+			desc:'This sample shows how the different options of the snap grid manager modify how the snapping experience works.',
+			path:'Drawing%20Tools%20Module/Snap%20grid%20options.html',
+			sourcePath:'Drawing%20Tools%20Module/Snap%20grid%20options.html',
+			screenshot:'Snap-grid-options.jpg',
+			keywords:'microsoft maps, map, gis, api, sdk, drawing tools, paint, events',
+			created:'7/20/2021'
+		},
+		{
+			title:'Use a snapping grid',
+			desc:'This sample shows how to use the snap grid manager when dragging HTML markers and/or while drawing shapes.',
+			path:'Drawing%20Tools%20Module/Use%20a%20snapping%20grid.html',
+			sourcePath:'Drawing%20Tools%20Module/Use%20a%20snapping%20grid.html',
+			screenshot:'Use-a-snapping-grid.jpg',
+			keywords:'microsoft maps, map, gis, api, sdk, drawing tools, paint, events',
+			created:'7/20/2021'
 		},
 	]
 },
@@ -1705,6 +1732,15 @@ var sampleList = [
 			created:'7/18/2021'
 		},
 		{
+			title:'Get nearest POIs to a set of addresses',
+			desc:'This sample shows the nearest POIs to a set of addresses',
+			path:'Services%20Module/Get%20nearest%20POIs%20to%20a%20set%20of%20addresses.html',
+			sourcePath:'Services%20Module/Get%20nearest%20POIs%20to%20a%20set%20of%20addresses.html',
+			screenshot:'Get nearest POIs to a set of addresses.gif',
+			keywords:'microsoft maps, map, gis, api, sdk, services, module, geolocation, search, fuzzy, geocode, geocoding, points of interest, poi, address, addresses, places, batch, batch geocode',
+			created:'7/26/2021'
+		},
+		{
 			title:'Load POIs as the map moves',
 			desc:'This sample shows how to load points of interest data on the map as the user moves the map.',
 			path:'Services%20Module/Load%20POI%20as%20the%20map%20moves.html',
@@ -2578,4 +2614,5 @@ var sampleList = [
 			created:'7/18/2021'
 		},
 	]
-}];var numberOfSamples = 270;
+
+}];var numberOfSamples = 273;
