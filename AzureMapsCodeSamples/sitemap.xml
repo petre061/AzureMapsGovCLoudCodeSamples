@@ -47,11 +47,11 @@
 <url><loc>https://azuremapscodesamples.azurewebsites.us/Demos/Create%20a%20Choropleth%20Map.html</loc></url>
 <url><loc>https://azuremapscodesamples.azurewebsites.us/Demos/Data-Driven%20Styling.html</loc></url>
 <url><loc>https://azuremapscodesamples.azurewebsites.us/Demos/Large%20GeoJSON%20Files.html</loc></url>
-<url><loc>https://azuremapscodesamples.azurewebsites.us/Device%20Sensors/Continuous%20user%20position%20tracking.html</loc></url>
+<url><loc>https://azuremapscodesamples.azurewebsites.us/Device%20Sensors/Continuous%20User%20Position%20Tracking.html</loc></url>
 <url><loc>https://azuremapscodesamples.azurewebsites.us/Device%20Sensors/Geolocation%20control%20options.html</loc></url>
 <url><loc>https://azuremapscodesamples.azurewebsites.us/Device%20Sensors/Geolocation%20control.html</loc></url>
-<url><loc>https://azuremapscodesamples.azurewebsites.us/Device%20Sensors/Show%20a%20users%20position.html</loc></url>
-<url><loc>https://azuremapscodesamples.azurewebsites.us/Device%20Sensors/User%20position%20accuracy%20circle.html</loc></url>
+<url><loc>https://azuremapscodesamples.azurewebsites.us/Device%20Sensors/Show%20a%20Users%20Position.html</loc></url>
+<url><loc>https://azuremapscodesamples.azurewebsites.us/Device%20Sensors/User%20Position%20Accuracy%20Circle.html</loc></url>
 <url><loc>https://azuremapscodesamples.azurewebsites.us/Drawing%20Tools%20Module/Add%20drawing%20toolbar%20to%20map.html</loc></url>
 <url><loc>https://azuremapscodesamples.azurewebsites.us/Drawing%20Tools%20Module/Allow%20map%20panning%20with%20drawing%20tools.html</loc></url>
 <url><loc>https://azuremapscodesamples.azurewebsites.us/Drawing%20Tools%20Module/Change%20drawing%20rendering%20style.html</loc></url>
@@ -124,7 +124,7 @@
 <url><loc>https://azuremapscodesamples.azurewebsites.us/Map/Map%20style%20options.html</loc></url>
 <url><loc>https://azuremapscodesamples.azurewebsites.us/Map/Map%20user%20interaction%20options.html</loc></url>
 <url><loc>https://azuremapscodesamples.azurewebsites.us/Map/Mini%20overview%20map%20options.html</loc></url>
-<url><loc>https://azuremapscodesamples.azurewebsites.us/Map/Mini%20overview%20map.html</loc></url>
+<url><loc>https://azuremapscodesamples.azurewebsites.us/Map/Mini%20Overview%20Map.html</loc></url>
 <url><loc>https://azuremapscodesamples.azurewebsites.us/Map/Mouse%20events%20with%20keys%20pressed.html</loc></url>
 <url><loc>https://azuremapscodesamples.azurewebsites.us/Map/Multiple%20Maps%20in%20Different%20Lanaguages.html</loc></url>
 <url><loc>https://azuremapscodesamples.azurewebsites.us/Map/Multiple%20Maps.html</loc></url>
