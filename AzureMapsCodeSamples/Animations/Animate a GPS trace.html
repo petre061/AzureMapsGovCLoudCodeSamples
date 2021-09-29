@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Animate a GPS trace - Azure Maps Web SDK Samples</title>
@@ -19,30 +19,30 @@
     <script src="https://atlas.microsoft.com/sdk/javascript/spatial/0/atlas-spatial.min.js"></script>
 
     <!-- Add reference to the animation module. -->
-    <script src="../Common/scripts/azure-maps-animations.min.js"></script>
+    <script src="../Common/scripts/azure-maps-animations.min.js"></script>    
     
     <script type='text/javascript'>
         var datasets = [
             {
                 displayName: 'GPS Trace (GeoJSON)',                
-                url: '../Common/data/geojson/GpsTrace.json',
+                url: 'C:Users/u200994/OneDrive - Trane Technologies/Desktop/AzureMapsCodeSamples-master/AzureMapsCodeSamples/Common/data/geojson/GpsTrace.json',
                 timestampProperty: 'time'
             },             
             {
                 displayName: 'Hurricane Barry track (csv)',                
-                url: '../Common/data/spatialcsv/hurricane_barry_track.csv',
+                url: 'https://raw.githubusercontent.com/petre061/AzureMapsGovCLoudCodeSamples/master/AzureMapsCodeSamples/Common/data/SpatialCSV/hurricane_barry_track.csv',
                 timestampProperty: 'Date'
             },           
             {
                 displayName: 'Kuhkopfsteig trail (GPX)',                
-                url: '../Common/data/gpx/kuhkopfsteig-fv.gpx',
+                url: 'C:Users/u200994/OneDrive - Trane Technologies/Desktop/AzureMapsCodeSamples-master/AzureMapsCodeSamples/Common/data/gpx/kuhkopfsteig-fv.gpx',
 
                 //Perform a linear interpolation on the `ele` property.
                 valueInterpolations: [{ propertyPath: 'ele' }]
             },
             {
                 displayName: 'Bike race GPS trace (GPX)',
-                url: '../Common/data/gpx/race-gps-trace.gpx',
+                url: 'C:Users/u200994/OneDrive - Trane Technologies/Desktop/AzureMapsCodeSamples-master/AzureMapsCodeSamples/Common/data/gpx/race-gps-trace.gpx',
 
                 //Perform a linear interpolation on the `ele` property.
                 valueInterpolations: [{ propertyPath: 'ele' }]
@@ -54,9 +54,7 @@
         var map, pin, datasource, pinSource;
         var animation, infoPanel, controls;
 
-        function GetMap() {
-            //Point the Azure Maps domain to the US Azure Gov Cloud domain.
-            atlas.setDomain('atlas.azure.us');   
+        function GetMap() {           
             
             //Cache reference to DOM elements for performance.
             infoPanel = document.getElementById('infoPanel');
@@ -80,18 +78,10 @@
                 //Add authentication details for connecting to Azure Maps.
                 authOptions: {
                     //Use Azure Active Directory authentication.
-                    authType: 'anonymous',
-                    clientId: 'c9f2f391-13f1-407b-a4a5-f0a241bacfbf', //Your Azure Active Directory client id for accessing your Azure Maps account.
-                    getToken: function (resolve, reject, map) {
-                        //URL to your authentication service that retrieves an Azure Active Directory Token.
-                        var tokenServiceUrl = 'https://azuremapscodesamples.azurewebsites.us/Common/TokenService.ashx';
-
-                        fetch(tokenServiceUrl).then(r => r.text()).then(token => resolve(token));
-                    }
-
+                    
                     //Alternatively, use an Azure Maps key. Get an Azure Maps key at https://azure.com/maps. NOTE: The primary key should be used as the key.
-                    //authType: 'subscriptionKey',
-                    //subscriptionKey: '<Your Azure Maps Key>'
+                    authType: 'subscriptionKey',
+                    subscriptionKey: '9PGTDNZHHUp4t8ntVSljOaRzHr0YEl5tcJXj9z6CFHc'
                 }
             });
 
